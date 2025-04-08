@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 0a50ca5e3516f1b4a64cbb026c9d3b802655f691
 public class Reserva {
     // Variables (atributos)
     private int idReserva;
@@ -94,4 +97,8 @@ public class Reserva {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 0a50ca5e3516f1b4a64cbb026c9d3b802655f691
