@@ -51,8 +51,8 @@ public abstract class Cliente {
     @Override
     public String toString() {
         return "Cliente: " +'\n'
-               "id_cliente= " + id_cliente +'\n'
-               "nombre= " + nombre + '\n' +
+               + "id_cliente= " + id_cliente +'\n'
+               + "nombre= " + nombre + '\n' +
                "telefono= " + telefono +
                "correo= " + correo + '\n';
     }

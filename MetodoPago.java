@@ -41,8 +41,8 @@ public class MetodoPago {
     @Override
     public String toString() {
         return "MetodoPago: " + '\n'
-               "id_Metodo_Pago= " + id_Metodo_Pago +'\n'
-               "descripcion= " + descripcion + '\n'' +
+               + "id_Metodo_Pago= " + id_Metodo_Pago +'\n'
+               + "descripcion= " + descripcion + '\n' +
                "moneda= " + moneda + '\n';
     }
 }
