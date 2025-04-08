@@ -1,3 +1,5 @@
+//Author: MAKO 
 public enum TipoProducto {
-    BOX_LUNCH,PLATO
+    BOX_LUNCH,
+    PLATO
 }

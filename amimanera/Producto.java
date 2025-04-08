@@ -7,6 +7,8 @@ public class Producto{
     private double precio_unitario;
     private TipoProducto tipoProducto;
     
+    //Constructores
+
     //Setters
     public void setId_producto(int id_producto){
         this.id_producto = id_producto;
@@ -14,7 +16,7 @@ public class Producto{
     public void setNombre(String nombre){
         this.nombre = nombre;
     }
-    public void detDescripcion(String descripcion){
+    public void setDescripcion(String descripcion){
         this.descripcion = descripcion;
     }
     public void setPrecio_unitario(double precio_unitario){
@@ -41,5 +43,4 @@ public class Producto{
         return tipoProducto;
     }
     
-
 }
