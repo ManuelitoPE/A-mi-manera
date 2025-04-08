@@ -1,3 +1,6 @@
+import java.sql.Timestamp;
+import java.util.Date;
+
 public class Reserva {
     // Variables (atributos)
     private int idReserva;
