@@ -74,7 +74,7 @@ public class Reserva {
 
     public void setHoraMaximaCancelacion(Timestamp horaMaximaCancelacion) {
         this.horaMaximaCancelacion = horaMaximaCancelacion;
-    }
+    } 
 
     public double getMontoReserva() {
         return montoReserva;
