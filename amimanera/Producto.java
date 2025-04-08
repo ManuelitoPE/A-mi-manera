@@ -8,6 +8,22 @@ public class Producto{
     private TipoProducto tipoProducto;
     
     //Constructores
+    public Producto(){}
+    public Producto(int id_producto,String nombre,String descripcion,
+                    double precio_unitario,TipoProducto tipoProducto){
+        this.id_producto = id_producto;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio_unitario = precio_unitario;
+        this.tipoProducto = tipoProducto;
+    }
+    public Producto(Producto producto){
+        id_producto = producto.id_producto;
+        nombre = producto.nombre;
+        descripcion = producto.descripcion;
+        precio_unitario = producto.precio_unitario;
+        tipoProducto = producto.tipoProducto;
+    }
 
     //Setters
     public void setId_producto(int id_producto){

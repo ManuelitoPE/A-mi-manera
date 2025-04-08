@@ -3,10 +3,25 @@
 public class LineaPedido {
     //Atributos
     private int id_lineaPedido;
+    private Producto producto;
     private int cantidad;
     private double monto_parcial;
 
     //Constructores
+    public LineaPedido(){}
+    public LineaPedido(int id_lineaPedido, Producto producto,
+                       int cantidad, double monto_parcial){
+        this.id_lineaPedido = id_lineaPedido;
+        this.producto = producto;
+        this.cantidad = cantidad;
+        this.monto_parcial = monto_parcial;
+    }
+    public LineaPedido(LineaPedido lineaPedido){
+        id_lineaPedido = lineaPedido.id_lineaPedido;
+        producto = lineaPedido.producto;
+        cantidad = lineaPedido.cantidad;
+        monto_parcial = lineaPedido.monto_parcial;
+    }
     
     //Setters
     public void setId_lineaPedido(int id_lineaPedido){
