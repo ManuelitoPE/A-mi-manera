@@ -1,19 +1,19 @@
 public class MetodoPago {
     // Atributos
-    private int id_Metodo_Pago;
+    private int idMetodoPago;
     private String descripcion;
     private String moneda;
 
     // Constructor
-    public MetodoPago(int id_Metodo_Pago, String descripcion, String moneda) {
-        this.id_Metodo_Pago = id_Metodo_Pago;
+    public MetodoPago(int idMetodoPago, String descripcion, String moneda) {
+        this.idMetodoPago = idMetodoPago;
         this.descripcion = descripcion;
         this.moneda = moneda;
     }
 
     // Getters
-    public int getId_Metodo_Pago() {
-        return id_Metodo_Pago;
+    public int getIdMetodoPago() {
+        return idMetodoPago;
     }
 
     public String getDescripcion() {
@@ -25,8 +25,8 @@ public class MetodoPago {
     }
 
     // Setters
-    public void setId_Metodo_Pago(int id_Metodo_Pago) {
-        this.id_Metodo_Pago = id_Metodo_Pago;
+    public void setIdMetodoPago(int idMetodoPago) {
+        this.idMetodoPago = idMetodoPago;
     }
 
     public void setDescripcion(String descripcion) {
@@ -41,7 +41,7 @@ public class MetodoPago {
     @Override
     public String toString() {
         return "MetodoPago: " + '\n'
-               + "id_Metodo_Pago= " + id_Metodo_Pago +'\n'
+               + "idMetodoPago= " + idMetodoPago +'\n'
                + "descripcion= " + descripcion + '\n' +
                "moneda= " + moneda + '\n';
     }

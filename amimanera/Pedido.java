@@ -5,33 +5,33 @@ import java.util.List;
 
 public class Pedido{
     //Atributos
-    private int id_pedido;
+    private int idPedido;
     private Timestamp fecha;
     private EstadoPedido estadoPedido;
-    private double monto_total;
+    private double montoTotal;
     private List<LineaPedido> listaLineaPedido;
 
     //Contructores
     public Pedido(){}
-    public Pedido(int id_pedido, Timestamp fecha, EstadoPedido estadoPedido,
-                  double monto_total, List<LineaPedido> listaLineaPedidos){
-        this.id_pedido = id_pedido;
+    public Pedido(int idPedido, Timestamp fecha, EstadoPedido estadoPedido,
+                  double montoTotal, List<LineaPedido> listaLineaPedidos){
+        this.idPedido = idPedido;
         this.fecha = fecha;
         this.estadoPedido = estadoPedido;
-        this.monto_total = monto_total;
+        this.montoTotal = montoTotal;
         this.listaLineaPedido = listaLineaPedidos;
     }
     public Pedido(Pedido pedido){
-        id_pedido = pedido.id_pedido;
+        idPedido = pedido.idPedido;
         fecha = pedido.fecha;
         estadoPedido = pedido.estadoPedido;
-        monto_total = pedido.monto_total;
+        montoTotal = pedido.montoTotal;
         listaLineaPedido = pedido.listaLineaPedido;
     }
     
     //Setters
-    public void setId_producto(int id_pedido){
-        this.id_pedido = id_pedido;
+    public void setIdProducto(int idPedido){
+        this.idPedido = idPedido;
     }
     public void setFecha(Timestamp fecha){
         this.fecha = fecha;
@@ -39,16 +39,16 @@ public class Pedido{
     public void setEstadoPedido(EstadoPedido estadoPedido){
         this.estadoPedido = estadoPedido;
     }
-    public void setMonto_total(double monto_total){
-        this.monto_total = monto_total;
+    public void setMontoTotal(double montoTotal){
+        this.montoTotal = montoTotal;
     }
-    public void setListLineaPedidop(List<LineaPedido> listaLineaPedido){
+    public void setListaLineaPedidos(List<LineaPedido> listaLineaPedido){
         this.listaLineaPedido = listaLineaPedido;
     }
     
     //Getters
-    public int getId_producto(){
-        return id_pedido;
+    public int getIdProducto(){
+        return idPedido;
     }
     public Timestamp getFecha(){
         return fecha;
@@ -56,8 +56,8 @@ public class Pedido{
     public EstadoPedido getEstadoPedido(){
         return estadoPedido;
     }
-    public double getMonto_total(){
-        return monto_total;
+    public double getMontoTotal(){
+        return montoTotal;
     }
     public List<LineaPedido> getListLineaPedidop(){
         return listaLineaPedido;

@@ -1,21 +1,21 @@
 public abstract class Cliente {
     // Atributos
-    private int id_cliente;
+    private int idCliente;
     private String nombre;
     private int telefono;
     private String correo;
 
     // Constructor
-    public Cliente(int id_cliente, String nombre, int telefono, String correo) {
-        this.id_cliente = id_cliente;
+    public Cliente(int idCliente, String nombre, int telefono, String correo) {
+        this.idCliente = idCliente;
         this.nombre = nombre;
         this.telefono = telefono;
         this.correo = correo;
     }
 
     // Getters
-    public int getId_cliente() {
-        return id_cliente;
+    public int getIdCliente() {
+        return idCliente;
     }
 
     public String getNombre() {
@@ -31,8 +31,8 @@ public abstract class Cliente {
     }
 
     // Setters
-    public void setId_cliente(int id_cliente) {
-        this.id_cliente = id_cliente;
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
 
     public void setNombre(String nombre) {
@@ -51,7 +51,7 @@ public abstract class Cliente {
     @Override
     public String toString() {
         return "Cliente: " +'\n'
-               + "id_cliente= " + id_cliente +'\n'
+               + "idCliente= " + idCliente +'\n'
                + "nombre= " + nombre + '\n' +
                "telefono= " + telefono +
                "correo= " + correo + '\n';

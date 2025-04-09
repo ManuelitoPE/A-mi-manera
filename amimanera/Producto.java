@@ -1,33 +1,33 @@
 //Author: MAKO
 public class Producto{
     //Atributos
-    private int id_producto;
+    private int idProducto;
     private String nombre;
     private String descripcion;
-    private double precio_unitario;
+    private double precioUnitario;
     private TipoProducto tipoProducto;
     
     //Constructores
     public Producto(){}
-    public Producto(int id_producto,String nombre,String descripcion,
-                    double precio_unitario,TipoProducto tipoProducto){
-        this.id_producto = id_producto;
+    public Producto(int idProducto,String nombre,String descripcion,
+                    double precioUnitario,TipoProducto tipoProducto){
+        this.idProducto = idProducto;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.precio_unitario = precio_unitario;
+        this.precioUnitario = precioUnitario;
         this.tipoProducto = tipoProducto;
     }
     public Producto(Producto producto){
-        id_producto = producto.id_producto;
+        idProducto = producto.idProducto;
         nombre = producto.nombre;
         descripcion = producto.descripcion;
-        precio_unitario = producto.precio_unitario;
+        precioUnitario = producto.precioUnitario;
         tipoProducto = producto.tipoProducto;
     }
 
     //Setters
-    public void setId_producto(int id_producto){
-        this.id_producto = id_producto;
+    public void setIdProducto(int idProducto){
+        this.idProducto = idProducto;
     }
     public void setNombre(String nombre){
         this.nombre = nombre;
@@ -35,16 +35,16 @@ public class Producto{
     public void setDescripcion(String descripcion){
         this.descripcion = descripcion;
     }
-    public void setPrecio_unitario(double precio_unitario){
-        this.precio_unitario = precio_unitario;
+    public void setPrecioUnitario(double precioUnitario){
+        this.precioUnitario = precioUnitario;
     }
     public void setTipoProducto(TipoProducto tipoProducto){
         this.tipoProducto = tipoProducto;
     }
     
     //Getters
-    public int getId_producto(){
-        return id_producto;
+    public int getIdProducto(){
+        return idProducto;
     }
     public String getNombre(){
         return nombre;
@@ -52,8 +52,8 @@ public class Producto{
     public String getDescripcion(){
         return descripcion;
     }
-    public double getPrecio_unitario(){
-        return precio_unitario;
+    public double getPrecioUnitario(){
+        return precioUnitario;
     }
     public TipoProducto getTipoProducto(){
         return tipoProducto;

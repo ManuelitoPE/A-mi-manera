@@ -2,47 +2,47 @@
 
 public class LineaPedido {
     //Atributos
-    private int id_lineaPedido;
+    private int idLineaPedido;
     private Producto producto;
     private int cantidad;
-    private double monto_parcial;
+    private double montoParcial;
 
     //Constructores
     public LineaPedido(){}
-    public LineaPedido(int id_lineaPedido, Producto producto,
-                       int cantidad, double monto_parcial){
-        this.id_lineaPedido = id_lineaPedido;
+    public LineaPedido(int idLineaPedido, Producto producto,
+                       int cantidad, double montoParcial){
+        this.idLineaPedido = idLineaPedido;
         this.producto = producto;
         this.cantidad = cantidad;
-        this.monto_parcial = monto_parcial;
+        this.montoParcial = montoParcial;
     }
     public LineaPedido(LineaPedido lineaPedido){
-        id_lineaPedido = lineaPedido.id_lineaPedido;
+        idLineaPedido = lineaPedido.idLineaPedido;
         producto = lineaPedido.producto;
         cantidad = lineaPedido.cantidad;
-        monto_parcial = lineaPedido.monto_parcial;
+        montoParcial = lineaPedido.montoParcial;
     }
     
     //Setters
-    public void setId_lineaPedido(int id_lineaPedido){
-        this.id_lineaPedido = id_lineaPedido;
+    public void setIdLineaPedido(int idLineaPedido){
+        this.idLineaPedido = idLineaPedido;
     }
     public void setCantidad(int cantidad){
         this.cantidad = cantidad;
     }
-    public void setMonto_parcial(double monto_parcial){
-        this.monto_parcial = monto_parcial;
+    public void setMontoParcial(double montoParcial){
+        this.montoParcial = montoParcial;
     }
     
     //Getters
-    public int id_lineaPedido(){
-        return id_lineaPedido;
+    public int getIdLineaPedido(){
+        return idLineaPedido;
     }
-    public int cantidad(){
+    public int getCantidad(){
         return cantidad;
     }
-    public double monto_parcial(){
-        return monto_parcial;
+    public double getMontoParcial(){
+        return montoParcial;
     }
 
     //Funciones
