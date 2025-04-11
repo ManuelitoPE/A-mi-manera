@@ -1,7 +1,10 @@
 //Author: MAKO
+
+import java.util.Scanner;
+
 public class Producto{
     //Atributos
-    private int idProducto;
+    private String idProducto;
     private String nombre;
     private String descripcion;
     private double precioUnitario;
@@ -9,7 +12,7 @@ public class Producto{
     
     //Constructores
     public Producto(){}
-    public Producto(int idProducto,String nombre,String descripcion,
+    public Producto(String idProducto,String nombre,String descripcion,
                     double precioUnitario,TipoProducto tipoProducto){
         this.idProducto = idProducto;
         this.nombre = nombre;
@@ -26,7 +29,7 @@ public class Producto{
     }
 
     //Setters
-    public void setIdProducto(int idProducto){
+    public void setIdProducto(String idProducto){
         this.idProducto = idProducto;
     }
     public void setNombre(String nombre){
@@ -43,7 +46,7 @@ public class Producto{
     }
     
     //Getters
-    public int getIdProducto(){
+    public String getIdProducto(){
         return idProducto;
     }
     public String getNombre(){
@@ -57,6 +60,19 @@ public class Producto{
     }
     public TipoProducto getTipoProducto(){
         return tipoProducto;
+    }
+
+    //Funciones
+    public void cargar(Scanner scanner){
+        idProducto = scanner.next();   
+        nombre = scanner.next();   
+        descripcion = scanner.next();   
+        precioUnitario = scanner.nextDouble();
+        tipoProducto = TipoProducto.valueOf(scanner.next());   
+    }
+    public void imprimir(){
+        System.out.println(String.format("%-15s\t%-10s\t%10.2f\t%-10s",
+                            nombre,descripcion,precioUnitario,tipoProducto));
     }
     
 }
