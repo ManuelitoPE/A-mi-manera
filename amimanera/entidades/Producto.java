@@ -1,4 +1,6 @@
 //Author: MAKO
+package amimanera.entidades;
+
 
 import java.util.Scanner;
 

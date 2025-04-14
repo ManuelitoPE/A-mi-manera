@@ -1,3 +1,5 @@
+package amimanera.entidades;
+
 public abstract class Cliente {
     // Atributos
     private int idCliente;

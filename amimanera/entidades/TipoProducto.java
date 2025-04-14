@@ -1,4 +1,6 @@
 //Author: MAKO 
+package amimanera.entidades;
+
 public enum TipoProducto {
     ENTRADA,
     SOPA,

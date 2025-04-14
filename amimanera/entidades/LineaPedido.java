@@ -1,4 +1,5 @@
 //Author: MAKO
+package amimanera.entidades;
 
 public class LineaPedido {
     //Atributos

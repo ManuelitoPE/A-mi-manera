@@ -1,4 +1,5 @@
 //Author: mako
+package amimanera.entidades;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,10 +38,30 @@ public class Menu {
             listaProductos.add(producto);
         }
     }
+
     public void mostrarPlatos(){
         for(Producto p : listaProductos){
             p.imprimir();
         }
     }
-        
+
+    public void subirPlato(String nombre, String descripcion,
+                           double precioUnitario,TipoProducto tipoProducto){
+
+    }
+
+    public void modificarPlato(){
+        //Modificar nombre
+        //Modificar descripcion
+        //Modificar precio unitario
+        //Modificar tipo de producto
+    }
+
+    public void mostrarPlato(){
+
+    }
+
+    public void eliminarPlato(){
+
+    }
 }

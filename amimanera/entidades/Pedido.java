@@ -1,4 +1,5 @@
 //Author: MAKO
+package amimanera.entidades;
 
 import java.sql.Timestamp;
 import java.util.List;

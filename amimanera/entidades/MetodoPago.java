@@ -1,3 +1,6 @@
+package amimanera.entidades;
+
+
 public class MetodoPago {
     // Atributos
     private int idMetodoPago;

@@ -1,4 +1,5 @@
 //Auhtor: mako
+package amimanera.entidades;
 
 import java.util.List;
 
