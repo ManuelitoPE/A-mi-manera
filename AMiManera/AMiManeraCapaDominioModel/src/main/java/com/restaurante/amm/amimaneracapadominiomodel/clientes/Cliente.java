@@ -22,7 +22,7 @@ public abstract class Cliente {
         this.nombre = nombre;
         this.telefono = telefono;
         this.correo = correo;
-        this.listaReservas = listaReservas;
+        this.listaReservas = new ArrayList<>(listaReservas);
     }
     
     public Cliente(Cliente cliente){
@@ -30,7 +30,7 @@ public abstract class Cliente {
         this.nombre = cliente.nombre;
         this.telefono = cliente.telefono;
         this.correo = cliente.correo;
-        this.listaReservas = cliente.listaReservas;
+        this.listaReservas = new ArrayList<>(cliente.listaReservas);
     }
 
     // Getters

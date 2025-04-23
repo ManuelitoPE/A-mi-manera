@@ -9,7 +9,9 @@ public class PersonaJuridica extends Cliente{
     
     //Constructor
     
-    public PersonaJuridica(){}
+    public PersonaJuridica(){
+        super();
+    }
     
     public PersonaJuridica(int idCliente, String nombre, int telefono, String correo,
             ArrayList<Reserva> listaReservas, String razonSocial, String RUC) {

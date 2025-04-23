@@ -21,12 +21,12 @@ public class Boleta extends ComprobantePago {
             ArrayList<DetalleBoleta> listaDetalleBoleta){
         super(idComprobantePago, fechaEmision, metodoPago,montoTotal, montoPropina,
                 montoSinIGV, montoIGV, montoReserva, pedido, reserva);
-        this.listaDetalleBoleta = listaDetalleBoleta;
+        this.listaDetalleBoleta = new ArrayList<>(listaDetalleBoleta);
     }
     
     public Boleta(Boleta boleta){
         super(boleta);
-        this.listaDetalleBoleta = boleta.listaDetalleBoleta;
+        this.listaDetalleBoleta = new ArrayList<>(boleta.listaDetalleBoleta);
     }
 
     //GETERS Y SETERS

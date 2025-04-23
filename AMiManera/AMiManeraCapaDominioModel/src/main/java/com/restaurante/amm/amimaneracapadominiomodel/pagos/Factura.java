@@ -28,14 +28,14 @@ public class Factura extends ComprobantePago {
                 montoSinIGV, montoIGV, montoReserva, pedido, reserva);
         this.RUC = RUC;
         this.razonSocial = razonSocial;
-        this.listaDetalleFactura = listaDetalleFactura;
+        this.listaDetalleFactura = new ArrayList<>(listaDetalleFactura);
     }
     
     public Factura(Factura factura){
         super(factura);
         this.RUC = factura.RUC;
         this.razonSocial = factura.razonSocial;
-        this.listaDetalleFactura = factura.listaDetalleFactura;
+        this.listaDetalleFactura = new ArrayList<>(factura.listaDetalleFactura);
     }
     
     //GETERS Y SETERS

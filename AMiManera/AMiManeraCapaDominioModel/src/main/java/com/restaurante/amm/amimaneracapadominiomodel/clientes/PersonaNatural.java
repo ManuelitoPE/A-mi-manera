@@ -8,7 +8,9 @@ public class PersonaNatural extends Cliente {
     
     //Constructor
     
-    public PersonaNatural(){}
+    public PersonaNatural(){
+        super();
+    }
     
     public PersonaNatural(int idCliente, String nombre, int telefono, String correo,
             ArrayList<Reserva> listaReservas, String DNI) {

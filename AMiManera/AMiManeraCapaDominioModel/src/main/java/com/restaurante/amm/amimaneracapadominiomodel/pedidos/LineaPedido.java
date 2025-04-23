@@ -13,13 +13,13 @@ public class LineaPedido {
     public LineaPedido(int idLineaPedido, Producto producto,
                        int cantidad, double montoParcial){
         this.idLineaPedido = idLineaPedido;
-        this.producto = producto;
+        this.producto = new Producto(producto);
         this.cantidad = cantidad;
         this.montoParcial = montoParcial;
     }
     public LineaPedido(LineaPedido lineaPedido){
         idLineaPedido = lineaPedido.idLineaPedido;
-        producto = lineaPedido.producto;
+        producto = new Producto(lineaPedido.producto);
         cantidad = lineaPedido.cantidad;
         montoParcial = lineaPedido.montoParcial;
     }

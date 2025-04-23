@@ -10,7 +10,9 @@ public class Mesa {
     private List<Pedido> listaPedidos;
 
     //Constructores
-    public Mesa(){}
+    public Mesa(){
+        
+    }
     public Mesa(int id_mesa,EstadoMesa estado,
                 List<Pedido> listaPedidos){
         this.idMesa = id_mesa;
