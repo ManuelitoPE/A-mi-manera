@@ -9,13 +9,17 @@ import java.util.Properties;
 
 public class DBManager {
     private static DBManager dbManager;
-    
+
+//    private String host = "http://prog3ta.cc11tjolntcn.us-east-1.rds.amazonaws.com";
+//    private int puerto = 3306;
+//    private String esquema = "Progra3AM";
+//    private String usuario = "admin";
+//    private String password = "progra320251italo";
     private String host;
-    private int puerto;
-    private String esquema;
-    private String usuario;
-    private String password;
-    
+    private int puerto ;
+    private String esquema ;
+    private String usuario ;
+    private String password ;
     private DBManager() throws IOException {
         cargarProperties();
     }
@@ -58,6 +62,12 @@ public class DBManager {
             esquema = properties.getProperty("db.esquema");
             usuario = properties.getProperty("db.usuario");
             password = properties.getProperty("db.password");
+//            host = "http://prog3ta.cc11tjolntcn.us-east-1.rds.amazonaws.com";
+//            puerto = 3306;
+//            esquema = "Progra3AM";
+//            usuario = "admin";
+//            password = properties.getProperty("db.password");
+//            password = "progra320251italo";
         }
         catch (IOException e) {
             System.err.println("No se pudo cargar el archivo db.properties");

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Producto {
     //Atributos
-    private String idProducto;
+    private int idProducto;
     private String nombre;
     private String descripcion;
     private double precioUnitario;
@@ -12,7 +12,7 @@ public class Producto {
     
     //Constructores
     public Producto(){}
-    public Producto(String idProducto,String nombre,String descripcion,
+    public Producto(int idProducto,String nombre,String descripcion,
                     double precioUnitario,TipoProducto tipoProducto){
         this.idProducto = idProducto;
         this.nombre = nombre;
@@ -29,7 +29,7 @@ public class Producto {
     }
 
     //Setters
-    public void setIdProducto(String idProducto){
+    public void setIdProducto(int idProducto){
         this.idProducto = idProducto;
     }
     public void setNombre(String nombre){
@@ -46,7 +46,7 @@ public class Producto {
     }
     
     //Getters
-    public String getIdProducto(){
+    public int getIdProducto(){
         return idProducto;
     }
     public String getNombre(){
@@ -64,7 +64,7 @@ public class Producto {
 
     //Funciones
     public void cargar(Scanner scanner){
-        idProducto = scanner.next();   
+        idProducto = scanner.nextInt();   
         nombre = scanner.next();   
         descripcion = scanner.next();   
         precioUnitario = scanner.nextDouble();

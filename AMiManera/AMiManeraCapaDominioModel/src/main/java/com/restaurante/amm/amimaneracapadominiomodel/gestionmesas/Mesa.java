@@ -1,7 +1,6 @@
 package com.restaurante.amm.amimaneracapadominiomodel.gestionmesas;
 
 import com.restaurante.amm.amimaneracapadominiomodel.pedidos.Pedido;
-import com.restaurante.amm.amimaneracapadominiomodel.gestionmesas.Reserva;
 import java.util.ArrayList;
 
 public class Mesa {

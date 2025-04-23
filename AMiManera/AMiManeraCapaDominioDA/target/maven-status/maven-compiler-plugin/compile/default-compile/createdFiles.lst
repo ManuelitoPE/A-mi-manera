@@ -1,7 +1,13 @@
-com\restaurante\amm\amimaneracapadominioda\mysql\PedidoDAOImpl.class
 com\restaurante\amm\amimaneracapadominioda\IPedidoDAO.class
-com\restaurante\amm\amimaneracapadominioda\IReservaDAO.class
-com\restaurante\amm\amimaneracapadominioda\IMesaDAO.class
+com\restaurante\amm\amimaneracapadominioda\IPersonaNaturalDAO.class
 com\restaurante\amm\amimaneracapadominioda\mysql\ReservaDAOImpl.class
-com\restaurante\amm\amimaneracapadominioda\mysql\MesaDAOImpl.class
 com\restaurante\amm\amimaneracapadominioda\ICrud.class
+com\restaurante\amm\amimaneracapadominioda\IPersonaJuridicaDAO.class
+com\restaurante\amm\amimaneracapadominioda\mysql\PedidoDAOImpl.class
+com\restaurante\amm\amimaneracapadominioda\IReservaDAO.class
+com\restaurante\amm\amimaneracapadominioda\mysql\ProductoDAOImpl.class
+com\restaurante\amm\amimaneracapadominioda\IMesaDAO.class
+com\restaurante\amm\amimaneracapadominioda\mysql\MesaDAOImpl.class
+com\restaurante\amm\amimaneracapadominioda\mysql\PersonaJuridicaDAOImpl.class
+com\restaurante\amm\amimaneracapadominioda\IProductoDAO.class
+com\restaurante\amm\amimaneracapadominioda\mysql\PersonaNaturalDAOImpl.class

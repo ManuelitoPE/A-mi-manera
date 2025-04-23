@@ -2,7 +2,7 @@ package com.restaurante.amm.amimaneracapadominiomodel.gestionmesas;
 
 import java.time.LocalDateTime;
 import java.util.Date;
-
+import com.restaurante.amm.amimaneracapadominiomodel.clientes.Cliente;
 public class Reserva {
     // Variables (atributos)
     private int idReserva;
@@ -14,7 +14,7 @@ public class Reserva {
     private double montoReserva;
     private Date fecha;
     private Mesa mesa;
-    
+    private Cliente cliente;
     
     //CONSTRUCTORES
     
@@ -179,6 +179,20 @@ public class Reserva {
      */
     public void setMesa(Mesa mesa) {
         this.mesa = mesa;
+    }
+
+    /**
+     * @return the cliente
+     */
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    /**
+     * @param cliente the cliente to set
+     */
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
     
 }

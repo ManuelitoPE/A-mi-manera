@@ -44,7 +44,7 @@ public class Pedido {
     }
     
     //Setters
-    public void setIdProducto(int idPedido){
+    public void setIdPedido(int idPedido){
         this.idPedido = idPedido;
     }
     public void setFecha(Date fecha){
@@ -56,12 +56,12 @@ public class Pedido {
     public void setMontoTotal(double montoTotal){
         this.montoTotal = montoTotal;
     }
-    public void setListaLineaPedidos(List<LineaPedido> listaLineaPedido){
+    public void setListaLineaPedido(List<LineaPedido> listaLineaPedido){
         this.listaLineaPedido = listaLineaPedido;
     }
     
     //Getters
-    public int getIdProducto(){
+    public int getIdPedido(){
         return idPedido;
     }
     public Date getFecha(){
@@ -73,7 +73,7 @@ public class Pedido {
     public double getMontoTotal(){
         return montoTotal;
     }
-    public List<LineaPedido> getListLineaPedidop(){
+    public List<LineaPedido> getListLineaPedido(){
         return listaLineaPedido;
     }
 
