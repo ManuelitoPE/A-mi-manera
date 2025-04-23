@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-Created-By: 23.0.1 (OpenJDK)
-Class-Path: entidades.jar
-Main-Class: amimanera/Principal
