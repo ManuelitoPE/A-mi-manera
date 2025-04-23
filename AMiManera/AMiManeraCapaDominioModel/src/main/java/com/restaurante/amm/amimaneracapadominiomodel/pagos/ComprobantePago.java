@@ -28,8 +28,8 @@ public abstract class ComprobantePago {
             double montoTotal, double montoPropina, double montoSinIGV,
             double montoIGV, double montoReserva, Pedido pedido, Reserva reserva){
         
-        this.pedido = pedido;
-        this.reserva = reserva;
+        this.pedido = new Pedido(pedido);
+        this.reserva = new Reserva(reserva);
         this.idComprobantePago = idComprobantePago;
         this.fechaEmision = fechaEmision;
         this.metodoPago = metodoPago;
@@ -49,8 +49,8 @@ public abstract class ComprobantePago {
         this.montoSinIGV = comprobantePago.montoSinIGV;
         this.montoIGV = comprobantePago.montoIGV;
         this.montoReserva = comprobantePago.montoReserva;
-        this.pedido = comprobantePago.pedido;
-        this.reserva = comprobantePago.reserva;
+        this.pedido = new Pedido(comprobantePago.pedido);
+        this.reserva = new Reserva(comprobantePago.reserva);
     }
     //GETERS Y SETERS
     /**
