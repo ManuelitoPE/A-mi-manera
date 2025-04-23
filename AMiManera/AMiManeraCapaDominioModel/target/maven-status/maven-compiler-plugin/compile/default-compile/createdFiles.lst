@@ -1,0 +1,12 @@
+com\restaurante\amm\amimaneracapadominiomodel\gestionmesas\Reserva.class
+com\restaurante\amm\amimaneracapadominiomodel\pedidos\TipoProducto.class
+com\restaurante\amm\amimaneracapadominiomodel\pedidos\Producto.class
+com\restaurante\amm\amimaneracapadominiomodel\pedidos\LineaPedido.class
+com\restaurante\amm\amimaneracapadominiomodel\pedidos\EstadoPedido.class
+com\restaurante\amm\amimaneracapadominiomodel\pedidos\Pedido.class
+com\restaurante\amm\amimaneracapadominiomodel\gestionmesas\Mesa.class
+com\restaurante\amm\amimaneracapadominiomodel\pagos\Pago.class
+com\restaurante\amm\amimaneracapadominiomodel\gestionmesas\EstadoMesa.class
+com\restaurante\amm\amimaneracapadominiomodel\personal\CuentaUsuario.class
+com\restaurante\amm\amimaneracapadominiomodel\personal\Trabajador.class
+com\restaurante\amm\amimaneracapadominiomodel\pedidos\Cliente.class
