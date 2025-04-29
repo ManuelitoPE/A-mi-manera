@@ -1,26 +1,23 @@
 -- Crear y seleccionar la base de datos
 USE Progra3AM;
 
--- Tabla Cliente (base)
-CREATE TABLE CLIENTE (
-    idCliente INT AUTO_INCREMENT PRIMARY KEY,
+-- Tabla Persona Natural
+CREATE TABLE PERSONA_NATURAL (
+    idPersonaNatural INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     telefono VARCHAR(15),
-    correo VARCHAR(100)
+    correo VARCHAR(100),
+    DNI VARCHAR(8) UNIQUE NOT NULL
 );
 
--- Tablas de herencia para clientes
-CREATE TABLE PERSONANATURAL (
-    idCliente INT PRIMARY KEY,
-    DNI VARCHAR(8) UNIQUE NOT NULL,
-    FOREIGN KEY (idCliente) REFERENCES CLIENTE(idCliente)
-);
-
-CREATE TABLE PERSONAJURIDICA (
-    idCliente INT PRIMARY KEY,
+-- Tabla Persona Jurídica
+CREATE TABLE PERSONA_JURIDICA (
+    idPersonaJuridica INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    telefono VARCHAR(15),
+    correo VARCHAR(100),
     RUC VARCHAR(11) UNIQUE NOT NULL,
-    razonSocial VARCHAR(100) NOT NULL,
-    FOREIGN KEY (idCliente) REFERENCES CLIENTE(idCliente)
+    razonSocial VARCHAR(100) NOT NULL
 );
 
 -- Tabla Mesa con estado ENUM
@@ -120,9 +117,11 @@ CREATE TABLE RESERVA (
     estado ENUM('PENDIENTE', 'CONFIRMADA', 'CANCELADA') NOT NULL,
     horaMaximaCancelacion DATETIME NOT NULL,
     montoReserva DECIMAL(10,2) NOT NULL,
-    idCliente INT NOT NULL,
+    idPersonaNatural INT,
+    idPersonaJuridica INT,
     idMesa INT NOT NULL,
-    FOREIGN KEY (idCliente) REFERENCES CLIENTE(idCliente),
+    FOREIGN KEY (idPersonaNatural) REFERENCES PERSONA_NATURAL(idPersonaNatural),
+    FOREIGN KEY (idPersonaJuridica) REFERENCES PERSONA_JURIDICA(idPersonaJuridica),
     FOREIGN KEY (idMesa) REFERENCES MESA(idMesa)
 );
 
@@ -146,7 +145,8 @@ CREATE TABLE DETALLEFACTURA (
 );
 
 -- Índices para optimización
-CREATE INDEX idx_cliente_nombre ON CLIENTE(nombre);
+CREATE INDEX idx_persona_natural_nombre ON PERSONA_NATURAL(nombre);
+CREATE INDEX idx_persona_juridica_nombre ON PERSONA_JURIDICA(nombre);
 CREATE INDEX idx_pedido_estado ON PEDIDO(estado);
 CREATE INDEX idx_producto_tipo ON PRODUCTO(TipoProducto);
 CREATE INDEX idx_mesa_estado ON MESA(estado); 
