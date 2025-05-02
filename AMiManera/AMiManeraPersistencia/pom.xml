@@ -35,7 +35,7 @@
   <dependencies>
     <dependency>
       <groupId>com.restaurante.amm</groupId>
-      <artifactId>AMiManeraCapaDominioModel</artifactId>
+      <artifactId>AMiManeraModel</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
