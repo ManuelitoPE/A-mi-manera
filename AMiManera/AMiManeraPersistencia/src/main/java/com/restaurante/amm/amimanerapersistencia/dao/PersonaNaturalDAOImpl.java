@@ -1,4 +1,4 @@
-package com.restaurante.amm.amimaneracapadominioda.mysql;
+package com.restaurante.amm.amimanerapersistencia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,24 +8,22 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.restaurante.amm.amimaneracapadominiomodel.clientes.PersonaJuridica;
-import com.restaurante.amm.amimaneracapadominioda.IPersonaJuridicaDAO;
+import com.restaurante.amm.amimaneracapadominiomodel.clientes.PersonaNatural;
+import com.restaurante.amm.amimanerapersistencia.daoimpl.IPersonaNaturalDAO;
 import com.restaurante.amm.amimaneradbmanager.DBManager;
 
-public class PersonaJuridicaDAOImpl implements IPersonaJuridicaDAO{
+public class PersonaNaturalDAOImpl implements IPersonaNaturalDAO{
     @Override
-    public int insertar(PersonaJuridica personaJuridica){
-        String sql="INSERT PersonaJuridica(idCliente,nombre,telefono,correo,razonSocial,"
-                + "RUC) VALUES (?,?,?,?,?,?)";
+    public int insertar(PersonaNatural personaNatural){
+        String sql="INSERT PersonaNatural (idCliente,nombre,telefono,correo,"
+                + "DNI) VALUES (?,?,?,?,?)";
         try(Connection conn=DBManager.getInstance().getConnection();
                 PreparedStatement ps=conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)){
-            
-            ps.setInt(1,personaJuridica.getIdCliente());
-            ps.setString(2,personaJuridica.getNombre());
-            ps.setInt(3, personaJuridica.getTelefono());
-            ps.setString(4, personaJuridica.getCorreo());
-            ps.setString(5, personaJuridica.getRazonSocial());
-            ps.setString(6, personaJuridica.getRUC());
+            ps.setInt(1,personaNatural.getIdCliente());
+            ps.setString(2,personaNatural.getNombre());
+            ps.setInt(3, personaNatural.getTelefono());
+            ps.setString(4, personaNatural.getCorreo());
+            ps.setString(5, personaNatural.getDNI());
             
             if(ps.executeUpdate()==0){
                 System.err.println("El registro no se inserto.");
@@ -46,18 +44,16 @@ public class PersonaJuridicaDAOImpl implements IPersonaJuridicaDAO{
     }
     
     @Override
-    public boolean modificar(PersonaJuridica personaJuridica){
-        String sql="UPDATE PersonaJuridica SET nombre=?,telefono=?,correo=?,"
-                + "razonSocial=?,RUC=? WHERE idCliente=?";
+    public boolean modificar(PersonaNatural personaNatural){
+        String sql="UPDATE PersonaNatural SET nombre=?,telefono=?,correo=?,"
+                + "DNI=? WHERE idCliente=?";
         try(Connection conn=DBManager.getInstance().getConnection();
                 PreparedStatement ps=conn.prepareStatement(sql)){
-            
-            ps.setInt(1,personaJuridica.getIdCliente());
-            ps.setString(2,personaJuridica.getNombre());
-            ps.setInt(3, personaJuridica.getTelefono());
-            ps.setString(4, personaJuridica.getCorreo());
-            ps.setString(5, personaJuridica.getRazonSocial());
-            ps.setString(6, personaJuridica.getRUC());
+            ps.setInt(1,personaNatural.getIdCliente());
+            ps.setString(2,personaNatural.getNombre());
+            ps.setInt(3, personaNatural.getTelefono());
+            ps.setString(4, personaNatural.getCorreo());
+            ps.setString(5, personaNatural.getDNI());
             
             return ps.executeUpdate()>0;
         }
@@ -74,7 +70,7 @@ public class PersonaJuridicaDAOImpl implements IPersonaJuridicaDAO{
     
     @Override
     public boolean eliminar(int id){
-        String sql="DELETE FROM PersonaJuridica WHERE idCliente=?";
+        String sql="DELETE FROM PersonaNatural WHERE idCliente=?";
         try (Connection conn = DBManager.getInstance().getConnection();
             PreparedStatement ps = conn.prepareStatement(sql)) {
             
@@ -93,8 +89,8 @@ public class PersonaJuridicaDAOImpl implements IPersonaJuridicaDAO{
     }
     
     @Override
-    public PersonaJuridica buscar(int id){
-        String sql="SELECT * FROM PersonaJuridica WHERE idCliente=?";
+    public PersonaNatural buscar(int id){
+        String sql="SELECT * FROM PersonaNatural WHERE idCliente=?";
         try (Connection conn = DBManager.getInstance().getConnection();
             PreparedStatement ps = conn.prepareStatement(sql)) {
             
@@ -106,15 +102,13 @@ public class PersonaJuridicaDAOImpl implements IPersonaJuridicaDAO{
                     return null;
                 }
 
-                PersonaJuridica personaJuridica = new PersonaJuridica();
-                personaJuridica.setIdCliente(rs.getInt("idCliente"));
-                personaJuridica.setNombre(rs.getString("nombre"));
-                personaJuridica.setTelefono(rs.getInt("telefono"));
-                personaJuridica.setCorreo(rs.getString("correo"));
-                personaJuridica.setRazonSocial(rs.getString("razonSocial"));
-                personaJuridica.setRUC(rs.getString("RUC"));
-                
-                return personaJuridica;
+                PersonaNatural personaNatural = new PersonaNatural();
+                personaNatural.setIdCliente(rs.getInt("idCliente"));
+                personaNatural.setNombre(rs.getString("nombre"));
+                personaNatural.setTelefono(rs.getInt("telefono"));
+                personaNatural.setCorreo(rs.getString("correo"));
+                personaNatural.setDNI(rs.getString("DNI"));
+                return personaNatural;
             }     
         }        
         catch (SQLException e) {
@@ -128,22 +122,20 @@ public class PersonaJuridicaDAOImpl implements IPersonaJuridicaDAO{
     }
     
     @Override
-    public List<PersonaJuridica> listar(){
-        String sql="SELECT * FROM PersonaJuridica";
+    public List<PersonaNatural> listar(){
+        String sql="SELECT * FROM PersonaNatural";
         try (Connection conn = DBManager.getInstance().getConnection();
                 PreparedStatement ps = conn.prepareStatement(sql);
                 ResultSet rs=ps.executeQuery()) {
             
-            List<PersonaJuridica> clientes = new ArrayList<>();
+            List<PersonaNatural> clientes = new ArrayList<>();
             while (rs.next()) {
-                PersonaJuridica cliente = new PersonaJuridica();
+                PersonaNatural cliente = new PersonaNatural();
                 cliente.setIdCliente(rs.getInt("idCliente"));
                 cliente.setNombre(rs.getString("nombre"));
                 cliente.setTelefono(rs.getInt("telefono"));
                 cliente.setCorreo(rs.getString("correo"));
-                cliente.setRazonSocial(rs.getString("razonSocial"));
-                cliente.setRUC(rs.getString("RUC"));
-                
+                cliente.setDNI(rs.getString("DNI"));
                 clientes.add(cliente);
             }
             return clientes;

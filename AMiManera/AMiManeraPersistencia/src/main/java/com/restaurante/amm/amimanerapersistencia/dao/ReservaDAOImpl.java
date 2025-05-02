@@ -1,4 +1,4 @@
-package com.restaurante.amm.amimaneracapadominioda.mysql;
+package com.restaurante.amm.amimanerapersistencia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.sql.Date;
 
 import com.restaurante.amm.amimaneracapadominiomodel.gestionmesas.Reserva;
-import com.restaurante.amm.amimaneracapadominioda.IReservaDAO;
+import com.restaurante.amm.amimanerapersistencia.daoimpl.IReservaDAO;
 import com.restaurante.amm.amimaneradbmanager.DBManager;
 import java.sql.Timestamp;
 

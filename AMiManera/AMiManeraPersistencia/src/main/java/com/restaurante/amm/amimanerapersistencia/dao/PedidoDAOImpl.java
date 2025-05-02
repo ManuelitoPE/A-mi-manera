@@ -1,6 +1,6 @@
-package com.restaurante.amm.amimaneracapadominioda.mysql;
+package com.restaurante.amm.amimanerapersistencia.dao;
 
-import com.restaurante.amm.amimaneracapadominioda.IPedidoDAO;
+import com.restaurante.amm.amimanerapersistencia.daoimpl.IPedidoDAO;
 import com.restaurante.amm.amimaneracapadominiomodel.pedidos.EstadoPedido;
 import com.restaurante.amm.amimaneracapadominiomodel.pedidos.Pedido;
 import com.restaurante.amm.amimaneradbmanager.DBManager;

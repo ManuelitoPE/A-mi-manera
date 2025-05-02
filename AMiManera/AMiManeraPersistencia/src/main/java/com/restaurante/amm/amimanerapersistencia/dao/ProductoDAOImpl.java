@@ -1,4 +1,4 @@
-package com.restaurante.amm.amimaneracapadominioda.mysql;
+package com.restaurante.amm.amimanerapersistencia.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.restaurante.amm.amimaneracapadominioda.IProductoDAO;
+import com.restaurante.amm.amimanerapersistencia.daoimpl.IProductoDAO;
 import com.restaurante.amm.amimaneracapadominiomodel.pedidos.Producto;
 import com.restaurante.amm.amimaneracapadominiomodel.pedidos.TipoProducto;
 import com.restaurante.amm.amimaneradbmanager.DBManager;

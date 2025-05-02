@@ -1,4 +1,4 @@
-package com.restaurante.amm.amimaneracapadominioda;
+package com.restaurante.amm.amimanerapersistencia.daoimpl;
 
 import java.util.List;
 

@@ -10,7 +10,6 @@
     </properties>
 <modules>
     <module>AMiManeraDBManager</module>
-    <module>AMiManeraModel</module>
     <module>AMiManeraPersistencia</module>
     <module>AMiManeraModel</module>
 </modules>
