@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
-import java.sql.Timestamp;
 import com.restaurante.amm.amimanerapersistencia.dao.ITrabajadorDAO;
 import com.restaurante.amm.amimaneramodel.personal.Trabajador;
 import com.restaurante.amm.amimaneramodel.personal.Mesero;

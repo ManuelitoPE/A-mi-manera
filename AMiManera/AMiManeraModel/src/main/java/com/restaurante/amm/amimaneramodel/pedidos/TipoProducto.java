@@ -1,6 +1,8 @@
 package com.restaurante.amm.amimaneramodel.pedidos;
 
 public enum TipoProducto {
-    Comida,
-    Bebida,
+    ENTRADA,
+    PLATO_PRINCIPAL,
+    POSTRE,
+    BEBIDA
 }

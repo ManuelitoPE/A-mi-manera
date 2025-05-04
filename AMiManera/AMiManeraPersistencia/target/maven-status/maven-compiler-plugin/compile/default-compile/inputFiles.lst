@@ -1,5 +1,6 @@
 C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IBoletaDAO.java
 C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\ICrud.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\ICuentaUsuarioDAO.java
 C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IDetalleBoletaDAO.java
 C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IDetalleFacturaDAO.java
 C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IFacturaDAO.java
@@ -14,6 +15,7 @@ C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trab
 C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\BaseDAOImpl.java
 C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\BoletaDAOImpl.java
 C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\ComprobanteDAOImpl.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\CuentaUsuarioDAOImpl.java
 C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\DetalleBoletaDAOImpl.java
 C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\DetalleFacturaDAOImpl.java
 C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\FacturaDAOImpl.java

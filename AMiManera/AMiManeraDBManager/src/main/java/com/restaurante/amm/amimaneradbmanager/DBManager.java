@@ -9,17 +9,12 @@ import java.util.Properties;
 
 public class DBManager {
     private static DBManager dbManager;
-
-//    private String host = "http://prog3ta.cc11tjolntcn.us-east-1.rds.amazonaws.com";
-//    private int puerto = 3306;
-//    private String esquema = "Progra3AM";
-//    private String usuario = "admin";
-//    private String password = "progra320251italo";
     private String host;
-    private int puerto ;
-    private String esquema ;
-    private String usuario ;
-    private String password ;
+    private int puerto;
+    private String esquema;
+    private String usuario;
+    private String password;
+    
     private DBManager() throws IOException {
         cargarProperties();
     }
@@ -35,15 +30,16 @@ public class DBManager {
         dbManager = new DBManager();
     }
     
-    public Connection getConnection() throws SQLException, ClassNotFoundException {
+    public Connection getConnection() throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String cadenaConexion = cadenaConexion(host, puerto, esquema);
+            String cadenaConexion = String.format("jdbc:mysql://%s:%d/%s?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", 
+                host, puerto, esquema);
+            System.out.println("Intentando conectar a: " + cadenaConexion);
             return DriverManager.getConnection(cadenaConexion, usuario, password);
-        }
-        catch (ClassNotFoundException | SQLException e) {
-            System.err.println(e);
-            throw e;
+        } catch (ClassNotFoundException | SQLException e) {
+            System.err.println("Error al conectar a la base de datos: " + e.getMessage());
+            throw new SQLException("Error al conectar a la base de datos", e);
         }
     }
     
@@ -51,8 +47,7 @@ public class DBManager {
         Properties properties = new Properties();
         try (InputStream input = getClass().getClassLoader().getResourceAsStream("db.properties")) {
             if (input == null) {
-                System.err.println("No se pudo abrir el archivo db.properties");
-                return;
+                throw new IOException("No se pudo encontrar el archivo db.properties");
             }
             
             properties.load(input);
@@ -62,20 +57,10 @@ public class DBManager {
             esquema = properties.getProperty("db.esquema");
             usuario = properties.getProperty("db.usuario");
             password = properties.getProperty("db.password");
-//            host = "http://prog3ta.cc11tjolntcn.us-east-1.rds.amazonaws.com";
-//            puerto = 3306;
-//            esquema = "Progra3AM";
-//            usuario = "admin";
-//            password = properties.getProperty("db.password");
-//            password = "progra320251italo";
+            
+            if (host == null || esquema == null || usuario == null || password == null) {
+                throw new IOException("Faltan propiedades requeridas en db.properties");
+            }
         }
-        catch (IOException e) {
-            System.err.println("No se pudo cargar el archivo db.properties");
-            throw e;
-        }
-    }
-    
-    private String cadenaConexion(String host, int puerto, String esquema) {
-        return String.format("jdbc:mysql://%s:%d/%s?useSSL=false&allowPublicKeyRetrieval=true", host, puerto, esquema);
     }
 }
