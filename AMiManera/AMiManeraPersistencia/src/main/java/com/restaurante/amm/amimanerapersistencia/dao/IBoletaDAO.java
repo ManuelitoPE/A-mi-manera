@@ -5,10 +5,12 @@
  */
 package com.restaurante.amm.amimanerapersistencia.dao;
 
+import com.restaurante.amm.amimaneramodel.pagos.Boleta;
+
 /**
  *
  * @author italo
  */
-public interface IBoletaDAO {
+public interface IBoletaDAO extends ICrud<Boleta>{
     
 }

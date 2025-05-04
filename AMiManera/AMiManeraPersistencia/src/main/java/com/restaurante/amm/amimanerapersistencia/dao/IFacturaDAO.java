@@ -5,10 +5,12 @@
  */
 package com.restaurante.amm.amimanerapersistencia.dao;
 
+import com.restaurante.amm.amimaneramodel.pagos.Factura;
+
 /**
  *
  * @author italo
  */
-public interface IFacturaDAO {
+public interface IFacturaDAO extends ICrud<Factura>{
     
 }

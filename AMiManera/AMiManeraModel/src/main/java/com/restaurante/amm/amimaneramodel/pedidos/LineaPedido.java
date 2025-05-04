@@ -7,6 +7,7 @@ public class LineaPedido {
     private int cantidad;
     private double montoParcial;
     private String descripcion;
+    private int idPedido;
 
     //Constructores
     public LineaPedido(){}
@@ -22,6 +23,7 @@ public class LineaPedido {
         producto = new Producto(lineaPedido.producto);
         cantidad = lineaPedido.cantidad;
         montoParcial = lineaPedido.montoParcial;
+        idPedido = lineaPedido.idPedido;
     }
     
     //Setters
@@ -37,6 +39,12 @@ public class LineaPedido {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+    public void setIdPedido(int idPedido) {
+        this.idPedido = idPedido;
+    }
     
     //Getters
     public int getIdLineaPedido(){
@@ -50,6 +58,12 @@ public class LineaPedido {
     }
     public String getDescripcion() {
         return descripcion;
+    }
+    public Producto getProducto() {
+        return producto;
+    }
+    public int getIdPedido() {
+        return idPedido;
     }
 
     //Funciones

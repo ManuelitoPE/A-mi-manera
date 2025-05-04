@@ -4,6 +4,7 @@ public class DetalleBoleta {
     private int idDetalleBoleta;
     private String nombreProducto;
     private double montoProducto;
+    private int idComprobante;
 
     //CONSTRUCTORES
     
@@ -11,16 +12,18 @@ public class DetalleBoleta {
     }
     
     public DetalleBoleta(int idDetalleBoleta, String nombreProducto,
-            double montoProducto){
+            double montoProducto, int idComprobante){
         this.idDetalleBoleta = idDetalleBoleta;
         this.nombreProducto = nombreProducto;
         this.montoProducto = montoProducto;
+        this.idComprobante = idComprobante;
     }
     
     public DetalleBoleta(DetalleBoleta detalleBoleta){
         this.idDetalleBoleta = detalleBoleta.idDetalleBoleta;
         this.nombreProducto = detalleBoleta.nombreProducto;
         this.montoProducto = detalleBoleta.montoProducto;
+        this.idComprobante = detalleBoleta.idComprobante;
     }
     
     
@@ -65,6 +68,14 @@ public class DetalleBoleta {
      */
     public void setMontoProducto(double montoProducto) {
         this.montoProducto = montoProducto;
+    }
+
+    public int getIdComprobante() {
+        return idComprobante;
+    }
+
+    public void setIdComprobante(int idComprobante) {
+        this.idComprobante = idComprobante;
     }
     
     

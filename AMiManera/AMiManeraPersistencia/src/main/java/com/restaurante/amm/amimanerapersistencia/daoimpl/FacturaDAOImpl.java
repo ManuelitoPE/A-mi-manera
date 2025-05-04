@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.sql.Timestamp;
-import com.restaurante.amm.amimanerapersistencia.dao.BaseDAOImpl;
 import com.restaurante.amm.amimanerapersistencia.dao.IFacturaDAO;
 import com.restaurante.amm.amimaneramodel.pagos.Factura;
 import com.restaurante.amm.amimaneramodel.pagos.DetalleFactura;

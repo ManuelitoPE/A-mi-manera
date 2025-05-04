@@ -6,6 +6,7 @@ public abstract class Trabajador {
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
+    private String rol;
     private CuentaUsuario cuentaUsuario;
     
     
@@ -15,12 +16,13 @@ public abstract class Trabajador {
     }
     
     public Trabajador(int idTrabajador, String nombre, String apellidoPaterno,
-            String apellidoMaterno, CuentaUsuario cuentaUsuario){
+            String apellidoMaterno, String rol, CuentaUsuario cuentaUsuario){
         
         this.idTrabajador = idTrabajador;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
+        this.rol = rol;
         this.cuentaUsuario = new CuentaUsuario(cuentaUsuario);
     }
     public Trabajador(Trabajador trabajador){
@@ -28,6 +30,7 @@ public abstract class Trabajador {
         this.nombre = trabajador.nombre;
         this.apellidoPaterno = trabajador.apellidoPaterno;
         this.apellidoMaterno = trabajador.apellidoMaterno;
+        this.rol = trabajador.rol;
         this.cuentaUsuario = new CuentaUsuario(trabajador.cuentaUsuario);
     }
      
@@ -62,6 +65,14 @@ public abstract class Trabajador {
 
     public void setApellidoMaterno(String apellidoMaterno) {
         this.apellidoMaterno = apellidoMaterno;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 
     public CuentaUsuario getCuentaUsuario() {

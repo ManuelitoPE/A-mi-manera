@@ -6,6 +6,7 @@ public class DetalleFactura {
     private double subtotalIGV;
     private double subtotalSinIGV;
     private double subtotalFinal;
+    private int idComprobante;
     
     //CONSTRUCTORES
     
@@ -13,12 +14,14 @@ public class DetalleFactura {
     }
     
     public DetalleFactura(int idDetalleFactura, String nombreProducto,
-            double subtotalIGV, double subtotalSinIGV, double subtotalFinal){
+            double subtotalIGV, double subtotalSinIGV, double subtotalFinal,
+            int idComprobante){
         this.idDetalleFactura = idDetalleFactura;
         this.nombreProducto = nombreProducto;
         this.subtotalIGV = subtotalIGV;
         this.subtotalSinIGV = subtotalSinIGV;
         this.subtotalFinal = subtotalFinal;
+        this.idComprobante = idComprobante;
     }
     
     public DetalleFactura(DetalleFactura detalleFactura){
@@ -27,6 +30,7 @@ public class DetalleFactura {
         this.subtotalIGV = detalleFactura.subtotalIGV;
         this.subtotalSinIGV = detalleFactura.subtotalSinIGV;
         this.subtotalFinal = detalleFactura.subtotalFinal;
+        this.idComprobante = detalleFactura.idComprobante;
     }
     
     //GETERS Y SETERS
@@ -98,6 +102,20 @@ public class DetalleFactura {
      */
     public void setSubtotalFinal(double subtotalFinal) {
         this.subtotalFinal = subtotalFinal;
+    }
+
+    /**
+     * @return the idComprobante
+     */
+    public int getIdComprobante() {
+        return idComprobante;
+    }
+
+    /**
+     * @param idComprobante the idComprobante to set
+     */
+    public void setIdComprobante(int idComprobante) {
+        this.idComprobante = idComprobante;
     }
     
     
