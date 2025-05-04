@@ -9,9 +9,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 <modules>
-    <module>AMiManeraCapaDominioModel</module>
-    <module>AMiManeraCapaDominioDA</module>
-    <module>AMiManeraAppTest</module>
-  <module>AMiManeraDBManager</module>
-  </modules>
+    <module>AMiManeraDBManager</module>
+    <module>AMiManeraPersistencia</module>
+    <module>AMiManeraModel</module>
+</modules>
 </project>
