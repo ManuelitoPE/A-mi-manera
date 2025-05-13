@@ -1,39 +1,44 @@
 package com.restaurante.amm.amimaneramodel.pagos;
 
+import com.restaurante.amm.amimaneramodel.pedidos.Producto;
+
 public class DetalleFactura {
     private int idDetalleFactura;
-    private String nombreProducto;
-    private double subtotalIGV;
-    private double subtotalSinIGV;
-    private double subtotalFinal;
-    private int idComprobante;
+    private int cantidadProducto;
+    private double precioUnitario;
+    private double subTotal;
+    private Producto producto;
+    private Factura factura;
     
     //CONSTRUCTORES
     
     public DetalleFactura(){
+        producto = new Producto();
+        factura  = new Factura();
     }
     
-    public DetalleFactura(int idDetalleFactura, String nombreProducto,
-            double subtotalIGV, double subtotalSinIGV, double subtotalFinal,
-            int idComprobante){
+    public DetalleFactura(int idDetalleFactura, int cantidadProducto,
+            double precioUnitario, double subTotal, Producto producto,
+            Factura factura){
         this.idDetalleFactura = idDetalleFactura;
-        this.nombreProducto = nombreProducto;
-        this.subtotalIGV = subtotalIGV;
-        this.subtotalSinIGV = subtotalSinIGV;
-        this.subtotalFinal = subtotalFinal;
-        this.idComprobante = idComprobante;
+        this.cantidadProducto =  cantidadProducto;
+        this.precioUnitario = precioUnitario;
+        this.subTotal = subTotal;
+        this.producto = producto;
+        this.factura = factura;
     }
     
     public DetalleFactura(DetalleFactura detalleFactura){
         this.idDetalleFactura = detalleFactura.idDetalleFactura;
-        this.nombreProducto = detalleFactura.nombreProducto;
-        this.subtotalIGV = detalleFactura.subtotalIGV;
-        this.subtotalSinIGV = detalleFactura.subtotalSinIGV;
-        this.subtotalFinal = detalleFactura.subtotalFinal;
-        this.idComprobante = detalleFactura.idComprobante;
+        this.cantidadProducto = detalleFactura.cantidadProducto;
+        this.precioUnitario = detalleFactura.precioUnitario;
+        this.subTotal = detalleFactura.subTotal;
+        this.producto = detalleFactura.producto;
+        this.factura = detalleFactura.factura;
     }
     
     //GETERS Y SETERS
+
     /**
      * @return the idDetalleFactura
      */
@@ -49,74 +54,73 @@ public class DetalleFactura {
     }
 
     /**
-     * @return the nombreProducto
+     * @return the cantidadProducto
      */
-    public String getNombreProducto() {
-        return nombreProducto;
+    public int getCantidadProducto() {
+        return cantidadProducto;
     }
 
     /**
-     * @param nombreProducto the nombreProducto to set
+     * @param cantidadProducto the cantidadProducto to set
      */
-    public void setNombreProducto(String nombreProducto) {
-        this.nombreProducto = nombreProducto;
+    public void setCantidadProducto(int cantidadProducto) {
+        this.cantidadProducto = cantidadProducto;
     }
 
     /**
-     * @return the subtotalIGV
+     * @return the precioUnitario
      */
-    public double getSubtotalIGV() {
-        return subtotalIGV;
+    public double getPrecioUnitario() {
+        return precioUnitario;
     }
 
     /**
-     * @param subtotalIGV the subtotalIGV to set
+     * @param precioUnitario the precioUnitario to set
      */
-    public void setSubtotalIGV(double subtotalIGV) {
-        this.subtotalIGV = subtotalIGV;
+    public void setPrecioUnitario(double precioUnitario) {
+        this.precioUnitario = precioUnitario;
     }
 
     /**
-     * @return the subtotalSinIGV
+     * @return the subTotal
      */
-    public double getSubtotalSinIGV() {
-        return subtotalSinIGV;
+    public double getSubTotal() {
+        return subTotal;
     }
 
     /**
-     * @param subtotalSinIGV the subtotalSinIGV to set
+     * @param subTotal the subTotal to set
      */
-    public void setSubtotalSinIGV(double subtotalSinIGV) {
-        this.subtotalSinIGV = subtotalSinIGV;
+    public void setSubTotal(double subTotal) {
+        this.subTotal = subTotal;
     }
 
     /**
-     * @return the subtotalFinal
+     * @return the producto
      */
-    public double getSubtotalFinal() {
-        return subtotalFinal;
+    public Producto getProducto() {
+        return producto;
     }
 
     /**
-     * @param subtotalFinal the subtotalFinal to set
+     * @param producto the producto to set
      */
-    public void setSubtotalFinal(double subtotalFinal) {
-        this.subtotalFinal = subtotalFinal;
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
     /**
-     * @return the idComprobante
+     * @return the factura
      */
-    public int getIdComprobante() {
-        return idComprobante;
+    public Factura getFactura() {
+        return factura;
     }
 
     /**
-     * @param idComprobante the idComprobante to set
+     * @param factura the factura to set
      */
-    public void setIdComprobante(int idComprobante) {
-        this.idComprobante = idComprobante;
+    public void setFactura(Factura factura) {
+        this.factura = factura;
     }
-    
     
 }
