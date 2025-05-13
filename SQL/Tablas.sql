@@ -158,7 +158,7 @@ CREATE TABLE DETALLEFACTURA (
     idProducto INT NOT NULL,
     idComprobantePago INT NOT NULL,
     FOREIGN KEY (idComprobantePago) REFERENCES FACTURA(idComprobantePago),
-    FOREIGN KEY (idProducto) REFERENCES Producto(idProducto)
+    FOREIGN KEY (idProducto) REFERENCES PRODUCTO(idProducto)
 );
 
 -- Índices para optimización
