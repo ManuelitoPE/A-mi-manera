@@ -44,7 +44,9 @@ public class ProductoDaoTest implements CrudDaoTest {
     @Override
     public void debeModificarSiIdExiste() {
         IProductoDAO productoDao = new ProductoDAOImpl();
+        
         Producto producto = new Producto();
+        
         producto.setIdProducto(this.testId);
         producto.setNombre("Producto Modificado");
         producto.setDescripcion("Descripción modificada");
@@ -56,6 +58,7 @@ public class ProductoDaoTest implements CrudDaoTest {
         
         Producto productoModificado = productoDao.buscar(this.testId);
         assertEquals(productoModificado.getNombre(), "Producto Modificado");
+        assertEquals(productoModificado.getDescripcion(), "Descripción modificada");
         assertEquals(productoModificado.getPrecioUnitario(), 29.99);
         assertEquals(productoModificado.getTipoProducto(), TipoProducto.POSTRE);
     }

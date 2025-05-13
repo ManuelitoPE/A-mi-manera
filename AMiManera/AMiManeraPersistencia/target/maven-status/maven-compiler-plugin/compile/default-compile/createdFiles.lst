@@ -13,6 +13,7 @@ com\restaurante\amm\amimanerapersistencia\daoimpl\ReservaDAOImpl.class
 com\restaurante\amm\amimanerapersistencia\daoimpl\DetalleFacturaDAOImpl.class
 com\restaurante\amm\amimanerapersistencia\dao\IPedidoDAO.class
 com\restaurante\amm\amimanerapersistencia\dao\ICrud.class
+com\restaurante\amm\amimanerapersistencia\daoimpl\CuentaUsuarioDAOImpl.class
 com\restaurante\amm\amimanerapersistencia\daoimpl\BoletaDAOImpl.class
 com\restaurante\amm\amimanerapersistencia\daoimpl\PersonaNaturalDAOImpl.class
 com\restaurante\amm\amimanerapersistencia\daoimpl\ComprobanteDAOImpl.class
@@ -23,5 +24,6 @@ com\restaurante\amm\amimanerapersistencia\daoimpl\BaseDAOImpl.class
 com\restaurante\amm\amimanerapersistencia\dao\IProductoDAO.class
 com\restaurante\amm\amimanerapersistencia\dao\IBoletaDAO.class
 com\restaurante\amm\amimanerapersistencia\daoimpl\TrabajadorDAOImpl.class
+com\restaurante\amm\amimanerapersistencia\dao\ICuentaUsuarioDAO.class
 com\restaurante\amm\amimanerapersistencia\dao\IPersonaNaturalDAO.class
 com\restaurante\amm\amimanerapersistencia\daoimpl\FacturaDAOImpl.class

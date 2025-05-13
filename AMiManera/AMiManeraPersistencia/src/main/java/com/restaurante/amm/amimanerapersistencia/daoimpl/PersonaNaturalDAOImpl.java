@@ -10,13 +10,17 @@ import com.restaurante.amm.amimaneramodel.clientes.PersonaNatural;
 
 public class PersonaNaturalDAOImpl extends BaseDAOImpl<PersonaNatural> implements IPersonaNaturalDAO {
     @Override
-    protected CallableStatement comandoInsertar(Connection conn, PersonaNatural persona) throws SQLException {
+    protected CallableStatement comandoInsertar(Connection conn, PersonaNatural personaNatural) throws SQLException {
+        
         String sql = "{CALL insertarPersonaNatural(?, ?, ?, ?, ?)}";
+        
         CallableStatement cmd = conn.prepareCall(sql);
-        cmd.setString("p_nombre", persona.getNombre());
-        cmd.setInt("p_telefono", persona.getTelefono());
-        cmd.setString("p_correo", persona.getCorreo());
-        cmd.setString("p_dni", persona.getDNI());
+        cmd.setString("p_nombre", personaNatural.getNombre());
+        cmd.setInt("p_telefono", personaNatural.getTelefono());
+        cmd.setString("p_correo", personaNatural.getCorreo());
+        cmd.setString("p_dni", personaNatural.getDNI());  
+        
+        
         cmd.registerOutParameter("p_id", Types.INTEGER);
         return cmd;
     }
