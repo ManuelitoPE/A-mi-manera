@@ -1,83 +1,92 @@
 package com.restaurante.amm.amimaneramodel.pagos;
 
+import com.restaurante.amm.amimaneramodel.pedidos.Producto;
+
 public class DetalleBoleta {
     private int idDetalleBoleta;
-    private String nombreProducto;
-    private double montoProducto;
-    private int idComprobante;
-
+    private int cantidadProducto;
+    private double precioUnitario;
+    private double subTotal;
+    
+    
+    private Producto producto;
+    private Boleta boleta;
     //CONSTRUCTORES
     
     public DetalleBoleta(){
+        producto = new Producto();
+        boleta = new Boleta();
     }
     
-    public DetalleBoleta(int idDetalleBoleta, String nombreProducto,
-            double montoProducto, int idComprobante){
+    public DetalleBoleta(int idDetalleBoleta, int cantidadProducto,
+            Producto producto, double precioUnitario, double subTotal){
         this.idDetalleBoleta = idDetalleBoleta;
-        this.nombreProducto = nombreProducto;
-        this.montoProducto = montoProducto;
-        this.idComprobante = idComprobante;
+        this.cantidadProducto = cantidadProducto;
+        this.producto = new Producto(producto);
+        this.boleta = new Boleta(boleta);
+        this.precioUnitario = precioUnitario;
+        this.subTotal = subTotal;
     }
     
     public DetalleBoleta(DetalleBoleta detalleBoleta){
         this.idDetalleBoleta = detalleBoleta.idDetalleBoleta;
-        this.nombreProducto = detalleBoleta.nombreProducto;
-        this.montoProducto = detalleBoleta.montoProducto;
-        this.idComprobante = detalleBoleta.idComprobante;
+        this.cantidadProducto = detalleBoleta.cantidadProducto;
+        this.producto = new Producto(detalleBoleta.producto);
+        this.boleta = new Boleta(detalleBoleta.boleta);
+        this.precioUnitario = detalleBoleta.precioUnitario;
+        this.subTotal = detalleBoleta.subTotal;
     }
     
     
     //GETERS Y SETERS
-    /**
-     * @return the idDetalleBoleta
-     */
+
     public int getIdDetalleBoleta() {
         return idDetalleBoleta;
     }
 
-    /**
-     * @param idDetalleBoleta the idDetalleBoleta to set
-     */
+    public int getCantidadProducto() {
+        return cantidadProducto;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+    
+    public double getPrecioUnitario() {
+        return precioUnitario;
+    }
+
+    public double getSubTotal() {
+        return subTotal;
+    }
+
+    public Boleta getBoleta() {
+        return boleta;
+    }
+
     public void setIdDetalleBoleta(int idDetalleBoleta) {
         this.idDetalleBoleta = idDetalleBoleta;
     }
 
-    /**
-     * @return the nombreProducto
-     */
-    public String getNombreProducto() {
-        return nombreProducto;
+    public void setCantidadProducto(int cantidadProducto) {
+        this.cantidadProducto = cantidadProducto;
     }
 
-    /**
-     * @param nombreProducto the nombreProducto to set
-     */
-    public void setNombreProducto(String nombreProducto) {
-        this.nombreProducto = nombreProducto;
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
-    /**
-     * @return the montoProducto
-     */
-    public double getMontoProducto() {
-        return montoProducto;
+    public void setPrecioUnitario(double precioUnitario) {
+        this.precioUnitario = precioUnitario;
     }
 
-    /**
-     * @param montoProducto the montoProducto to set
-     */
-    public void setMontoProducto(double montoProducto) {
-        this.montoProducto = montoProducto;
+    public void setSubTotal(double subTotal) {
+        this.subTotal = subTotal;
     }
 
-    public int getIdComprobante() {
-        return idComprobante;
-    }
-
-    public void setIdComprobante(int idComprobante) {
-        this.idComprobante = idComprobante;
+    public void setBoleta(Boleta boleta) {
+        this.boleta = boleta;
     }
     
     
-
 }
