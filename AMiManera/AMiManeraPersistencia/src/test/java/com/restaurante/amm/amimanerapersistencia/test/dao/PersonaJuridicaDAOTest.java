@@ -19,7 +19,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 
-public class PersonaJuridicaDAOTest implements CrudDAOTest {
+public class PersonaJuridicaDAOTest implements ICrudDAOTest {
     private int testId;
     private final int idIncorrecto = 99999;
     
