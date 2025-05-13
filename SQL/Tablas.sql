@@ -152,11 +152,13 @@ CREATE TABLE DETALLEBOLETA (
 -- Tabla DetalleFactura
 CREATE TABLE DETALLEFACTURA (
     idDetalleFactura INT AUTO_INCREMENT PRIMARY KEY,
-    nombreProducto VARCHAR(100) NOT NULL,
-    subtotalSinIGV DECIMAL(10,2) NOT NULL,
-    subtotalFinal DECIMAL(10,2) NOT NULL,
-    idComprobante INT NOT NULL,
-    FOREIGN KEY (idComprobante) REFERENCES FACTURA(idFactura)
+    cantidadProducto INT NOT NULL,
+    precioUnitario DECIMAL(10,2) NOT NULL,
+    subTotal DECIMAL(10,2) NOT NULL,
+    idProducto INT NOT NULL,
+    idComprobantePago INT NOT NULL,
+    FOREIGN KEY (idComprobantePago) REFERENCES FACTURA(idComprobantePago),
+    FOREIGN KEY (idProducto) REFERENCES PRODUCTO(idProducto)
 );
 
 -- Índices para optimización
