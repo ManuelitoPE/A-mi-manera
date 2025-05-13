@@ -5,29 +5,33 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
-import java.sql.Timestamp;
 import com.restaurante.amm.amimanerapersistencia.dao.IDetalleBoletaDAO;
 import com.restaurante.amm.amimaneramodel.pagos.DetalleBoleta;
 
 public class DetalleBoletaDAOImpl extends BaseDAOImpl<DetalleBoleta> implements IDetalleBoletaDAO {
     @Override
     protected CallableStatement comandoInsertar(Connection conn, DetalleBoleta detalleBoleta) throws SQLException {
-        String sql = "{CALL insertarDetalleBoleta(?, ?, ?)}";
+        String sql = "{CALL insertarDetalleBoleta(?, ?, ?, ?, ?, ?)}";
         CallableStatement cmd = conn.prepareCall(sql);
-        cmd.setString("p_nombreProducto", detalleBoleta.getNombreProducto());
-        cmd.setDouble("p_montoProducto", detalleBoleta.getMontoProducto());
-        cmd.setInt("p_idComprobante", detalleBoleta.getIdComprobante());
+        
+        cmd.setInt("p_cantidadProducto", detalleBoleta.getCantidadProducto());
+        cmd.setDouble("p_precioUnitario", detalleBoleta.getPrecioUnitario());
+        cmd.setDouble("p_subTotal", detalleBoleta.getSubTotal());
+        cmd.setInt("p_idProducto", detalleBoleta.getProducto().getIdProducto());
+        cmd.setInt("p_idComprobantePago", detalleBoleta.getBoleta().getIdComprobantePago());
         cmd.registerOutParameter("p_id", Types.INTEGER);
         return cmd;
     }
 
     @Override
     protected CallableStatement comandoModificar(Connection conn, DetalleBoleta detalleBoleta) throws SQLException {
-        String sql = "{CALL modificarDetalleBoleta(?, ?, ?, ?)}";
+        String sql = "{CALL modificarDetalleBoleta(?, ?, ?, ?, ?, ?)}";
         CallableStatement cmd = conn.prepareCall(sql);
-        cmd.setString("p_nombreProducto", detalleBoleta.getNombreProducto());
-        cmd.setDouble("p_montoProducto", detalleBoleta.getMontoProducto());
-        cmd.setInt("p_idComprobante", detalleBoleta.getIdComprobante());
+        cmd.setInt("p_cantidadProducto", detalleBoleta.getCantidadProducto());
+        cmd.setDouble("p_precioUnitario", detalleBoleta.getPrecioUnitario());
+        cmd.setDouble("p_subTotal", detalleBoleta.getSubTotal());
+        cmd.setInt("p_idProducto", detalleBoleta.getProducto().getIdProducto());
+        cmd.setInt("p_idComprobantePago", detalleBoleta.getBoleta().getIdComprobantePago());
         cmd.setInt("p_id", detalleBoleta.getIdDetalleBoleta());
         return cmd;
     }
@@ -59,9 +63,11 @@ public class DetalleBoletaDAOImpl extends BaseDAOImpl<DetalleBoleta> implements 
     protected DetalleBoleta mapearModelo(ResultSet rs) throws SQLException {
         DetalleBoleta detalle = new DetalleBoleta();
         detalle.setIdDetalleBoleta(rs.getInt("idDetalleBoleta"));
-        detalle.setNombreProducto(rs.getString("nombreProducto"));
-        detalle.setMontoProducto(rs.getDouble("montoProducto"));
-        detalle.setIdComprobante(rs.getInt("idComprobante"));
+        detalle.setCantidadProducto(rs.getInt("cantidadProducto"));
+        detalle.setPrecioUnitario(rs.getDouble("precioUnitario"));
+        detalle.setSubTotal(rs.getDouble("subTotal"));
+        detalle.setProducto(new ProductoDAOImpl().buscar(rs.getInt("idProducto")));
+        detalle.setBoleta(new BoletaDAOImpl().buscar(rs.getInt("idComprobantePago")));
         return detalle;
     }
 }

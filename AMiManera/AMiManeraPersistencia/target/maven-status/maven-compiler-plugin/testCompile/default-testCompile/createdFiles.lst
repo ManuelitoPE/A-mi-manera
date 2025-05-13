@@ -1,4 +1,5 @@
 com\restaurante\amm\amimanerapersistencia\test\dao\ICrudDAOTest.class
 com\restaurante\amm\amimanerapersistencia\test\dao\PersonaNaturalDAOTest.class
 com\restaurante\amm\amimanerapersistencia\test\dao\ProductoDAOTest.class
+com\restaurante\amm\amimanerapersistencia\test\dao\DetalleBoletaDAOTest.class
 com\restaurante\amm\amimanerapersistencia\test\dao\PersonaJuridicaDAOTest.class

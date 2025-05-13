@@ -16,7 +16,6 @@ com\restaurante\amm\amimanerapersistencia\dao\ICrud.class
 com\restaurante\amm\amimanerapersistencia\daoimpl\CuentaUsuarioDAOImpl.class
 com\restaurante\amm\amimanerapersistencia\daoimpl\BoletaDAOImpl.class
 com\restaurante\amm\amimanerapersistencia\daoimpl\PersonaNaturalDAOImpl.class
-com\restaurante\amm\amimanerapersistencia\daoimpl\ComprobanteDAOImpl.class
 com\restaurante\amm\amimanerapersistencia\dao\IMesaDAO.class
 com\restaurante\amm\amimanerapersistencia\dao\IReservaDAO.class
 com\restaurante\amm\amimanerapersistencia\dao\IPersonaJuridicaDAO.class

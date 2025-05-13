@@ -141,12 +141,16 @@ CREATE TABLE RESERVA (
 );
 
 -- Tabla DetalleBoleta
+
 CREATE TABLE DETALLEBOLETA (
     idDetalleBoleta INT AUTO_INCREMENT PRIMARY KEY,
-    nombreProducto VARCHAR(100) NOT NULL,
-    montoProducto DECIMAL(10,2) NOT NULL,
-    idComprobante INT NOT NULL,
-    FOREIGN KEY (idComprobante) REFERENCES BOLETA(idBoleta)
+    cantidadProducto INT NOT NULL,
+	precioUnitario DECIMAL(10,2) NOT NULL,
+	subTotal DECIMAL(10,2) NOT NULL,
+	idProducto INT NOT NULL,
+	idComprobantePago INT NOT NULL,
+    FOREIGN KEY (idProducto) REFERENCES PRODUCTO(idProducto),
+    FOREIGN KEY (idComprobantePago) REFERENCES BOLETA(idBoleta)
 );
 
 -- Tabla DetalleFactura
