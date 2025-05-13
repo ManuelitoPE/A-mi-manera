@@ -12,24 +12,26 @@ import com.restaurante.amm.amimaneramodel.pagos.DetalleFactura;
 public class DetalleFacturaDAOImpl extends BaseDAOImpl<DetalleFactura> implements IDetalleFacturaDAO {
     @Override
     protected CallableStatement comandoInsertar(Connection conn, DetalleFactura detalleFactura) throws SQLException {
-        String sql = "{CALL insertarDetalleFactura(?, ?, ?, ?, ?)}";
+        String sql = "{CALL insertarDetalleFactura(?, ?, ?, ?, ?, ?)}";
         CallableStatement cmd = conn.prepareCall(sql);
-        cmd.setString("p_nombreProducto", detalleFactura.getNombreProducto());
-        cmd.setDouble("p_subtotalSinIGV", detalleFactura.getSubtotalSinIGV());
-        cmd.setDouble("p_subtotalFinal", detalleFactura.getSubtotalFinal());
-        cmd.setInt("p_idComprobante", detalleFactura.getIdComprobante());
+        cmd.setInt("p_cantidadProducto", detalleFactura.getCantidadProducto());
+        cmd.setDouble("p_precioUnitario", detalleFactura.getPrecioUnitario());
+        cmd.setDouble("p_subTotal", detalleFactura.getSubTotal());
+        cmd.setInt("p_idProducto", detalleFactura.getProducto().getIdProducto());
+        cmd.setInt("p_idComprobante", detalleFactura.getFactura().getIdComprobantePago());
         cmd.registerOutParameter("p_id", Types.INTEGER);
         return cmd;
     }
 
     @Override
     protected CallableStatement comandoModificar(Connection conn, DetalleFactura detalleFactura) throws SQLException {
-        String sql = "{CALL modificarDetalleFactura(?, ?, ?, ?, ?)}";
+        String sql = "{CALL modificarDetalleFactura(?, ?, ?, ?, ?, ?)}";
         CallableStatement cmd = conn.prepareCall(sql);
-        cmd.setString("p_nombreProducto", detalleFactura.getNombreProducto());
-        cmd.setDouble("p_subtotalSinIGV", detalleFactura.getSubtotalSinIGV());
-        cmd.setDouble("p_subtotalFinal", detalleFactura.getSubtotalFinal());
-        cmd.setInt("p_idComprobante", detalleFactura.getIdComprobante());
+        cmd.setInt("p_cantidadProducto", detalleFactura.getCantidadProducto());
+        cmd.setDouble("p_precioUnitario", detalleFactura.getPrecioUnitario());
+        cmd.setDouble("p_subTotal", detalleFactura.getSubTotal());
+        cmd.setInt("p_idProducto", detalleFactura.getProducto().getIdProducto());
+        cmd.setInt("p_idComprobante", detalleFactura.getFactura().getIdComprobantePago());
         cmd.setInt("p_id", detalleFactura.getIdDetalleFactura());
         return cmd;
     }
@@ -61,10 +63,11 @@ public class DetalleFacturaDAOImpl extends BaseDAOImpl<DetalleFactura> implement
     protected DetalleFactura mapearModelo(ResultSet rs) throws SQLException {
         DetalleFactura detalle = new DetalleFactura();
         detalle.setIdDetalleFactura(rs.getInt("idDetalleFactura"));
-        detalle.setNombreProducto(rs.getString("nombreProducto"));
-        detalle.setSubtotalSinIGV(rs.getDouble("subtotalSinIGV"));
-        detalle.setSubtotalFinal(rs.getDouble("subtotalFinal"));
-        detalle.setIdComprobante(rs.getInt("idComprobante"));
+        detalle.setCantidadProducto(rs.getInt("cantidadProducto"));
+        detalle.setPrecioUnitario(rs.getDouble("precioUnitario"));
+        detalle.setSubTotal(rs.getDouble("subTotal"));
+        detalle.setProducto(new ProductoDAOImpl().buscar(rs.getInt("idProducto")));
+        detalle.setFactura(new FacturaDAOImpl().buscar(rs.getInt("idComprobante")));
         return detalle;
     }
-} 
+}
