@@ -1,0 +1,4 @@
+com\restaurante\amm\amimanerapersistencia\test\dao\PersonaNaturalDAOTest.class
+com\restaurante\amm\amimanerapersistencia\test\dao\ProductoDAOTest.class
+com\restaurante\amm\amimanerapersistencia\test\dao\CrudDAOTest.class
+com\restaurante\amm\amimanerapersistencia\test\dao\PersonaJuridicaDAOTest.class
