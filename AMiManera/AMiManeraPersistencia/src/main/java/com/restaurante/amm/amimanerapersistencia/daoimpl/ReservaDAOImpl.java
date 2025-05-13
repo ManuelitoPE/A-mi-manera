@@ -16,12 +16,10 @@ public class ReservaDAOImpl extends BaseDAOImpl<Reserva> implements IReservaDAO 
     protected CallableStatement comandoInsertar(Connection conn, Reserva reserva) throws SQLException {
         String sql = "{CALL insertarReserva(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
         CallableStatement cmd = conn.prepareCall(sql);
-        cmd.setDate("p_fecha", new Date(reserva.getFecha().getTime()));
-        cmd.setTimestamp("p_horaInicio", Timestamp.valueOf(reserva.getHoraInicio()));
-        cmd.setTimestamp("p_horaFin", Timestamp.valueOf(reserva.getHoraFin()));
+        cmd.setTimestamp("p_fechaHoraInicio", Timestamp.valueOf(reserva.getFechaHoraFin()));
+        cmd.setTimestamp("p_fechaHoraFin", Timestamp.valueOf(reserva.getFechaHoraFin()));
         cmd.setInt("p_cantidadPersonas", reserva.getCantidadPersonas());
-        cmd.setString("p_estado", reserva.getEstado());
-        cmd.setTimestamp("p_horaMaximaCancelacion", Timestamp.valueOf(reserva.getHoraMaximaCancelacion()));
+        cmd.setString("p_estado", reserva.getEstado().name());
         cmd.setDouble("p_montoReserva", reserva.getMontoReserva());
         cmd.setInt("p_idCliente", reserva.getCliente().getIdCliente());
         cmd.setInt("p_idMesa", reserva.getMesa().getIdMesa());

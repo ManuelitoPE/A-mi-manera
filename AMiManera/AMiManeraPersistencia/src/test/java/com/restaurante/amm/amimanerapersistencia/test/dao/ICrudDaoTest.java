@@ -1,6 +1,6 @@
 package com.restaurante.amm.amimanerapersistencia.test.dao;
 
-public interface CrudDaoTest {
+public interface ICrudDAOTest {
     void debeInsertar();
     void debeModificarSiIdExiste();
     void noDebeModificarSiIdNoExiste();

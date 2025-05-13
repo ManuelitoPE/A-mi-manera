@@ -9,6 +9,7 @@ com\restaurante\amm\amimaneramodel\personal\Administrador.class
 com\restaurante\amm\amimaneramodel\clientes\Cliente.class
 com\restaurante\amm\amimaneramodel\clientes\PersonaJuridica.class
 com\restaurante\amm\amimaneramodel\pedidos\LineaPedido.class
+com\restaurante\amm\amimaneramodel\gestionmesas\EstadoReserva.class
 com\restaurante\amm\amimaneramodel\personal\Trabajador.class
 com\restaurante\amm\amimaneramodel\pedidos\EstadoPedido.class
 com\restaurante\amm\amimaneramodel\pagos\DetalleFactura.class
