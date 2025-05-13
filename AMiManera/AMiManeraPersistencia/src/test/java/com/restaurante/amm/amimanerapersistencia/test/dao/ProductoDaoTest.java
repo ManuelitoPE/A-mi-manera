@@ -20,7 +20,7 @@ import com.restaurante.amm.amimaneramodel.pedidos.TipoProducto;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class ProductoDaoTest implements CrudDaoTest {
+public class ProductoDAOTest implements CrudDAOTest {
     private int testId;
     private final int idIncorrecto = 99999;
     
