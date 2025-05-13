@@ -1,2 +1,9 @@
+<<<<<<< HEAD
 com\restaurante\amm\amimanerapersistencia\test\dao\ICrudDaoTest.class
 com\restaurante\amm\amimanerapersistencia\test\dao\ProductoDaoTest.class
+=======
+com\restaurante\amm\amimanerapersistencia\test\dao\PersonaNaturalDAOTest.class
+com\restaurante\amm\amimanerapersistencia\test\dao\ProductoDAOTest.class
+com\restaurante\amm\amimanerapersistencia\test\dao\CrudDAOTest.class
+com\restaurante\amm\amimanerapersistencia\test\dao\PersonaJuridicaDAOTest.class
+>>>>>>> f4e3c6aa7f867579a2d5adaba31ab2deb92777cc

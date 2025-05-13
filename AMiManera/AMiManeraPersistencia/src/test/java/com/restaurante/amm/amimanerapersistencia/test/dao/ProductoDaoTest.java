@@ -20,7 +20,11 @@ import com.restaurante.amm.amimaneramodel.pedidos.TipoProducto;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+<<<<<<< HEAD
 public class ProductoDAOTest implements ICrudDAOTest {
+=======
+public class ProductoDAOTest implements CrudDAOTest {
+>>>>>>> f4e3c6aa7f867579a2d5adaba31ab2deb92777cc
     private int testId;
     private final int idIncorrecto = 99999;
     
@@ -44,7 +48,9 @@ public class ProductoDAOTest implements ICrudDAOTest {
     @Override
     public void debeModificarSiIdExiste() {
         IProductoDAO productoDao = new ProductoDAOImpl();
+        
         Producto producto = new Producto();
+        
         producto.setIdProducto(this.testId);
         producto.setNombre("Producto Modificado");
         producto.setDescripcion("Descripción modificada");
@@ -56,6 +62,7 @@ public class ProductoDAOTest implements ICrudDAOTest {
         
         Producto productoModificado = productoDao.buscar(this.testId);
         assertEquals(productoModificado.getNombre(), "Producto Modificado");
+        assertEquals(productoModificado.getDescripcion(), "Descripción modificada");
         assertEquals(productoModificado.getPrecioUnitario(), 29.99);
         assertEquals(productoModificado.getTipoProducto(), TipoProducto.POSTRE);
     }
