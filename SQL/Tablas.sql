@@ -157,7 +157,7 @@ CREATE TABLE DETALLEFACTURA (
     subTotal DECIMAL(10,2) NOT NULL,
     idProducto INT NOT NULL,
     idComprobantePago INT NOT NULL,
-    FOREIGN KEY (idComprobantePago) REFERENCES Factura(idComprobantePago)
+    FOREIGN KEY (idComprobantePago) REFERENCES FACTURA(idComprobantePago),
     FOREIGN KEY (idProducto) REFERENCES Producto(idProducto)
 );
 
