@@ -12,9 +12,14 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestMethodOrder;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 
 public class DetalleBoletaDAOTest implements ICrudDAOTest {
     private int testId;
@@ -32,15 +37,16 @@ public class DetalleBoletaDAOTest implements ICrudDAOTest {
         detalleBoleta.setPrecioUnitario(99.99);
         detalleBoleta.setSubTotal(99.99);
         //Debemos poner un idproducto que ya exista, el 18 es referencial
-        int idProductoExistente = 18;
+        int idProductoExistente = 1;
         detalleBoleta.setProducto(new ProductoDAOImpl().buscar(idProductoExistente));
         
         //Debemos poner un idboleta que ya exista, el 1 es referencial
         int idBoletaExistente = 1;
         detalleBoleta.setBoleta(new BoletaDAOImpl().buscar(idBoletaExistente));
         
-               
+        
         this.testId = detalleBoletaDAO.insertar(detalleBoleta);
+        System.out.println(this.testId);
         assertTrue(this.testId > 0);
     }
     
@@ -57,13 +63,15 @@ public class DetalleBoletaDAOTest implements ICrudDAOTest {
         detalleBoleta.setPrecioUnitario(10.00);
         detalleBoleta.setSubTotal(20.00);
         
-        //Debemos poner un idproducto que ya exista, el 19 es referencial
-        int idProductoExistente = 19;
+        //Debemos poner un idproducto que ya exista, el 2 es referencial
+        int idProductoExistente = 1;
         detalleBoleta.setProducto(new ProductoDAOImpl().buscar(idProductoExistente));
         
         //Debemos poner un idboleta que ya exista, el 2 es referencial
-        int idBoletaExistente = 2;
+        int idBoletaExistente = 1;
         detalleBoleta.setBoleta(new BoletaDAOImpl().buscar(idBoletaExistente));
+        
+        System.out.println(detalleBoleta.getIdDetalleBoleta() + " " + detalleBoleta.getCantidadProducto());
         
         boolean modifico = detalleBoletaDAO.modificar(detalleBoleta);
         assertTrue(modifico);
@@ -90,11 +98,11 @@ public class DetalleBoletaDAOTest implements ICrudDAOTest {
         detalleBoleta.setSubTotal(20.00);
         
         //Debemos poner un idproducto que ya exista, el 19 es referencial
-        int idProductoExistente = 19;
+        int idProductoExistente = 1;
         detalleBoleta.setProducto(new ProductoDAOImpl().buscar(idProductoExistente));
         
         //Debemos poner un idboleta que ya exista, el 2 es referencial
-        int idBoletaExistente = 2;
+        int idBoletaExistente = 1;
         detalleBoleta.setBoleta(new BoletaDAOImpl().buscar(idBoletaExistente));
         
         
