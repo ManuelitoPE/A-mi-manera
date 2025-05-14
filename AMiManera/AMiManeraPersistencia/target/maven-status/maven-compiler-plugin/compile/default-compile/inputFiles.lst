@@ -1,28 +1,30 @@
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IBoletaDAO.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\ICrud.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\ICuentaUsuarioDAO.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IDetalleBoletaDAO.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IDetalleFacturaDAO.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IFacturaDAO.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\ILineaPedidoDAO.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IMesaDAO.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IPedidoDAO.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IPersonaJuridicaDAO.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IPersonaNaturalDAO.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IProductoDAO.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IReservaDAO.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\ITrabajadorDAO.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\BaseDAOImpl.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\BoletaDAOImpl.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\CuentaUsuarioDAOImpl.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\DetalleBoletaDAOImpl.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\DetalleFacturaDAOImpl.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\FacturaDAOImpl.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\LineaPedidoDAOImpl.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\MesaDAOImpl.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\PedidoDAOImpl.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\PersonaJuridicaDAOImpl.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\PersonaNaturalDAOImpl.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\ProductoDAOImpl.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\ReservaDAOImpl.java
-C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\TrabajadorDAOImpl.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IBoletaDAO.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\ICrud.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\ICuentaUsuarioDAO.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IDetalleBoletaDAO.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IDetalleFacturaDAO.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IFacturaDAO.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\ILineaPedidoDAO.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IMesaDAO.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IPedidoDAO.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IPersonaJuridicaDAO.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IPersonaNaturalDAO.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IProductoDAO.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IReservaDAO.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\ITipoProductoDAO.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\ITrabajadorDAO.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\BaseDAOImpl.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\BoletaDAOImpl.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\CuentaUsuarioDAOImpl.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\DetalleBoletaDAOImpl.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\DetalleFacturaDAOImpl.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\FacturaDAOImpl.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\LineaPedidoDAOImpl.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\MesaDAOImpl.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\PedidoDAOImpl.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\PersonaJuridicaDAOImpl.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\PersonaNaturalDAOImpl.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\ProductoDAOImpl.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\ReservaDAOImpl.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\TipoProductoDAOImpl.java
+C:\Users\USER\Desktop\Progra3\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\TrabajadorDAOImpl.java
