@@ -6,3 +6,4 @@ com\restaurante\amm\amimanerapersistencia\test\dao\DetalleBoletaDAOTest.class
 com\restaurante\amm\amimanerapersistencia\test\dao\PersonaJuridicaDAOTest.class
 com\restaurante\amm\amimanerapersistencia\test\dao\MesaDAOTest.class
 com\restaurante\amm\amimanerapersistencia\test\dao\ProductoDAOTest.class
+com\restaurante\amm\amimanerapersistencia\test\dao\LineaPedidoDAOTest.class
