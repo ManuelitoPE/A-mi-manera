@@ -141,7 +141,9 @@ CREATE TABLE FACTURA (
     RUC VARCHAR(11) NOT NULL,
     razonSocial VARCHAR(100) NOT NULL,
     idPedido INT NOT NULL,
-    FOREIGN KEY (idPedido) REFERENCES PEDIDO(idPedido)
+    FOREIGN KEY (idPedido) REFERENCES PEDIDO(idPedido),
+    idReserva INT NOT NULL,
+	FOREIGN KEY (idReserva) REFERENCES RESERVA(idReserva)
 );
 
 -- Tabla DetalleBoleta

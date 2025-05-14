@@ -24,8 +24,8 @@ public class DetalleFactura {
         this.cantidadProducto =  cantidadProducto;
         this.precioUnitario = precioUnitario;
         this.subTotal = subTotal;
-        this.producto = producto;
-        this.factura = factura;
+        this.producto = new Producto(producto);
+        this.factura = new Factura(factura);
     }
     
     public DetalleFactura(DetalleFactura detalleFactura){
@@ -33,8 +33,8 @@ public class DetalleFactura {
         this.cantidadProducto = detalleFactura.cantidadProducto;
         this.precioUnitario = detalleFactura.precioUnitario;
         this.subTotal = detalleFactura.subTotal;
-        this.producto = detalleFactura.producto;
-        this.factura = detalleFactura.factura;
+        this.producto = new Producto(detalleFactura.producto);
+        this.factura = new Factura(detalleFactura.factura);
     }
     
     //GETERS Y SETERS
