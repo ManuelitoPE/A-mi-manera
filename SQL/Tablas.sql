@@ -4,9 +4,9 @@ USE Progra3AM;
 -- Eliminar tablas existentes (en orden inverso para respetar dependencias)
 DROP TABLE IF EXISTS DETALLEFACTURA;
 DROP TABLE IF EXISTS DETALLEBOLETA;
-DROP TABLE IF EXISTS RESERVA;
 DROP TABLE IF EXISTS FACTURA;
 DROP TABLE IF EXISTS BOLETA;
+DROP TABLE IF EXISTS RESERVA;
 DROP TABLE IF EXISTS LINEAPEDIDO;
 DROP TABLE IF EXISTS PRODUCTO;
 DROP TABLE IF EXISTS PEDIDO;
@@ -75,6 +75,12 @@ CREATE TABLE PEDIDO (
     FOREIGN KEY (idMesero) REFERENCES TRABAJADOR(idTrabajador)
 );
 
+-- Tabla tipoProducto
+CREATE TABLE TIPO_PRODUCTO (
+	idTipoProducto INT AUTO_INCREMENT PRIMARY KEY,
+	descripcion VARCHAR(200) NOT NULL
+);
+
 -- Tabla Producto
 CREATE TABLE PRODUCTO (
     idProducto INT AUTO_INCREMENT PRIMARY KEY,
@@ -88,9 +94,7 @@ CREATE TABLE PRODUCTO (
 -- Tabla LineaPedido
 CREATE TABLE LINEAPEDIDO (
     idLineaPedido INT AUTO_INCREMENT PRIMARY KEY,
-    cantidad INT NOT NULL CHECK (cantidad > 0),
-    montoParcial DECIMAL(10,2) NOT NULL,
-    descripcion VARCHAR(200),
+    cantidadProducto INT NOT NULL CHECK (cantidadProducto > 0),
     idPedido INT NOT NULL,
     idProducto INT NOT NULL,
     FOREIGN KEY (idPedido) REFERENCES PEDIDO(idPedido),
@@ -115,6 +119,7 @@ CREATE TABLE RESERVA (
     FOREIGN KEY (idPersonaJuridica) REFERENCES PERSONA_JURIDICA(idPersonaJuridica),
     FOREIGN KEY (idMesa) REFERENCES MESA(idMesa)
 );
+
 
 -- Tablas de comprobantes separadas
 CREATE TABLE BOLETA (
@@ -147,6 +152,7 @@ CREATE TABLE FACTURA (
 	FOREIGN KEY (idReserva) REFERENCES RESERVA(idReserva)
 );
 
+
 -- Tabla DetalleBoleta
 
 CREATE TABLE DETALLEBOLETA (
@@ -168,17 +174,13 @@ CREATE TABLE DETALLEFACTURA (
     subTotal DECIMAL(10,2) NOT NULL,
     idProducto INT NOT NULL,
     idComprobantePago INT NOT NULL,
-    FOREIGN KEY (idComprobantePago) REFERENCES FACTURA(idComprobantePago),
+    FOREIGN KEY (idComprobantePago) REFERENCES FACTURA(idFactura),
     FOREIGN KEY (idProducto) REFERENCES PRODUCTO(idProducto)
 );
 
-CREATE TABLE TIPO_PRODUCTO (
-	idTipoProducto INT AUTO_INCREMENT PRIMARY KEY,
-	descripcion VARCHAR(200) NOT NULL
-);
+
 -- Índices para optimización
 CREATE INDEX idx_persona_natural_nombre ON PERSONA_NATURAL(nombre);
 CREATE INDEX idx_persona_juridica_nombre ON PERSONA_JURIDICA(nombre);
 CREATE INDEX idx_pedido_estado ON PEDIDO(estado);
-CREATE INDEX idx_producto_tipo ON PRODUCTO(TipoProducto);
 CREATE INDEX idx_mesa_estado ON MESA(estado); 

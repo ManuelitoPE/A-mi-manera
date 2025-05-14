@@ -17,7 +17,7 @@ public class ProductoDAOImpl extends BaseDAOImpl<Producto> implements IProductoD
         cmd.setString("p_nombre", producto.getNombre());
         cmd.setString("p_descripcion", producto.getDescripcion());
         cmd.setDouble("p_precioUnitario", producto.getPrecioUnitario());
-        cmd.setInt("p_tipoProducto", producto.getTipoProducto().getIdTipoProducto());
+        cmd.setInt("p_idTipoProducto", producto.getTipoProducto().getIdTipoProducto());
         cmd.registerOutParameter("p_id", Types.INTEGER);
         return cmd;
     }
@@ -29,7 +29,7 @@ public class ProductoDAOImpl extends BaseDAOImpl<Producto> implements IProductoD
         cmd.setString("p_nombre", producto.getNombre());
         cmd.setString("p_descripcion", producto.getDescripcion());
         cmd.setDouble("p_precioUnitario", producto.getPrecioUnitario());
-        cmd.setInt("p_tipoProducto", producto.getTipoProducto().getIdTipoProducto());
+        cmd.setInt("p_idTipoProducto", producto.getTipoProducto().getIdTipoProducto());
         cmd.setInt("p_id", producto.getIdProducto());
         return cmd;
     }
@@ -64,11 +64,7 @@ public class ProductoDAOImpl extends BaseDAOImpl<Producto> implements IProductoD
         producto.setNombre(rs.getString("nombre"));
         producto.setDescripcion(rs.getString("descripcion"));
         producto.setPrecioUnitario(rs.getDouble("precioUnitario"));
-        
-        TipoProductoDAOImpl tipoProducto = new TipoProductoDAOImpl();
-        
-        producto.setTipoProducto( tipoProducto.buscar(rs.getInt("tipoProducto")));
-        //producto.setTipoProducto(TipoProducto.valueOf(rs.getString("tipoProducto")));
+        producto.setTipoProducto(new TipoProductoDAOImpl().buscar(rs.getInt("idTipoProducto")));
         return producto;
     }
 }
