@@ -13,7 +13,7 @@ import com.restaurante.amm.amimaneramodel.pagos.DetalleBoleta;
 public class BoletaDAOImpl extends BaseDAOImpl<Boleta> implements IBoletaDAO {
     @Override
     protected CallableStatement comandoInsertar(Connection conn, Boleta boleta) throws SQLException {
-        String sql = "{CALL insertarBoleta(?, ?, ?, ?, ?, ?, ?, ?)}";
+        String sql = "{CALL insertarBoleta(?, ?, ?, ?, ?, ?, ?, ?, ?)}";
         CallableStatement cmd = conn.prepareCall(sql);
         cmd.setTimestamp("p_fechaEmision", new Timestamp(boleta.getFechaEmision().getTime()));
         cmd.setString("p_metodoPago", boleta.getMetodoPago().name());
@@ -22,6 +22,7 @@ public class BoletaDAOImpl extends BaseDAOImpl<Boleta> implements IBoletaDAO {
         cmd.setDouble("p_montoSinIGV", boleta.getMontoSinIGV());
         cmd.setDouble("p_montoIGV", boleta.getMontoIGV());
         cmd.setInt("p_idPedido", boleta.getPedido().getIdPedido());
+        cmd.setInt("p_idReserva", boleta.getReserva().getIdReserva());
         cmd.registerOutParameter("p_id", Types.INTEGER);
         return cmd;
     }
@@ -37,6 +38,7 @@ public class BoletaDAOImpl extends BaseDAOImpl<Boleta> implements IBoletaDAO {
         cmd.setDouble("p_montoSinIGV", boleta.getMontoSinIGV());
         cmd.setDouble("p_montoIGV", boleta.getMontoIGV());
         cmd.setInt("p_idPedido", boleta.getPedido().getIdPedido());
+        cmd.setInt("p_idReserva", boleta.getReserva().getIdReserva());
         cmd.setInt("p_id", boleta.getIdComprobantePago());
         return cmd;
     }
@@ -74,8 +76,11 @@ public class BoletaDAOImpl extends BaseDAOImpl<Boleta> implements IBoletaDAO {
         boleta.setMontoPropina(rs.getDouble("montoPropina"));
         boleta.setMontoSinIGV(rs.getDouble("montoSinIGV"));
         boleta.setMontoIGV(rs.getDouble("montoIGV"));
-        // boleta.setPedido(...) // Puedes mapear el pedido si lo necesitas
-        // boleta.setListaDetalleBoleta(...) // Puedes mapear los detalles si lo necesitas
+        boleta.setPedido(new PedidoDAOImpl().buscar(rs.getInt("idPedido")));
+        
+
+    // Falta implementar la generacion de una lista de detalle boleta
+    
         return boleta;
     }
 } 

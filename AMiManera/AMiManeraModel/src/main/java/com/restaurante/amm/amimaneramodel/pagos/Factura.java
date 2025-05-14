@@ -20,12 +20,12 @@ public class Factura extends ComprobantePago {
     
     public Factura(int idComprobantePago, Date fechaEmision, MetodoPago metodoPago,
             double montoTotal, double montoPropina, double montoSinIGV,
-            double montoIGV, double montoReserva, Pedido pedido, Reserva reserva,
+            double montoIGV, Pedido pedido, Reserva reserva,
             String RUC, String razonSocial, 
             ArrayList<DetalleFactura> listaDetalleFactura){
         
         super(idComprobantePago, fechaEmision, metodoPago,montoTotal, montoPropina,
-                montoSinIGV, montoIGV, montoReserva, pedido, reserva);
+                montoSinIGV, montoIGV, pedido, reserva);
         this.RUC = RUC;
         this.razonSocial = razonSocial;
         this.listaDetalleFactura = new ArrayList<>(listaDetalleFactura);

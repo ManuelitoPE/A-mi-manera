@@ -95,32 +95,6 @@ CREATE TABLE LINEAPEDIDO (
     FOREIGN KEY (idProducto) REFERENCES PRODUCTO(idProducto)
 );
 
--- Tablas de comprobantes separadas
-CREATE TABLE BOLETA (
-    idBoleta INT AUTO_INCREMENT PRIMARY KEY,
-    fechaEmision DATETIME DEFAULT CURRENT_TIMESTAMP,
-    metodoPago ENUM('TARJETA', 'EFECTIVO') DEFAULT 'EFECTIVO',
-    montoTotal DECIMAL(10,2) NOT NULL,
-    montoPropina DECIMAL(10,2) DEFAULT 0,
-    montoSinIGV DECIMAL(10,2) NOT NULL,
-    montoIGV DECIMAL(10,2) NOT NULL,
-    idPedido INT NOT NULL,
-    FOREIGN KEY (idPedido) REFERENCES PEDIDO(idPedido)
-);
-
-CREATE TABLE FACTURA (
-    idFactura INT AUTO_INCREMENT PRIMARY KEY,
-    fechaEmision DATETIME DEFAULT CURRENT_TIMESTAMP,
-    metodoPago ENUM('TARJETA', 'EFECTIVO') DEFAULT 'EFECTIVO',
-    montoTotal DECIMAL(10,2) NOT NULL,
-    montoPropina DECIMAL(10,2) DEFAULT 0,
-    montoSinIGV DECIMAL(10,2) NOT NULL,
-    montoIGV DECIMAL(10,2) NOT NULL,
-    RUC VARCHAR(11) NOT NULL,
-    razonSocial VARCHAR(100) NOT NULL,
-    idPedido INT NOT NULL,
-    FOREIGN KEY (idPedido) REFERENCES PEDIDO(idPedido)
-);
 
 -- Tabla Reserva con estado ENUM
 CREATE TABLE RESERVA (
@@ -138,6 +112,35 @@ CREATE TABLE RESERVA (
     FOREIGN KEY (idPersonaNatural) REFERENCES PERSONA_NATURAL(idPersonaNatural),
     FOREIGN KEY (idPersonaJuridica) REFERENCES PERSONA_JURIDICA(idPersonaJuridica),
     FOREIGN KEY (idMesa) REFERENCES MESA(idMesa)
+);
+
+-- Tablas de comprobantes separadas
+CREATE TABLE BOLETA (
+    idBoleta INT AUTO_INCREMENT PRIMARY KEY,
+    fechaEmision DATETIME DEFAULT CURRENT_TIMESTAMP,
+    metodoPago ENUM('TARJETA', 'EFECTIVO') DEFAULT 'EFECTIVO',
+    montoTotal DECIMAL(10,2) NOT NULL,
+    montoPropina DECIMAL(10,2) DEFAULT 0,
+    montoSinIGV DECIMAL(10,2) NOT NULL,
+    montoIGV DECIMAL(10,2) NOT NULL,
+    idPedido INT NOT NULL,
+    FOREIGN KEY (idPedido) REFERENCES PEDIDO(idPedido),
+	idReserva INT NOT NULL,
+	FOREIGN KEY (idReserva) REFERENCES RESERVA(idReserva)
+);
+
+CREATE TABLE FACTURA (
+    idFactura INT AUTO_INCREMENT PRIMARY KEY,
+    fechaEmision DATETIME DEFAULT CURRENT_TIMESTAMP,
+    metodoPago ENUM('TARJETA', 'EFECTIVO') DEFAULT 'EFECTIVO',
+    montoTotal DECIMAL(10,2) NOT NULL,
+    montoPropina DECIMAL(10,2) DEFAULT 0,
+    montoSinIGV DECIMAL(10,2) NOT NULL,
+    montoIGV DECIMAL(10,2) NOT NULL,
+    RUC VARCHAR(11) NOT NULL,
+    razonSocial VARCHAR(100) NOT NULL,
+    idPedido INT NOT NULL,
+    FOREIGN KEY (idPedido) REFERENCES PEDIDO(idPedido)
 );
 
 -- Tabla DetalleBoleta
