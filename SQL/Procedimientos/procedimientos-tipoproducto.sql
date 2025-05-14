@@ -8,7 +8,7 @@ DROP PROCEDURE IF EXISTS listarTipoProductos;
 
 DELIMITER //
 CREATE PROCEDURE insertarTipoProducto(
-  IN p_descripcion VARCHAR(200).
+  IN p_descripcion VARCHAR(200),
   OUT p_id INT
 )
 BEGIN
@@ -32,7 +32,7 @@ BEGIN
     DELETE FROM TIPO_PRODUCTO WHERE idTipoProducto = p_id;
 END //
 
-CREATE PROCEDURE buscarTipoProductoPorId(int p_id INT)
+CREATE PROCEDURE buscarTipoProductoPorId(IN p_id INT)
 BEGIN
     SELECT * FROM TIPO_PRODUCTO WHERE idTipoProducto = p_id;
 END //
