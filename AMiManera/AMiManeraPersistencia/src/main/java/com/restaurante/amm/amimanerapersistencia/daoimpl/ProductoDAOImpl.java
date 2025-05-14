@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import java.sql.Types;
 import com.restaurante.amm.amimanerapersistencia.dao.IProductoDAO;
 import com.restaurante.amm.amimaneramodel.pedidos.Producto;
-import com.restaurante.amm.amimaneramodel.pedidos.TipoProducto;
 
 public class ProductoDAOImpl extends BaseDAOImpl<Producto> implements IProductoDAO {
+
     @Override
     protected CallableStatement comandoInsertar(Connection conn, Producto producto) throws SQLException {
         String sql = "{CALL insertarProducto(?, ?, ?, ?, ?)}";
@@ -17,7 +17,7 @@ public class ProductoDAOImpl extends BaseDAOImpl<Producto> implements IProductoD
         cmd.setString("p_nombre", producto.getNombre());
         cmd.setString("p_descripcion", producto.getDescripcion());
         cmd.setDouble("p_precioUnitario", producto.getPrecioUnitario());
-        cmd.setString("p_tipoProducto", producto.getTipoProducto().name());
+        cmd.setInt("p_tipoProducto", producto.getTipoProducto().getIdTipoProducto());
         cmd.registerOutParameter("p_id", Types.INTEGER);
         return cmd;
     }
@@ -29,7 +29,7 @@ public class ProductoDAOImpl extends BaseDAOImpl<Producto> implements IProductoD
         cmd.setString("p_nombre", producto.getNombre());
         cmd.setString("p_descripcion", producto.getDescripcion());
         cmd.setDouble("p_precioUnitario", producto.getPrecioUnitario());
-        cmd.setString("p_tipoProducto", producto.getTipoProducto().name());
+        cmd.setInt("p_tipoProducto", producto.getTipoProducto().getIdTipoProducto());
         cmd.setInt("p_id", producto.getIdProducto());
         return cmd;
     }
@@ -64,7 +64,11 @@ public class ProductoDAOImpl extends BaseDAOImpl<Producto> implements IProductoD
         producto.setNombre(rs.getString("nombre"));
         producto.setDescripcion(rs.getString("descripcion"));
         producto.setPrecioUnitario(rs.getDouble("precioUnitario"));
-        producto.setTipoProducto(TipoProducto.valueOf(rs.getString("tipoProducto")));
+        
+        TipoProductoDAOImpl tipoProducto = new TipoProductoDAOImpl();
+        
+        producto.setTipoProducto( tipoProducto.buscar(rs.getInt("tipoProducto")));
+        //producto.setTipoProducto(TipoProducto.valueOf(rs.getString("tipoProducto")));
         return producto;
     }
 }

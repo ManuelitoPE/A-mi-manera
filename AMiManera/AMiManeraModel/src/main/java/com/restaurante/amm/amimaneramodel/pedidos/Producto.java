@@ -1,7 +1,5 @@
 package com.restaurante.amm.amimaneramodel.pedidos;
 
-import java.util.Scanner;
-
 public class Producto {
     //Atributos
     private int idProducto;
@@ -63,13 +61,6 @@ public class Producto {
     }
 
     //Funciones
-    public void cargar(Scanner scanner){
-        idProducto = scanner.nextInt();   
-        nombre = scanner.next();   
-        descripcion = scanner.next();   
-        precioUnitario = scanner.nextDouble();
-        tipoProducto = TipoProducto.valueOf(scanner.next());   
-    }
     public void imprimir(){
         System.out.println(String.format("%-15s\t%-10s\t%10.2f\t%-10s",
                             nombre,descripcion,precioUnitario,tipoProducto));
