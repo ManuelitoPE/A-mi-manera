@@ -70,6 +70,8 @@ public class PedidoDAOImpl extends BaseDAOImpl<Pedido> implements IPedidoDAO {
         pedido.setFecha(rs.getDate("fechaHora")); // O "fecha" según tu tabla
         pedido.setEstadoPedido(EstadoPedido.valueOf(rs.getString("estado")));
         pedido.setMontoTotal(rs.getDouble("montoTotal"));
+        
+        
         // Mapeo de mesa y mesero solo con el ID, puedes expandirlo si necesitas más datos
         Mesa mesa = new Mesa();
         mesa.setIdMesa(rs.getInt("idMesa"));

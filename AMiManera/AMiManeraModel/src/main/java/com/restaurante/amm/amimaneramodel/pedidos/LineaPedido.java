@@ -3,71 +3,60 @@ package com.restaurante.amm.amimaneramodel.pedidos;
 public class LineaPedido {
     //Atributos
     private int idLineaPedido;
+    private int cantidadProducto;
+    
     private Producto producto;
-    private int cantidad;
-    private double montoParcial;
-    private String descripcion;
-    private int idPedido;
+    private Pedido pedido;
 
     //Constructores
     public LineaPedido(){}
-    public LineaPedido(int idLineaPedido, Producto producto,
-                       int cantidad, double montoParcial){
+    public LineaPedido(int idLineaPedido, int cantidad,  Producto producto,
+                       Pedido pedido){
+        
         this.idLineaPedido = idLineaPedido;
+        this.cantidadProducto = cantidad;
+        
         this.producto = new Producto(producto);
-        this.cantidad = cantidad;
-        this.montoParcial = montoParcial;
+        this.pedido = new Pedido(pedido);
     }
     public LineaPedido(LineaPedido lineaPedido){
-        idLineaPedido = lineaPedido.idLineaPedido;
-        producto = new Producto(lineaPedido.producto);
-        cantidad = lineaPedido.cantidad;
-        montoParcial = lineaPedido.montoParcial;
-        idPedido = lineaPedido.idPedido;
+        this.idLineaPedido = lineaPedido.idLineaPedido;
+        this.cantidadProducto = lineaPedido.cantidadProducto;
+        
+        this.producto = new Producto(lineaPedido.producto);
+        this.pedido = new Pedido(lineaPedido.pedido);
     }
     
     //Setters
-    public void setIdLineaPedido(int idLineaPedido){
+    public void setIdLineaPedido(int idLineaPedido) {
         this.idLineaPedido = idLineaPedido;
     }
-    public void setCantidad(int cantidad){
-        this.cantidad = cantidad;
-    }
-    public void setMontoParcial(double montoParcial){
-        this.montoParcial = montoParcial;
-    }
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setCantidadProducto(int cantidadProducto) {
+        this.cantidadProducto = cantidadProducto;
     }
     public void setProducto(Producto producto) {
         this.producto = producto;
     }
-    public void setIdPedido(int idPedido) {
-        this.idPedido = idPedido;
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
     }
     
     //Getters
     public int getIdLineaPedido(){
-        return idLineaPedido;
+        return idLineaPedido;   
     }
-    public int getCantidad(){
-        return cantidad;
-    }
-    public double getMontoParcial(){
-        return montoParcial;
-    }
-    public String getDescripcion() {
-        return descripcion;
+    public int getCantidadProducto() {
+        return cantidadProducto;
     }
     public Producto getProducto() {
         return producto;
     }
-    public int getIdPedido() {
-        return idPedido;
+    public Pedido getPedido() {    
+        return pedido;
     }
 
+    
     //Funciones
-    public void guardarDetalle(){
-        
+    public void guardarDetalle() {
     }
 }

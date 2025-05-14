@@ -77,6 +77,7 @@ public class BoletaDAOImpl extends BaseDAOImpl<Boleta> implements IBoletaDAO {
         boleta.setMontoSinIGV(rs.getDouble("montoSinIGV"));
         boleta.setMontoIGV(rs.getDouble("montoIGV"));
         boleta.setPedido(new PedidoDAOImpl().buscar(rs.getInt("idPedido")));
+        boleta.setReserva(new ReservaDAOImpl().buscar(rs.getInt("idReserva")));
         
 
     // Falta implementar la generacion de una lista de detalle boleta

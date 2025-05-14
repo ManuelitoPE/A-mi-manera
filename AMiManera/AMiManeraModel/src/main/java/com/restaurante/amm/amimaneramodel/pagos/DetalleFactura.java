@@ -23,6 +23,11 @@ public class DetalleFactura {
         this.factura = new Factura();
         this.precioUnitario = precioUnitario;
         this.subTotal = subTotal;
+<<<<<<< HEAD
+=======
+        this.producto = new Producto(producto);
+        this.factura = new Factura(factura);
+>>>>>>> 1a8582190c446185f911e4068490c0009715d489
     }
 
     public DetalleFactura(DetalleFactura detalleFactura) {
@@ -32,6 +37,11 @@ public class DetalleFactura {
         this.factura = new Factura(detalleFactura.factura);
         this.precioUnitario = detalleFactura.precioUnitario;
         this.subTotal = detalleFactura.subTotal;
+<<<<<<< HEAD
+=======
+        this.producto = new Producto(detalleFactura.producto);
+        this.factura = new Factura(detalleFactura.factura);
+>>>>>>> 1a8582190c446185f911e4068490c0009715d489
     }
 
     // Getters y Setters

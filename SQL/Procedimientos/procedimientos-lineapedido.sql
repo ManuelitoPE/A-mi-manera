@@ -8,23 +8,19 @@ DROP PROCEDURE IF EXISTS listarLineasPedido;
 
 DELIMITER //
 CREATE PROCEDURE insertarLineaPedido(
-    IN p_cantidad INT,
-    IN p_montoParcial DECIMAL(10,2),
-    IN p_descripcion VARCHAR(255),
+    IN p_cantidadProducto INT,
     IN p_idPedido INT,
     IN p_idProducto INT,
     OUT p_id INT
 )
 BEGIN
-    INSERT INTO LINEAPEDIDO(cantidad, montoParcial, descripcion, idPedido, idProducto)
-    VALUES(p_cantidad, p_montoParcial, p_descripcion, p_idPedido, p_idProducto);
+    INSERT INTO LINEAPEDIDO(cantidadProducto, idPedido, idProducto)
+    VALUES(p_cantidadProducto, p_idPedido, p_idProducto);
     SET p_id = LAST_INSERT_ID();
 END //
 
 CREATE PROCEDURE modificarLineaPedido(
-    IN p_cantidad INT,
-    IN p_montoParcial DECIMAL(10,2),
-    IN p_descripcion VARCHAR(255),
+    IN p_cantidadProducto INT,
     IN p_idPedido INT,
     IN p_idProducto INT,
     IN p_id INT
@@ -32,9 +28,7 @@ CREATE PROCEDURE modificarLineaPedido(
 BEGIN
     UPDATE LINEAPEDIDO
     SET 
-        cantidad = p_cantidad,
-        montoParcial = p_montoParcial,
-        descripcion = p_descripcion,
+        cantidadProducto = p_cantidadProducto,
         idPedido = p_idPedido,
         idProducto = p_idProducto
     WHERE idLineaPedido = p_id;

@@ -1,7 +1,58 @@
-/AMiManera/AMiManeraCapaDominioModel/target/
-/AMiManera/AMiManeraCapaDominioDA/target/
-/AMiManera/AMiManeraAppTest/target/
-/AMiManera/AMiManeraDBManager/target/
-/AMiManera/AMiManeraCapaPersistencia/target/
-/AMiManera/AMiManeraPersistencia/target/
-/AMiManera/AMiManeraModel/target/
+### Raíz del repositorio ###
+# Archivos de entorno (excepto el ejemplo)
+.env
+!.env.example
+nb-configuration.xml
+
+# Directorios de proyectos hijos
+**/target/
+**/build/
+**/bin/
+**/obj/
+**/.mvn/wrapper/
+
+# Archivos específicos de Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+dependency-reduced-pom.xml
+
+# IDEs
+.idea/
+.vs/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+.factorypath
+.springBeans
+
+
+# Archivos temporales
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+*.~*
+*~
+.DS_Store
+Thumbs.db
+
+# Reportes de pruebas
+**/surefire-reports/
+**/failsafe-reports/
+**/TEST-*.xml
+
+# Base de datos
+*.db
+*.sqlite
