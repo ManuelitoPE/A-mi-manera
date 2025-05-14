@@ -1,20 +1,25 @@
 
 package com.restaurante.amm.amimanerapersistencia.test.dao;
 
+import com.restaurante.amm.amimaneramodel.pagos.Boleta;
 import com.restaurante.amm.amimaneramodel.pagos.DetalleBoleta;
+import com.restaurante.amm.amimaneramodel.pedidos.Producto;
 import com.restaurante.amm.amimanerapersistencia.dao.IDetalleBoletaDAO;
-import com.restaurante.amm.amimanerapersistencia.daoimpl.BoletaDAOImpl;
 import com.restaurante.amm.amimanerapersistencia.daoimpl.DetalleBoletaDAOImpl;
-import com.restaurante.amm.amimanerapersistencia.daoimpl.ProductoDAOImpl;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestMethodOrder;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 
 public class DetalleBoletaDAOTest implements ICrudDAOTest {
     private int testId;
@@ -31,16 +36,17 @@ public class DetalleBoletaDAOTest implements ICrudDAOTest {
         detalleBoleta.setCantidadProducto(1);
         detalleBoleta.setPrecioUnitario(99.99);
         detalleBoleta.setSubTotal(99.99);
-        //Debemos poner un idproducto que ya exista, el 18 es referencial
-        int idProductoExistente = 18;
-        detalleBoleta.setProducto(new ProductoDAOImpl().buscar(idProductoExistente));
         
-        //Debemos poner un idboleta que ya exista, el 1 es referencial
-        int idBoletaExistente = 1;
-        detalleBoleta.setBoleta(new BoletaDAOImpl().buscar(idBoletaExistente));
+        Producto productoTest = new Producto();
+        productoTest.setIdProducto(1);
+        detalleBoleta.setProducto(productoTest);
         
-               
+        Boleta boletaTest = new Boleta();
+        boletaTest.setIdComprobantePago(4);
+        detalleBoleta.setBoleta(boletaTest);
+                
         this.testId = detalleBoletaDAO.insertar(detalleBoleta);
+
         assertTrue(this.testId > 0);
     }
     
@@ -57,13 +63,13 @@ public class DetalleBoletaDAOTest implements ICrudDAOTest {
         detalleBoleta.setPrecioUnitario(10.00);
         detalleBoleta.setSubTotal(20.00);
         
-        //Debemos poner un idproducto que ya exista, el 19 es referencial
-        int idProductoExistente = 19;
-        detalleBoleta.setProducto(new ProductoDAOImpl().buscar(idProductoExistente));
+        Producto productoTest = new Producto();
+        productoTest.setIdProducto(2);
+        detalleBoleta.setProducto(productoTest);
         
-        //Debemos poner un idboleta que ya exista, el 2 es referencial
-        int idBoletaExistente = 2;
-        detalleBoleta.setBoleta(new BoletaDAOImpl().buscar(idBoletaExistente));
+        Boleta boletaTest = new Boleta();
+        boletaTest.setIdComprobantePago(5);
+        detalleBoleta.setBoleta(boletaTest);
         
         boolean modifico = detalleBoletaDAO.modificar(detalleBoleta);
         assertTrue(modifico);
@@ -72,8 +78,8 @@ public class DetalleBoletaDAOTest implements ICrudDAOTest {
         assertEquals(detalleBoletaModificada.getCantidadProducto(), 2);
         assertEquals(detalleBoletaModificada.getPrecioUnitario(), 10.00);
         assertEquals(detalleBoletaModificada.getSubTotal(), 20.00);
-        assertEquals(detalleBoletaModificada.getProducto().getIdProducto(), idProductoExistente);
-        assertEquals(detalleBoletaModificada.getBoleta().getIdComprobantePago(),idBoletaExistente);
+        assertEquals(detalleBoletaModificada.getProducto().getIdProducto(), 2);
+        assertEquals(detalleBoletaModificada.getBoleta().getIdComprobantePago(),5);
     }
     
     @Test
@@ -89,13 +95,13 @@ public class DetalleBoletaDAOTest implements ICrudDAOTest {
         detalleBoleta.setPrecioUnitario(10.00);
         detalleBoleta.setSubTotal(20.00);
         
-        //Debemos poner un idproducto que ya exista, el 19 es referencial
-        int idProductoExistente = 19;
-        detalleBoleta.setProducto(new ProductoDAOImpl().buscar(idProductoExistente));
+        Producto productoTest = new Producto();
+        productoTest.setIdProducto(2);
+        detalleBoleta.setProducto(productoTest);
         
-        //Debemos poner un idboleta que ya exista, el 2 es referencial
-        int idBoletaExistente = 2;
-        detalleBoleta.setBoleta(new BoletaDAOImpl().buscar(idBoletaExistente));
+        Boleta boletaTest = new Boleta();
+        boletaTest.setIdComprobantePago(5);
+        detalleBoleta.setBoleta(boletaTest);
         
         
         boolean modifico = detalleBoletaDAO.modificar(detalleBoleta);

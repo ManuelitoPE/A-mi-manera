@@ -18,11 +18,12 @@ CREATE PROCEDURE insertarFactura(
     IN p_ruc VARCHAR(11),
     IN p_razonSocial VARCHAR(100),
     IN p_idPedido INT,
+    IN p_idReserva INT,
     OUT p_id INT
 )
 BEGIN
-    INSERT INTO FACTURA(fechaEmision, metodoPago, montoTotal, montoPropina, montoSinIGV, montoIGV, RUC, razonSocial, idPedido)
-    VALUES(p_fechaEmision, p_metodoPago, p_montoTotal, p_montoPropina, p_montoSinIGV, p_montoIGV, p_ruc, p_razonSocial, p_idPedido);
+    INSERT INTO FACTURA(fechaEmision, metodoPago, montoTotal, montoPropina, montoSinIGV, montoIGV, RUC, razonSocial, idPedido, idReserva)
+    VALUES(p_fechaEmision, p_metodoPago, p_montoTotal, p_montoPropina, p_montoSinIGV, p_montoIGV, p_ruc, p_razonSocial, p_idPedido, p_idReserva);
     SET p_id = LAST_INSERT_ID();
 END //
 
@@ -36,6 +37,7 @@ CREATE PROCEDURE modificarFactura(
     IN p_ruc VARCHAR(11),
     IN p_razonSocial VARCHAR(100),
     IN p_idPedido INT,
+    IN p_idReserva INT,
     IN p_id INT
 )
 BEGIN
@@ -49,7 +51,8 @@ BEGIN
         montoIGV = p_montoIGV,
         RUC = p_ruc,
         razonSocial = p_razonSocial,
-        idPedido = p_idPedido
+        idPedido = p_idPedido,
+        idReserva = p_idReserva
     WHERE idFactura = p_id;
 END //
 
