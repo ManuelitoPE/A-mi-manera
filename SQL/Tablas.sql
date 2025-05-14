@@ -174,7 +174,7 @@ CREATE TABLE DETALLEFACTURA (
 
 CREATE TABLE TIPO_PRODUCTO (
 	idTipoProducto INT AUTO_INCREMENT PRIMARY KEY,
-	descripcion VARCHAR2(200) NOT NULL
+	descripcion VARCHAR(200) NOT NULL
 );
 -- Índices para optimización
 CREATE INDEX idx_persona_natural_nombre ON PERSONA_NATURAL(nombre);
