@@ -19,7 +19,7 @@ public class PedidoDAOImpl extends BaseDAOImpl<Pedido> implements IPedidoDAO {
         String sql = "{CALL insertarPedido(?, ?, ?, ?, ?, ?)}";
         CallableStatement cmd = conn.prepareCall(sql);
         cmd.setDate("p_fecha", new Date(pedido.getFecha().getTime()));
-        cmd.setString("p_estado", pedido.getEstadoPedido().name());
+        cmd.setString("p_estadoPedido", pedido.getEstadoPedido().name());
         cmd.setDouble("p_montoTotal", pedido.getMontoTotal());
         cmd.setInt("p_idMesa", pedido.getMesa().getIdMesa());
         cmd.setInt("p_idMesero", pedido.getMesero().getIdTrabajador());
@@ -29,10 +29,10 @@ public class PedidoDAOImpl extends BaseDAOImpl<Pedido> implements IPedidoDAO {
 
     @Override
     protected CallableStatement comandoModificar(Connection conn, Pedido pedido) throws SQLException {
-        String sql = "{CALL modificarPedido(?, ?, ?, ?, ?, ?, ?)}";
+        String sql = "{CALL modificarPedido(?, ?, ?, ?, ?, ?)}";
         CallableStatement cmd = conn.prepareCall(sql);
         cmd.setDate("p_fecha", new Date(pedido.getFecha().getTime()));
-        cmd.setString("p_estado", pedido.getEstadoPedido().name());
+        cmd.setString("p_estadoPedido", pedido.getEstadoPedido().name());
         cmd.setDouble("p_montoTotal", pedido.getMontoTotal());
         cmd.setInt("p_idMesa", pedido.getMesa().getIdMesa());
         cmd.setInt("p_idMesero", pedido.getMesero().getIdTrabajador());
@@ -67,20 +67,12 @@ public class PedidoDAOImpl extends BaseDAOImpl<Pedido> implements IPedidoDAO {
     protected Pedido mapearModelo(ResultSet rs) throws SQLException {
         Pedido pedido = new Pedido();
         pedido.setIdPedido(rs.getInt("idPedido"));
-        pedido.setFecha(rs.getDate("fechaHora")); // O "fecha" según tu tabla
-        pedido.setEstadoPedido(EstadoPedido.valueOf(rs.getString("estado")));
+        pedido.setFecha(rs.getDate("fecha")); 
+        pedido.setEstadoPedido(EstadoPedido.valueOf(rs.getString("estadoPedido")));
         pedido.setMontoTotal(rs.getDouble("montoTotal"));
-        
-        
-        // Mapeo de mesa y mesero solo con el ID, puedes expandirlo si necesitas más datos
-        Mesa mesa = new Mesa();
-        mesa.setIdMesa(rs.getInt("idMesa"));
-        pedido.setMesa(mesa);
-
-        Mesero mesero = new Mesero();
-        mesero.setIdTrabajador(rs.getInt("idMesero"));
-        pedido.setMesero(mesero);
-
+        pedido.setMesa(new MesaDAOImpl().buscar(rs.getInt("idMesa")));
+//        pedido.setMesero(new TrabajadorDAOImpl().buscar(rs.getInt("idMesero")));
+  
         return pedido;
     }
 }

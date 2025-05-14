@@ -12,6 +12,7 @@ public class Pedido {
     private Date fecha;
     private EstadoPedido estadoPedido;
     private double montoTotal;
+    
     private List<LineaPedido> listaLineaPedido;
     private Mesa mesa;
     private Mesero mesero;
@@ -24,7 +25,7 @@ public class Pedido {
     }
     public Pedido(int idPedido, Date fecha, EstadoPedido estadoPedido,
                   double montoTotal, List<LineaPedido> listaLineaPedidos,
-                  Mesa mesa){
+                  Mesa mesa, Mesero mesero){
         this.idPedido = idPedido;
         this.fecha = fecha;
         this.estadoPedido = estadoPedido;
@@ -39,8 +40,8 @@ public class Pedido {
         estadoPedido = pedido.estadoPedido;
         montoTotal = pedido.montoTotal;
         listaLineaPedido = new ArrayList<>(pedido.listaLineaPedido);
-        mesa = new Mesa(mesa);
-        mesero = new Mesero(mesero);
+        mesa = new Mesa(pedido.mesa);
+        mesero = new Mesero(pedido.mesero);
     }
     
     //Setters
