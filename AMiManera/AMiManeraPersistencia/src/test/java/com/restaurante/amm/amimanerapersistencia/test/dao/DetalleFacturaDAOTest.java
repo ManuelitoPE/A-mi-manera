@@ -41,7 +41,7 @@ public class DetalleFacturaDAOTest implements ICrudDAOTest {
         detalleFactura.setProducto(productoTest);
         
         Factura facturaTest = new Factura();
-        facturaTest.setIdComprobantePago(4);
+        facturaTest.setIdComprobantePago(1);
         detalleFactura.setFactura(facturaTest);
                 
         this.testId = detalleFacturaDAO.insertar(detalleFactura);
@@ -67,7 +67,7 @@ public class DetalleFacturaDAOTest implements ICrudDAOTest {
         detalleFactura.setProducto(productoTest);
         
         Factura facturaTest = new Factura();
-        facturaTest.setIdComprobantePago(5);
+        facturaTest.setIdComprobantePago(2);
         detalleFactura.setFactura(facturaTest);
         
         boolean modifico = detalleFacturaDAO.modificar(detalleFactura);
@@ -78,7 +78,7 @@ public class DetalleFacturaDAOTest implements ICrudDAOTest {
         assertEquals(detalleFacturaModificada.getPrecioUnitario(), 10.00);
         assertEquals(detalleFacturaModificada.getSubTotal(), 20.00);
         assertEquals(detalleFacturaModificada.getProducto().getIdProducto(), 2);
-        assertEquals(detalleFacturaModificada.getFactura().getIdComprobantePago(),5);
+        assertEquals(detalleFacturaModificada.getFactura().getIdComprobantePago(),2);
     }
     
     @Test
@@ -99,7 +99,7 @@ public class DetalleFacturaDAOTest implements ICrudDAOTest {
         detalleFactura.setProducto(productoTest);
         
         Factura facturaTest = new Factura();
-        facturaTest.setIdComprobantePago(5);
+        facturaTest.setIdComprobantePago(2);
         detalleFactura.setFactura(facturaTest);
         
         

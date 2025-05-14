@@ -42,7 +42,7 @@ public class DetalleBoletaDAOTest implements ICrudDAOTest {
         detalleBoleta.setProducto(productoTest);
         
         Boleta boletaTest = new Boleta();
-        boletaTest.setIdComprobantePago(4);
+        boletaTest.setIdComprobantePago(1);
         detalleBoleta.setBoleta(boletaTest);
                 
         this.testId = detalleBoletaDAO.insertar(detalleBoleta);
@@ -68,7 +68,7 @@ public class DetalleBoletaDAOTest implements ICrudDAOTest {
         detalleBoleta.setProducto(productoTest);
         
         Boleta boletaTest = new Boleta();
-        boletaTest.setIdComprobantePago(5);
+        boletaTest.setIdComprobantePago(2);
         detalleBoleta.setBoleta(boletaTest);
         
         boolean modifico = detalleBoletaDAO.modificar(detalleBoleta);
@@ -79,7 +79,7 @@ public class DetalleBoletaDAOTest implements ICrudDAOTest {
         assertEquals(detalleBoletaModificada.getPrecioUnitario(), 10.00);
         assertEquals(detalleBoletaModificada.getSubTotal(), 20.00);
         assertEquals(detalleBoletaModificada.getProducto().getIdProducto(), 2);
-        assertEquals(detalleBoletaModificada.getBoleta().getIdComprobantePago(),5);
+        assertEquals(detalleBoletaModificada.getBoleta().getIdComprobantePago(),2);
     }
     
     @Test
@@ -100,7 +100,7 @@ public class DetalleBoletaDAOTest implements ICrudDAOTest {
         detalleBoleta.setProducto(productoTest);
         
         Boleta boletaTest = new Boleta();
-        boletaTest.setIdComprobantePago(5);
+        boletaTest.setIdComprobantePago(2);
         detalleBoleta.setBoleta(boletaTest);
         
         

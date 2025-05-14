@@ -75,11 +75,11 @@ public class FacturaDAOTest implements ICrudDAOTest {
         factura.setRazonSocial("Montage Lodge");
         
         Pedido pedidoTest = new Pedido();
-        pedidoTest.setIdPedido(1);
+        pedidoTest.setIdPedido(2);
         factura.setPedido(pedidoTest);
         
         Reserva reservaTest = new Reserva();
-        reservaTest.setIdReserva(1);
+        reservaTest.setIdReserva(2);
         factura.setReserva(reservaTest);
         
                 
@@ -94,6 +94,9 @@ public class FacturaDAOTest implements ICrudDAOTest {
         assertEquals(facturaModificada.getMontoIGV(), 11.11);
         assertEquals(facturaModificada.getRUC(), "10103131318");
         assertEquals(facturaModificada.getRazonSocial(), "Montage Lodge");
+        assertEquals(facturaModificada.getPedido().getIdPedido(), 2);
+        assertEquals(facturaModificada.getReserva().getIdReserva(), 2);
+        
     
     }
     
@@ -116,11 +119,11 @@ public class FacturaDAOTest implements ICrudDAOTest {
         factura.setRazonSocial("Montage Lodge");
         
         Pedido pedidoTest = new Pedido();
-        pedidoTest.setIdPedido(1);
+        pedidoTest.setIdPedido(2);
         factura.setPedido(pedidoTest);
         
         Reserva reservaTest = new Reserva();
-        reservaTest.setIdReserva(1);
+        reservaTest.setIdReserva(2);
         factura.setReserva(reservaTest);
         
         boolean modifico = facturaDAO.modificar(factura);

@@ -36,7 +36,10 @@ public class ProductoDAOTest implements ICrudDAOTest{
         producto.setNombre("Producto de Prueba");
         producto.setDescripcion("Descripción de prueba");
         producto.setPrecioUnitario(19.99);
-        producto.setTipoProducto(new TipoProductoDAOImpl().buscar(1));
+        
+        TipoProducto tipoProductoTest = new TipoProducto();
+        tipoProductoTest.setIdTipoProducto(1);
+        producto.setTipoProducto(tipoProductoTest);
         
         this.testId = productoDao.insertar(producto);
         assertTrue(this.testId > 0);
@@ -55,7 +58,9 @@ public class ProductoDAOTest implements ICrudDAOTest{
         producto.setDescripcion("Descripción modificada");
         producto.setPrecioUnitario(29.99);
         
-        producto.setTipoProducto(new TipoProductoDAOImpl().buscar(2));
+        TipoProducto tipoProductoTest = new TipoProducto();
+        tipoProductoTest.setIdTipoProducto(2);
+        producto.setTipoProducto(tipoProductoTest);
         
         boolean modifico = productoDao.modificar(producto);
         assertTrue(modifico);
@@ -78,7 +83,10 @@ public class ProductoDAOTest implements ICrudDAOTest{
         producto.setNombre("Producto Modificado");
         producto.setDescripcion("Descripción modificada");
         producto.setPrecioUnitario(29.99);
-        producto.setTipoProducto(new TipoProductoDAOImpl().buscar(1));
+        
+        TipoProducto tipoProductoTest = new TipoProducto();
+        tipoProductoTest.setIdTipoProducto(2);
+        producto.setTipoProducto(tipoProductoTest);
         
         boolean modifico = productoDao.modificar(producto);
         assertFalse(modifico);

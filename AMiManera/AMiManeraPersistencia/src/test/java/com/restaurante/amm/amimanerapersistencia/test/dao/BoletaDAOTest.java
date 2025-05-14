@@ -71,11 +71,11 @@ public class BoletaDAOTest implements ICrudDAOTest {
         boleta.setMontoIGV(11.11);
         
         Pedido pedidoTest = new Pedido();
-        pedidoTest.setIdPedido(1);
+        pedidoTest.setIdPedido(2);
         boleta.setPedido(pedidoTest);
         
         Reserva reservaTest = new Reserva();
-        reservaTest.setIdReserva(1);
+        reservaTest.setIdReserva(2);
         boleta.setReserva(reservaTest);
         
                 
@@ -88,6 +88,8 @@ public class BoletaDAOTest implements ICrudDAOTest {
         assertEquals(boletaModificada.getMontoPropina(), 11.11);
         assertEquals(boletaModificada.getMontoSinIGV(), 11.11);
         assertEquals(boletaModificada.getMontoIGV(), 11.11);
+        assertEquals(boletaModificada.getPedido().getIdPedido(), 2);
+        assertEquals(boletaModificada.getReserva().getIdReserva(), 2);
     }
     
     @Test
@@ -107,11 +109,11 @@ public class BoletaDAOTest implements ICrudDAOTest {
         boleta.setMontoIGV(11.11);
         
         Pedido pedidoTest = new Pedido();
-        pedidoTest.setIdPedido(1);
+        pedidoTest.setIdPedido(2);
         boleta.setPedido(pedidoTest);
         
         Reserva reservaTest = new Reserva();
-        reservaTest.setIdReserva(1);
+        reservaTest.setIdReserva(2);
         boleta.setReserva(reservaTest);
         
         boolean modifico = boletaDAO.modificar(boleta);
