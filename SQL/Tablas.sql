@@ -81,7 +81,8 @@ CREATE TABLE PRODUCTO (
     nombre VARCHAR(100) NOT NULL,
     descripcion VARCHAR(1000),
     precioUnitario DECIMAL(10,2) NOT NULL CHECK (precioUnitario > 0),
-    TipoProducto ENUM('ENTRADA', 'PLATO_PRINCIPAL', 'POSTRE', 'BEBIDA') NOT NULL
+    idTipoProducto INT NOT NULL,
+    FOREIGN KEY (idTipoProducto) REFERENCES TIPO_PRODUCTO(idTipoProducto)
 );
 
 -- Tabla LineaPedido
