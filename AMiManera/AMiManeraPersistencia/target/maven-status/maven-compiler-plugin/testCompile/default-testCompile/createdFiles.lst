@@ -1,12 +1,12 @@
-com\restaurante\amm\amimanerapersistencia\test\dao\ICrudDAOTest.class
-com\restaurante\amm\amimanerapersistencia\test\dao\PersonaNaturalDAOTest.class
-com\restaurante\amm\amimanerapersistencia\test\dao\TipoProductoDAOTest.class
 com\restaurante\amm\amimanerapersistencia\test\dao\BoletaDAOTest.class
 com\restaurante\amm\amimanerapersistencia\test\dao\DetalleBoletaDAOTest.class
 com\restaurante\amm\amimanerapersistencia\test\dao\PersonaJuridicaDAOTest.class
+com\restaurante\amm\amimanerapersistencia\test\dao\LineaPedidoDAOTest.class
+com\restaurante\amm\amimanerapersistencia\test\dao\FacturaDAOTest.class
+com\restaurante\amm\amimanerapersistencia\test\dao\ICrudDAOTest.class
+com\restaurante\amm\amimanerapersistencia\test\dao\PersonaNaturalDAOTest.class
+com\restaurante\amm\amimanerapersistencia\test\dao\TipoProductoDAOTest.class
 com\restaurante\amm\amimanerapersistencia\test\dao\DetalleFacturaDAOTest.class
 com\restaurante\amm\amimanerapersistencia\test\dao\MesaDAOTest.class
 com\restaurante\amm\amimanerapersistencia\test\dao\ProductoDAOTest.class
-com\restaurante\amm\amimanerapersistencia\test\dao\LineaPedidoDAOTest.class
 com\restaurante\amm\amimanerapersistencia\test\dao\PedidoDAOTest.class
-com\restaurante\amm\amimanerapersistencia\test\dao\FacturaDAOTest.class

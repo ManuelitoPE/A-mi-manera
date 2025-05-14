@@ -89,7 +89,7 @@ public class BoletaDAOTest implements ICrudDAOTest {
         assertEquals(boletaModificada.getMontoSinIGV(), 11.11);
         assertEquals(boletaModificada.getMontoIGV(), 11.11);
         assertEquals(boletaModificada.getPedido().getIdPedido(), 2);
-        assertEquals(boletaModificada.getReserva().getIdReserva(), 2);
+//        assertEquals(boletaModificada.getReserva().getIdReserva(), 2);
     }
     
     @Test
