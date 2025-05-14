@@ -181,5 +181,5 @@ CREATE TABLE DETALLEFACTURA (
 -- Índices para optimización
 CREATE INDEX idx_persona_natural_nombre ON PERSONA_NATURAL(nombre);
 CREATE INDEX idx_persona_juridica_nombre ON PERSONA_JURIDICA(nombre);
-CREATE INDEX idx_pedido_estado ON PEDIDO(estado);
+CREATE INDEX idx_pedido_estado ON PEDIDO(estadoPedido);
 CREATE INDEX idx_mesa_estado ON MESA(estado); 
