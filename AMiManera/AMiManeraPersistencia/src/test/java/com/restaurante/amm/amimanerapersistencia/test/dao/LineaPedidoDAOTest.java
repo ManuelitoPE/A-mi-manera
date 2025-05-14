@@ -64,7 +64,7 @@ public class LineaPedidoDAOTest implements ICrudDAOTest{
         lineaPedido.setProducto(producto);
         
         Pedido pedido = new Pedido();
-        pedido.setIdPedido(3);
+        pedido.setIdPedido(2);
         lineaPedido.setPedido(pedido);
         
         boolean modifico = lineaPedidoDao.modificar(lineaPedido);
@@ -73,7 +73,7 @@ public class LineaPedidoDAOTest implements ICrudDAOTest{
         LineaPedido lineaPedidoModificado = lineaPedidoDao.buscar(this.testId);
         assertEquals(lineaPedidoModificado.getCantidadProducto(), 99);
         assertEquals(lineaPedidoModificado.getProducto().getIdProducto(), 2);
-        assertEquals(lineaPedidoModificado.getPedido().getIdPedido(), 3);
+        assertEquals(lineaPedidoModificado.getPedido().getIdPedido(), 2);
         
     }
     
@@ -92,7 +92,7 @@ public class LineaPedidoDAOTest implements ICrudDAOTest{
         lineaPedido.setProducto(producto);
         
         Pedido pedido = new Pedido();
-        pedido.setIdPedido(3);
+        pedido.setIdPedido(2);
         lineaPedido.setPedido(pedido);
         
         boolean modifico = lineaPedidoDao.modificar(lineaPedido);
