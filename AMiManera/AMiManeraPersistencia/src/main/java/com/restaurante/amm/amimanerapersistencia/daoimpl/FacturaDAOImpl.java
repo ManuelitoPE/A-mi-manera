@@ -14,7 +14,7 @@ import com.restaurante.amm.amimaneramodel.pagos.DetalleFactura;
 public class FacturaDAOImpl extends BaseDAOImpl<Factura> implements IFacturaDAO {
     @Override
     protected CallableStatement comandoInsertar(Connection conn, Factura factura) throws SQLException {
-        String sql = "{CALL insertarFactura(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+        String sql = "{CALL insertarFactura(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
         CallableStatement cmd = conn.prepareCall(sql);
         cmd.setTimestamp("p_fechaEmision", new Timestamp(factura.getFechaEmision().getTime()));
         cmd.setString("p_metodoPago", factura.getMetodoPago().name());
@@ -84,9 +84,8 @@ public class FacturaDAOImpl extends BaseDAOImpl<Factura> implements IFacturaDAO 
         factura.setRUC(rs.getString("RUC"));
         factura.setRazonSocial(rs.getString("razonSocial"));
         factura.setPedido(new PedidoDAOImpl().buscar(rs.getInt("idPedido")));
-        factura.setReserva(new ReservaDAOImpl().buscar(rs.getInt("idPedido")));
-        // factura.setPedido(...) // Puedes mapear el pedido si lo necesitas
-        // factura.setListaDetalleFactura(...) // Puedes mapear los detalles si lo necesitas
+        factura.setReserva(new ReservaDAOImpl().buscar(rs.getInt("idReserva")));
+        
         return factura;
     }
 } 
