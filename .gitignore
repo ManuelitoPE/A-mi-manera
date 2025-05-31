@@ -11,6 +11,13 @@ nb-configuration.xml
 **/obj/
 **/.mvn/wrapper/
 
+# Directorios target específicos
+AMiManera/AMiManeraModel/target/
+AMiManera/AMiManeraDBManager/target/
+AMiManera/AMiManeraPersistencia/target/
+AMiManera/AMiManeraNegocio/target/
+AMiManera/AMiManeraPresentacion/target/
+
 # Archivos específicos de Java
 *.class
 *.jar
@@ -36,6 +43,14 @@ dependency-reduced-pom.xml
 .factorypath
 .springBeans
 
+# Archivos de NetBeans
+nbproject/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
 
 # Archivos temporales
 *.log
@@ -56,3 +71,8 @@ Thumbs.db
 # Base de datos
 *.db
 *.sqlite
+
+# Archivos de configuración local
+application.properties
+application-dev.properties
+application-prod.properties
