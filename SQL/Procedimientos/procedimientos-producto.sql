@@ -11,12 +11,12 @@ CREATE PROCEDURE insertarProducto(
     IN p_nombre VARCHAR(100),
     IN p_descripcion VARCHAR(1000),
     IN p_precioUnitario DECIMAL(10,2),
-    IN p_tipoProducto VARCHAR(20),
+    IN p_idTipoProducto VARCHAR(20),
     OUT p_id INT
 )
 BEGIN
-    INSERT INTO PRODUCTO(nombre, descripcion, precioUnitario, TipoProducto)
-    VALUES(p_nombre, p_descripcion, p_precioUnitario, p_tipoProducto);
+    INSERT INTO PRODUCTO(nombre, descripcion, precioUnitario, idTipoProducto)
+    VALUES(p_nombre, p_descripcion, p_precioUnitario, p_idTipoProducto);
     SET p_id = LAST_INSERT_ID();
 END //
 
@@ -24,7 +24,7 @@ CREATE PROCEDURE modificarProducto(
     IN p_nombre VARCHAR(100),
     IN p_descripcion VARCHAR(1000),
     IN p_precioUnitario DECIMAL(10,2),
-    IN p_tipoProducto VARCHAR(20),
+    IN p_idTipoProducto VARCHAR(20),
     IN p_id INT
 )
 BEGIN
@@ -33,7 +33,7 @@ BEGIN
         nombre = p_nombre,
         descripcion = p_descripcion,
         precioUnitario = p_precioUnitario,
-        TipoProducto = p_tipoProducto
+        idTipoProducto = p_idTipoProducto
     WHERE idProducto = p_id;
 END //
 
