@@ -9,118 +9,87 @@ public class DetalleFactura {
     private double subTotal;
     private Producto producto;
     private Factura factura;
-    
-    //CONSTRUCTORES
-    
-    public DetalleFactura(){
+
+    // Constructores
+    public DetalleFactura() {
         producto = new Producto();
-        factura  = new Factura();
+        factura = new Factura();
     }
-    
-    public DetalleFactura(int idDetalleFactura, int cantidadProducto,
-            double precioUnitario, double subTotal, Producto producto,
-            Factura factura){
+
+    public DetalleFactura(int idDetalleFactura, int cantidadProducto, Producto producto, double precioUnitario, double subTotal) {
         this.idDetalleFactura = idDetalleFactura;
-        this.cantidadProducto =  cantidadProducto;
+        this.cantidadProducto = cantidadProducto;
+        this.producto = new Producto(producto);
+        this.factura = new Factura();
         this.precioUnitario = precioUnitario;
         this.subTotal = subTotal;
+<<<<<<< HEAD
+=======
         this.producto = new Producto(producto);
         this.factura = new Factura(factura);
+>>>>>>> 1a8582190c446185f911e4068490c0009715d489
     }
-    
-    public DetalleFactura(DetalleFactura detalleFactura){
+
+    public DetalleFactura(DetalleFactura detalleFactura) {
         this.idDetalleFactura = detalleFactura.idDetalleFactura;
         this.cantidadProducto = detalleFactura.cantidadProducto;
-        this.precioUnitario = detalleFactura.precioUnitario;
-        this.subTotal = detalleFactura.subTotal;
         this.producto = new Producto(detalleFactura.producto);
         this.factura = new Factura(detalleFactura.factura);
+        this.precioUnitario = detalleFactura.precioUnitario;
+        this.subTotal = detalleFactura.subTotal;
+<<<<<<< HEAD
+=======
+        this.producto = new Producto(detalleFactura.producto);
+        this.factura = new Factura(detalleFactura.factura);
+>>>>>>> 1a8582190c446185f911e4068490c0009715d489
     }
-    
-    //GETERS Y SETERS
 
-    /**
-     * @return the idDetalleFactura
-     */
+    // Getters y Setters
     public int getIdDetalleFactura() {
         return idDetalleFactura;
     }
 
-    /**
-     * @param idDetalleFactura the idDetalleFactura to set
-     */
     public void setIdDetalleFactura(int idDetalleFactura) {
         this.idDetalleFactura = idDetalleFactura;
     }
 
-    /**
-     * @return the cantidadProducto
-     */
     public int getCantidadProducto() {
         return cantidadProducto;
     }
 
-    /**
-     * @param cantidadProducto the cantidadProducto to set
-     */
     public void setCantidadProducto(int cantidadProducto) {
         this.cantidadProducto = cantidadProducto;
     }
 
-    /**
-     * @return the precioUnitario
-     */
     public double getPrecioUnitario() {
         return precioUnitario;
     }
 
-    /**
-     * @param precioUnitario the precioUnitario to set
-     */
     public void setPrecioUnitario(double precioUnitario) {
         this.precioUnitario = precioUnitario;
     }
 
-    /**
-     * @return the subTotal
-     */
     public double getSubTotal() {
         return subTotal;
     }
 
-    /**
-     * @param subTotal the subTotal to set
-     */
     public void setSubTotal(double subTotal) {
         this.subTotal = subTotal;
     }
 
-    /**
-     * @return the producto
-     */
     public Producto getProducto() {
         return producto;
     }
 
-    /**
-     * @param producto the producto to set
-     */
     public void setProducto(Producto producto) {
         this.producto = producto;
     }
 
-    /**
-     * @return the factura
-     */
     public Factura getFactura() {
         return factura;
     }
 
-    /**
-     * @param factura the factura to set
-     */
     public void setFactura(Factura factura) {
         this.factura = factura;
     }
-    
 }

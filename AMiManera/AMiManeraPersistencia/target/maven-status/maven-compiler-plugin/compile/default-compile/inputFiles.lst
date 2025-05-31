@@ -1,3 +1,33 @@
+<<<<<<< HEAD
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IBoletaDAO.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\ICrud.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\ICuentaUsuarioDAO.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IDetalleBoletaDAO.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IDetalleFacturaDAO.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IFacturaDAO.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\ILineaPedidoDAO.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IMesaDAO.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IPedidoDAO.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IPersonaJuridicaDAO.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IPersonaNaturalDAO.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IProductoDAO.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IReservaDAO.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\ITrabajadorDAO.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\BaseDAOImpl.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\BoletaDAOImpl.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\CuentaUsuarioDAOImpl.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\DetalleBoletaDAOImpl.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\DetalleFacturaDAOImpl.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\FacturaDAOImpl.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\LineaPedidoDAOImpl.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\MesaDAOImpl.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\PedidoDAOImpl.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\PersonaJuridicaDAOImpl.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\PersonaNaturalDAOImpl.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\ProductoDAOImpl.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\ReservaDAOImpl.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\TrabajadorDAOImpl.java
+=======
 C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\IBoletaDAO.java
 C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\ICrud.java
 C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\dao\ICuentaUsuarioDAO.java
@@ -28,3 +58,4 @@ C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMi
 C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\ReservaDAOImpl.java
 C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\TipoProductoDAOImpl.java
 C:\Users\jfgut\OneDrive\Desktop\PUCP\2025 - 1\Programacion 3\GIT\A-mi-manera\AMiManera\AMiManeraPersistencia\src\main\java\com\restaurante\amm\amimanerapersistencia\daoimpl\TrabajadorDAOImpl.java
+>>>>>>> 1a8582190c446185f911e4068490c0009715d489
