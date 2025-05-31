@@ -14,19 +14,12 @@ public class DetalleFacturaDAOImpl extends BaseDAOImpl<DetalleFactura> implement
     protected CallableStatement comandoInsertar(Connection conn, DetalleFactura detalleFactura) throws SQLException {
         String sql = "{CALL insertarDetalleFactura(?, ?, ?, ?, ?, ?)}";
         CallableStatement cmd = conn.prepareCall(sql);
-<<<<<<< HEAD
-=======
         
->>>>>>> 1a8582190c446185f911e4068490c0009715d489
         cmd.setInt("p_cantidadProducto", detalleFactura.getCantidadProducto());
         cmd.setDouble("p_precioUnitario", detalleFactura.getPrecioUnitario());
         cmd.setDouble("p_subTotal", detalleFactura.getSubTotal());
         cmd.setInt("p_idProducto", detalleFactura.getProducto().getIdProducto());
-<<<<<<< HEAD
-        cmd.setInt("p_idComprobante", detalleFactura.getFactura().getIdComprobantePago());
-=======
         cmd.setInt("p_idComprobantePago", detalleFactura.getFactura().getIdComprobantePago());
->>>>>>> 1a8582190c446185f911e4068490c0009715d489
         cmd.registerOutParameter("p_id", Types.INTEGER);
         return cmd;
     }
@@ -39,11 +32,7 @@ public class DetalleFacturaDAOImpl extends BaseDAOImpl<DetalleFactura> implement
         cmd.setDouble("p_precioUnitario", detalleFactura.getPrecioUnitario());
         cmd.setDouble("p_subTotal", detalleFactura.getSubTotal());
         cmd.setInt("p_idProducto", detalleFactura.getProducto().getIdProducto());
-<<<<<<< HEAD
-        cmd.setInt("p_idComprobante", detalleFactura.getFactura().getIdComprobantePago());
-=======
         cmd.setInt("p_idComprobantePago", detalleFactura.getFactura().getIdComprobantePago());
->>>>>>> 1a8582190c446185f911e4068490c0009715d489
         cmd.setInt("p_id", detalleFactura.getIdDetalleFactura());
         return cmd;
     }
@@ -79,11 +68,7 @@ public class DetalleFacturaDAOImpl extends BaseDAOImpl<DetalleFactura> implement
         detalle.setPrecioUnitario(rs.getDouble("precioUnitario"));
         detalle.setSubTotal(rs.getDouble("subTotal"));
         detalle.setProducto(new ProductoDAOImpl().buscar(rs.getInt("idProducto")));
-<<<<<<< HEAD
-        detalle.setFactura(new FacturaDAOImpl().buscar(rs.getInt("idComprobante")));
-=======
         detalle.setFactura(new FacturaDAOImpl().buscar(rs.getInt("idComprobantePago")));
->>>>>>> 1a8582190c446185f911e4068490c0009715d489
         return detalle;
     }
 }
