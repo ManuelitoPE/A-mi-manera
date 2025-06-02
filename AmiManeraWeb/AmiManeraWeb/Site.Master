@@ -1,0 +1,99 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="AmiManeraWeb.SiteMaster" %>
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Tasty Station - Restaurant Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="Content/bootstrap.css" />
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="app-container">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="logo">
+                    <img src="Content/Images/logo.png" alt="Tasty Station" />
+                    <div class="logo-text">
+                        <h1>Tasty</h1>
+                        <h2>Station</h2>
+                    </div>
+                </div>
+                
+                <nav class="nav-menu">
+                    <a href="Default.aspx" class="nav-item">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="OrderLine.aspx" class="nav-item">
+                        <i class="fas fa-receipt"></i>
+                        <span>Order Line</span>
+                    </a>
+                    <a href="ManageTable.aspx" class="nav-item active">
+                        <i class="fas fa-border-all"></i>
+                        <span>Manage Table</span>
+                    </a>
+                    <a href="ManageDishes.aspx" class="nav-item">
+                        <i class="fas fa-utensils"></i>
+                        <span>Manage Dishes</span>
+                    </a>
+                    <a href="Customers.aspx" class="nav-item">
+                        <i class="fas fa-users"></i>
+                        <span>Customers</span>
+                    </a>
+                </nav>
+                
+                <div class="sidebar-footer">
+                    <a href="Settings.aspx" class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                    <a href="HelpCenter.aspx" class="nav-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help Center</span>
+                    </a>
+                    <a href="javascript:void(0);" class="nav-item" id="btnLogout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Header -->
+                <header class="header">
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search menu, orders and more" />
+                    </div>
+                    
+                    <div class="header-right">
+                        <div class="notifications">
+                            <i class="far fa-bell"></i>
+                        </div>
+                        <div class="user-profile">
+                            <img src="Content/Images/profile.jpg" alt="User Profile" />
+                            <div class="user-info">
+                                <span class="user-name">Ibrahim Kadri</span>
+                                <span class="user-role">Admin</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                
+                <!-- Page Content -->
+                <div class="page-content">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="Scripts/app.js"></script>
+</body>
+</html>
