@@ -17,10 +17,10 @@ public class Boleta extends ComprobantePago {
     
     public Boleta(int idComprobantePago, Date fechaEmision, MetodoPago metodoPago,
             double montoTotal, double montoPropina, double montoSinIGV,
-            double montoIGV, double montoReserva, Pedido pedido, Reserva reserva,
+            double montoIGV, Pedido pedido, Reserva reserva,
             ArrayList<DetalleBoleta> listaDetalleBoleta){
         super(idComprobantePago, fechaEmision, metodoPago,montoTotal, montoPropina,
-                montoSinIGV, montoIGV, montoReserva, pedido, reserva);
+                montoSinIGV, montoIGV, pedido, reserva);
         this.listaDetalleBoleta = new ArrayList<>(listaDetalleBoleta);
     }
     

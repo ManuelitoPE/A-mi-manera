@@ -13,7 +13,6 @@ public abstract class ComprobantePago {
     private double montoPropina;
     private double montoSinIGV;
     private double montoIGV;
-    private double montoReserva;
     
     private Pedido pedido;
     private Reserva reserva;
@@ -26,7 +25,7 @@ public abstract class ComprobantePago {
     
     public ComprobantePago(int idComprobantePago, Date fechaEmision, MetodoPago metodoPago,
             double montoTotal, double montoPropina, double montoSinIGV,
-            double montoIGV, double montoReserva, Pedido pedido, Reserva reserva){
+            double montoIGV, Pedido pedido, Reserva reserva){
         
         this.pedido = new Pedido(pedido);
         this.reserva = new Reserva(reserva);
@@ -37,7 +36,6 @@ public abstract class ComprobantePago {
         this.montoPropina = montoPropina;
         this.montoSinIGV = montoSinIGV;
         this.montoIGV = montoIGV;
-        this.montoReserva = montoReserva;
     }
     
     public ComprobantePago (ComprobantePago comprobantePago){
@@ -48,7 +46,6 @@ public abstract class ComprobantePago {
         this.montoPropina = comprobantePago.montoPropina;
         this.montoSinIGV = comprobantePago.montoSinIGV;
         this.montoIGV = comprobantePago.montoIGV;
-        this.montoReserva = comprobantePago.montoReserva;
         this.pedido = new Pedido(comprobantePago.pedido);
         this.reserva = new Reserva(comprobantePago.reserva);
     }
@@ -151,20 +148,7 @@ public abstract class ComprobantePago {
         this.montoIGV = montoIGV;
     }
 
-    /**
-     * @return the montoReserva
-     */
-    public double getMontoReserva() {
-        return montoReserva;
-    }
-
-    /**
-     * @param montoReserva the montoReserva to set
-     */
-    public void setMontoReserva(double montoReserva) {
-        this.montoReserva = montoReserva;
-    }
-
+   
     /**
      * @return the pedido
      */

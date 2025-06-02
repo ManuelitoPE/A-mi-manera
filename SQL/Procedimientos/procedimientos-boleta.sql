@@ -16,11 +16,12 @@ CREATE PROCEDURE insertarBoleta(
     IN p_montoSinIGV DECIMAL(10,2),
     IN p_montoIGV DECIMAL(10,2),
     IN p_idPedido INT,
+	IN p_idReserva INT,
     OUT p_id INT
 )
 BEGIN
-    INSERT INTO BOLETA(fechaEmision, metodoPago, montoTotal, montoPropina, montoSinIGV, montoIGV, idPedido)
-    VALUES(p_fechaEmision, p_metodoPago, p_montoTotal, p_montoPropina, p_montoSinIGV, p_montoIGV, p_idPedido);
+    INSERT INTO BOLETA(fechaEmision, metodoPago, montoTotal, montoPropina, montoSinIGV, montoIGV, idPedido, idReserva)
+    VALUES(p_fechaEmision, p_metodoPago, p_montoTotal, p_montoPropina, p_montoSinIGV, p_montoIGV, p_idPedido, p_idReserva);
     SET p_id = LAST_INSERT_ID();
 END //
 
@@ -32,6 +33,7 @@ CREATE PROCEDURE modificarBoleta(
     IN p_montoSinIGV DECIMAL(10,2),
     IN p_montoIGV DECIMAL(10,2),
     IN p_idPedido INT,
+	IN p_idReserva INT,
     IN p_id INT
 )
 BEGIN
@@ -43,7 +45,8 @@ BEGIN
         montoPropina = p_montoPropina,
         montoSinIGV = p_montoSinIGV,
         montoIGV = p_montoIGV,
-        idPedido = p_idPedido
+        idPedido = p_idPedido,
+		idReserva = p_idReserva
     WHERE idBoleta = p_id;
 END //
 

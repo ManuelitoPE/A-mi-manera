@@ -8,6 +8,7 @@ public class Mesa {
     private int idMesa;
     private int cantidadAsientos;
     private EstadoMesa estado;
+    
     private ArrayList<Pedido> listaPedidos;
     private ArrayList<Reserva> listaReservas;
 

@@ -59,12 +59,12 @@ public class PersonaJuridicaDAOTest implements ICrudDAOTest {
         boolean modifico = personaJuridicaDAO.modificar(personaJuridica);
         assertTrue(modifico);
         
-        PersonaJuridica personaNaturalModificada = personaJuridicaDAO.buscar(this.testId);
-        assertEquals(personaNaturalModificada.getNombre(), "Nombre Modificado");
-        assertEquals(personaNaturalModificada.getTelefono(), 1111111);
-        assertEquals(personaNaturalModificada.getCorreo(), "Correo Modificado");
-        assertEquals(personaNaturalModificada.getRUC(), "11111111111");
-        assertEquals(personaNaturalModificada.getRazonSocial(),"Razon Social Modificada");
+        PersonaJuridica personaJuridicaModificada = personaJuridicaDAO.buscar(this.testId);
+        assertEquals(personaJuridicaModificada.getNombre(), "Nombre Modificado");
+        assertEquals(personaJuridicaModificada.getTelefono(), 1111111);
+        assertEquals(personaJuridicaModificada.getCorreo(), "Correo Modificado");
+        assertEquals(personaJuridicaModificada.getRUC(), "11111111111");
+        assertEquals(personaJuridicaModificada.getRazonSocial(),"Razon Social Modificada");
     }
     
     @Test

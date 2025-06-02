@@ -9,21 +9,21 @@ DROP PROCEDURE IF EXISTS listarPedidos;
 DELIMITER //
 CREATE PROCEDURE insertarPedido(
     IN p_fecha DATE,
-    IN p_estado VARCHAR(20),
+    IN p_estadoPedido VARCHAR(20),
     IN p_montoTotal DECIMAL(10,2),
     IN p_idMesa INT,
     IN p_idMesero INT,
     OUT p_id INT
 )
 BEGIN
-    INSERT INTO PEDIDO(fechaHora, estado, montoTotal, idMesa, idMesero)
-    VALUES(p_fecha, p_estado, p_montoTotal, p_idMesa, p_idMesero);
+    INSERT INTO PEDIDO(fecha, estadoPedido, montoTotal, idMesa, idMesero)
+    VALUES(p_fecha, p_estadoPedido, p_montoTotal, p_idMesa, p_idMesero);
     SET p_id = LAST_INSERT_ID();
 END //
 
 CREATE PROCEDURE modificarPedido(
     IN p_fecha DATE,
-    IN p_estado VARCHAR(20),
+    IN p_estadoPedido VARCHAR(20),
     IN p_montoTotal DECIMAL(10,2),
     IN p_idMesa INT,
     IN p_idMesero INT,
@@ -32,8 +32,8 @@ CREATE PROCEDURE modificarPedido(
 BEGIN
     UPDATE PEDIDO
     SET 
-        fechaHora = p_fecha,
-        estado = p_estado,
+        fecha = p_fecha,
+        estadoPedido = p_estadoPedido,
         montoTotal = p_montoTotal,
         idMesa = p_idMesa,
         idMesero = p_idMesero

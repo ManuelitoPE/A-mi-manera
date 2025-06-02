@@ -8,12 +8,13 @@ import java.sql.Types;
 import java.sql.Timestamp;
 import com.restaurante.amm.amimanerapersistencia.dao.IFacturaDAO;
 import com.restaurante.amm.amimaneramodel.pagos.Factura;
+import com.restaurante.amm.amimaneramodel.gestionmesas.Reserva;
 import com.restaurante.amm.amimaneramodel.pagos.DetalleFactura;
 
 public class FacturaDAOImpl extends BaseDAOImpl<Factura> implements IFacturaDAO {
     @Override
     protected CallableStatement comandoInsertar(Connection conn, Factura factura) throws SQLException {
-        String sql = "{CALL insertarFactura(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+        String sql = "{CALL insertarFactura(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
         CallableStatement cmd = conn.prepareCall(sql);
         cmd.setTimestamp("p_fechaEmision", new Timestamp(factura.getFechaEmision().getTime()));
         cmd.setString("p_metodoPago", factura.getMetodoPago().name());
@@ -24,6 +25,7 @@ public class FacturaDAOImpl extends BaseDAOImpl<Factura> implements IFacturaDAO 
         cmd.setString("p_ruc", factura.getRUC());
         cmd.setString("p_razonSocial", factura.getRazonSocial());
         cmd.setInt("p_idPedido", factura.getPedido().getIdPedido());
+        cmd.setInt("p_idReserva", factura.getReserva().getIdReserva());
         cmd.registerOutParameter("p_id", Types.INTEGER);
         return cmd;
     }
@@ -41,6 +43,7 @@ public class FacturaDAOImpl extends BaseDAOImpl<Factura> implements IFacturaDAO 
         cmd.setString("p_ruc", factura.getRUC());
         cmd.setString("p_razonSocial", factura.getRazonSocial());
         cmd.setInt("p_idPedido", factura.getPedido().getIdPedido());
+        cmd.setInt("p_idReserva", factura.getReserva().getIdReserva());
         cmd.setInt("p_id", factura.getIdComprobantePago());
         return cmd;
     }
@@ -80,8 +83,9 @@ public class FacturaDAOImpl extends BaseDAOImpl<Factura> implements IFacturaDAO 
         factura.setMontoIGV(rs.getDouble("montoIGV"));
         factura.setRUC(rs.getString("RUC"));
         factura.setRazonSocial(rs.getString("razonSocial"));
-        // factura.setPedido(...) // Puedes mapear el pedido si lo necesitas
-        // factura.setListaDetalleFactura(...) // Puedes mapear los detalles si lo necesitas
+        factura.setPedido(new PedidoDAOImpl().buscar(rs.getInt("idPedido")));
+        factura.setReserva(new ReservaDAOImpl().buscar(rs.getInt("idReserva")));
+        
         return factura;
     }
 } 

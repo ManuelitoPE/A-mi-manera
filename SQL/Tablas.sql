@@ -4,9 +4,9 @@ USE Progra3AM;
 -- Eliminar tablas existentes (en orden inverso para respetar dependencias)
 DROP TABLE IF EXISTS DETALLEFACTURA;
 DROP TABLE IF EXISTS DETALLEBOLETA;
-DROP TABLE IF EXISTS RESERVA;
 DROP TABLE IF EXISTS FACTURA;
 DROP TABLE IF EXISTS BOLETA;
+DROP TABLE IF EXISTS RESERVA;
 DROP TABLE IF EXISTS LINEAPEDIDO;
 DROP TABLE IF EXISTS PRODUCTO;
 DROP TABLE IF EXISTS PEDIDO;
@@ -15,6 +15,7 @@ DROP TABLE IF EXISTS CUENTAUSUARIO;
 DROP TABLE IF EXISTS MESA;
 DROP TABLE IF EXISTS PERSONA_JURIDICA;
 DROP TABLE IF EXISTS PERSONA_NATURAL;
+DROP TABLE IF EXISTS TIPO_PRODUCTO;
 
 -- Tabla Persona Natural
 CREATE TABLE PERSONA_NATURAL (
@@ -64,14 +65,19 @@ CREATE TABLE TRABAJADOR (
 -- Tabla Pedido con relación a mesero
 CREATE TABLE PEDIDO (
     idPedido INT AUTO_INCREMENT PRIMARY KEY,
-    fechaHora DATETIME DEFAULT CURRENT_TIMESTAMP,
-    estado ENUM('EN_ORDEN', 'CANCELADO', 'PAGADO') DEFAULT 'EN_ORDEN',
+    fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
+    estadoPedido ENUM('EN_ORDEN', 'CANCELADO', 'ENTREGADO') DEFAULT 'EN_ORDEN',
     montoTotal DECIMAL(10,2) NOT NULL,
-    montoDescuento DECIMAL(10,2) DEFAULT 0,
     idMesa INT NOT NULL,
     idMesero INT NOT NULL,
     FOREIGN KEY (idMesa) REFERENCES MESA(idMesa),
     FOREIGN KEY (idMesero) REFERENCES TRABAJADOR(idTrabajador)
+);
+
+-- Tabla tipoProducto
+CREATE TABLE TIPO_PRODUCTO (
+	idTipoProducto INT AUTO_INCREMENT PRIMARY KEY,
+	descripcion VARCHAR(200) NOT NULL
 );
 
 -- Tabla Producto
@@ -80,47 +86,20 @@ CREATE TABLE PRODUCTO (
     nombre VARCHAR(100) NOT NULL,
     descripcion VARCHAR(1000),
     precioUnitario DECIMAL(10,2) NOT NULL CHECK (precioUnitario > 0),
-    TipoProducto ENUM('ENTRADA', 'PLATO_PRINCIPAL', 'POSTRE', 'BEBIDA') NOT NULL
+    idTipoProducto INT NOT NULL,
+    FOREIGN KEY (idTipoProducto) REFERENCES TIPO_PRODUCTO(idTipoProducto)
 );
 
 -- Tabla LineaPedido
 CREATE TABLE LINEAPEDIDO (
     idLineaPedido INT AUTO_INCREMENT PRIMARY KEY,
-    cantidad INT NOT NULL CHECK (cantidad > 0),
-    montoParcial DECIMAL(10,2) NOT NULL,
-    descripcion VARCHAR(200),
+    cantidadProducto INT NOT NULL CHECK (cantidadProducto > 0),
     idPedido INT NOT NULL,
     idProducto INT NOT NULL,
     FOREIGN KEY (idPedido) REFERENCES PEDIDO(idPedido),
     FOREIGN KEY (idProducto) REFERENCES PRODUCTO(idProducto)
 );
 
--- Tablas de comprobantes separadas
-CREATE TABLE BOLETA (
-    idBoleta INT AUTO_INCREMENT PRIMARY KEY,
-    fechaEmision DATETIME DEFAULT CURRENT_TIMESTAMP,
-    metodoPago ENUM('TARJETA', 'EFECTIVO') DEFAULT 'EFECTIVO',
-    montoTotal DECIMAL(10,2) NOT NULL,
-    montoPropina DECIMAL(10,2) DEFAULT 0,
-    montoSinIGV DECIMAL(10,2) NOT NULL,
-    montoIGV DECIMAL(10,2) NOT NULL,
-    idPedido INT NOT NULL,
-    FOREIGN KEY (idPedido) REFERENCES PEDIDO(idPedido)
-);
-
-CREATE TABLE FACTURA (
-    idFactura INT AUTO_INCREMENT PRIMARY KEY,
-    fechaEmision DATETIME DEFAULT CURRENT_TIMESTAMP,
-    metodoPago ENUM('TARJETA', 'EFECTIVO') DEFAULT 'EFECTIVO',
-    montoTotal DECIMAL(10,2) NOT NULL,
-    montoPropina DECIMAL(10,2) DEFAULT 0,
-    montoSinIGV DECIMAL(10,2) NOT NULL,
-    montoIGV DECIMAL(10,2) NOT NULL,
-    RUC VARCHAR(11) NOT NULL,
-    razonSocial VARCHAR(100) NOT NULL,
-    idPedido INT NOT NULL,
-    FOREIGN KEY (idPedido) REFERENCES PEDIDO(idPedido)
-);
 
 -- Tabla Reserva con estado ENUM
 CREATE TABLE RESERVA (
@@ -140,13 +119,50 @@ CREATE TABLE RESERVA (
     FOREIGN KEY (idMesa) REFERENCES MESA(idMesa)
 );
 
+
+-- Tablas de comprobantes separadas
+CREATE TABLE BOLETA (
+    idBoleta INT AUTO_INCREMENT PRIMARY KEY,
+    fechaEmision DATETIME DEFAULT CURRENT_TIMESTAMP,
+    metodoPago ENUM('TARJETA', 'EFECTIVO') DEFAULT 'EFECTIVO',
+    montoTotal DECIMAL(10,2) NOT NULL,
+    montoPropina DECIMAL(10,2) DEFAULT 0,
+    montoSinIGV DECIMAL(10,2) NOT NULL,
+    montoIGV DECIMAL(10,2) NOT NULL,
+    idPedido INT NOT NULL,
+    FOREIGN KEY (idPedido) REFERENCES PEDIDO(idPedido),
+	idReserva INT NOT NULL,
+	FOREIGN KEY (idReserva) REFERENCES RESERVA(idReserva)
+);
+
+CREATE TABLE FACTURA (
+    idFactura INT AUTO_INCREMENT PRIMARY KEY,
+    fechaEmision DATETIME DEFAULT CURRENT_TIMESTAMP,
+    metodoPago ENUM('TARJETA', 'EFECTIVO') DEFAULT 'EFECTIVO',
+    montoTotal DECIMAL(10,2) NOT NULL,
+    montoPropina DECIMAL(10,2) DEFAULT 0,
+    montoSinIGV DECIMAL(10,2) NOT NULL,
+    montoIGV DECIMAL(10,2) NOT NULL,
+    RUC VARCHAR(11) NOT NULL,
+    razonSocial VARCHAR(100) NOT NULL,
+    idPedido INT NOT NULL,
+    FOREIGN KEY (idPedido) REFERENCES PEDIDO(idPedido),
+    idReserva INT NOT NULL,
+	FOREIGN KEY (idReserva) REFERENCES RESERVA(idReserva)
+);
+
+
 -- Tabla DetalleBoleta
+
 CREATE TABLE DETALLEBOLETA (
     idDetalleBoleta INT AUTO_INCREMENT PRIMARY KEY,
-    nombreProducto VARCHAR(100) NOT NULL,
-    montoProducto DECIMAL(10,2) NOT NULL,
-    idComprobante INT NOT NULL,
-    FOREIGN KEY (idComprobante) REFERENCES BOLETA(idBoleta)
+    cantidadProducto INT NOT NULL,
+	precioUnitario DECIMAL(10,2) NOT NULL,
+	subTotal DECIMAL(10,2) NOT NULL,
+	idProducto INT NOT NULL,
+	idComprobantePago INT NOT NULL,
+    FOREIGN KEY (idProducto) REFERENCES PRODUCTO(idProducto),
+    FOREIGN KEY (idComprobantePago) REFERENCES BOLETA(idBoleta)
 );
 
 -- Tabla DetalleFactura
@@ -157,13 +173,13 @@ CREATE TABLE DETALLEFACTURA (
     subTotal DECIMAL(10,2) NOT NULL,
     idProducto INT NOT NULL,
     idComprobantePago INT NOT NULL,
-    FOREIGN KEY (idComprobantePago) REFERENCES FACTURA(idComprobantePago),
+    FOREIGN KEY (idComprobantePago) REFERENCES FACTURA(idFactura),
     FOREIGN KEY (idProducto) REFERENCES PRODUCTO(idProducto)
 );
+
 
 -- Índices para optimización
 CREATE INDEX idx_persona_natural_nombre ON PERSONA_NATURAL(nombre);
 CREATE INDEX idx_persona_juridica_nombre ON PERSONA_JURIDICA(nombre);
-CREATE INDEX idx_pedido_estado ON PEDIDO(estado);
-CREATE INDEX idx_producto_tipo ON PRODUCTO(TipoProducto);
+CREATE INDEX idx_pedido_estado ON PEDIDO(estadoPedido);
 CREATE INDEX idx_mesa_estado ON MESA(estado); 

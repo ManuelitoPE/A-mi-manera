@@ -1,0 +1,92 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="AmiManeraWeb.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>A mi Manera</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="Content/style.css" />
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="Content/Images/logo.png" alt="Tasty Station" />
+            </div>
+            <!--Navegacion-->
+            <nav class="nav-menu">        
+                <a href="" class="nav-item">
+                    <i class="fas fa-receipt"></i>
+                    <span>Pedidos</span>
+                </a>
+                <a href="" class="nav-item active">
+                    <i class="fas fa-border-all"></i>
+                    <span>Mesas</span>
+                </a>
+                <a href="" class="nav-item">
+                    <i class="fas fa-utensils"></i>
+                    <span>Platos</span>
+                </a>
+                <a href="" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span>Reportes</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Configuracion</span>
+                </a>
+                <a href="" class="nav-item">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Ayuda</span>
+                </a>
+                <a href="javascript:void(0);" class="nav-item" id="btnLogout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar mesas, pedidos y mas" />
+                </div>
+                
+                <div class="header-right">
+                    <div class="notifications">
+                        <i class="far fa-bell"></i>
+                    </div>
+                    <div class="user-profile">
+                        <img src="Content/Images/profile.jpg" alt="User Profile" />
+                        <div class="user-info">
+                            <span class="user-name">Ibrahim Kadri</span>
+                            <span class="user-role">Admin</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Page Content -->
+            <div class="page-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="Scripts/app.js"></script>
+</body>
+</html>
