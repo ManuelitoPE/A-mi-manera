@@ -11,5 +11,5 @@ import com.restaurante.amm.amimaneramodel.personal.CuentaUsuario;
  * @author USER
  */
 public interface ICuentaUsuarioBO extends IBaseBO<CuentaUsuario>{
-    
+    CuentaUsuario autenticar(String nombreUsuario,String contrasenia);
 }

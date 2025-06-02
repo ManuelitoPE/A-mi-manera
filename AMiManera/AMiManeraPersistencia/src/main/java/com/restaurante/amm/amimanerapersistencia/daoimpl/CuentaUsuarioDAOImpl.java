@@ -1,5 +1,6 @@
 package com.restaurante.amm.amimanerapersistencia.daoimpl;
 
+import com.restaurante.amm.amimaneradbmanager.DBManager;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -7,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Types;
 import com.restaurante.amm.amimanerapersistencia.dao.ICuentaUsuarioDAO;
 import com.restaurante.amm.amimaneramodel.personal.CuentaUsuario;
+import java.sql.PreparedStatement;
 
 public class CuentaUsuarioDAOImpl extends BaseDAOImpl<CuentaUsuario> implements ICuentaUsuarioDAO {
     @Override
@@ -63,4 +65,38 @@ public class CuentaUsuarioDAOImpl extends BaseDAOImpl<CuentaUsuario> implements 
         cuentaUsuario.setTipoUsuario(rs.getString("tipoUsuario"));
         return cuentaUsuario;
     }
+    
+    protected CallableStatement comandoAutenticar(Connection conn,
+            String nombreUsuario,String contrasenia) throws SQLException {
+        String sql = "{CALL autenticarUsuario(?, ?)}";
+        CallableStatement cmd = conn.prepareCall(sql);
+        
+        cmd.setString("p_nombreUsuario", nombreUsuario);
+        cmd.setString("p_contrasenia", contrasenia);
+        return cmd;
+    }
+    
+    @Override
+    public CuentaUsuario autenticar(String usuario, String contrasenia) {
+        try (
+            Connection conn = DBManager.getInstance().getConnection();
+            PreparedStatement ps = this.comandoAutenticar(conn, usuario, contrasenia);
+        ) {
+            ResultSet rs = ps.executeQuery();
+            
+            if (!rs.next()) {
+                System.err.println("No se encontro el registro con usuario: " + usuario);
+                return null;
+            }         
+            return this.mapearModelo(rs);
+        }
+        catch (SQLException e) {
+            System.err.println("Error SQL durante la busqueda: " + e.getMessage());
+            throw new RuntimeException("No se pudo buscar el registro.", e);
+        }
+        catch (Exception e) {
+            System.err.println("Error inpesperado: " + e.getMessage());
+            throw new RuntimeException("Error inesperado al buscar el registro.", e);
+        }
+    }    
 } 

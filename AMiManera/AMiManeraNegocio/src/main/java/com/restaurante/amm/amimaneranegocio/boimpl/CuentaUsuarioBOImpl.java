@@ -23,21 +23,29 @@ public class CuentaUsuarioBOImpl implements ICuentaUsuarioBO{
         this.cuentaUsuarioDAO = new CuentaUsuarioDAOImpl();
     }
     
+    @Override
     public void guardar(CuentaUsuario cuenta,Estado estado){
         if (estado == Estado.NUEVO) this.cuentaUsuarioDAO.insertar(cuenta);
         else if (estado == Estado.MODIFICAR) this.cuentaUsuarioDAO.modificar(cuenta);
     }
     
+    @Override
     public void eliminar(int id){
         this.cuentaUsuarioDAO.eliminar(id);
     }
     
+    @Override
     public CuentaUsuario obtener(int id){
         return this.cuentaUsuarioDAO.buscar(id);
     }
     
+    @Override
     public List<CuentaUsuario> listar(){
         return this.cuentaUsuarioDAO.listar();
     }
     
+    @Override
+    public CuentaUsuario autenticar(String nombreUsuario,String contrasenia){
+        return this.cuentaUsuarioDAO.autenticar(nombreUsuario, contrasenia);
+    }
 }

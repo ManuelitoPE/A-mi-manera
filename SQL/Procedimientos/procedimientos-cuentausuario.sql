@@ -54,4 +54,14 @@ BEGIN
     FROM CuentaUsuario;
 END //
 
+-- Procedimiento para buscar una cuenta de usuario por nombre de usuario y contrasenia
+CREATE PROCEDURE autenticarUsuario(
+    IN p_nombreUsuario VARCHAR(50),
+    IN p_contrasenia VARCHAR(50)
+)
+BEGIN
+    SELECT idCuentaUsuario, nombreUsuario, contrasenia, tipoUsuario
+    FROM CuentaUsuario
+    WHERE nombreUsuario = p_nombreUsuario AND contrasenia = p_contrasenia;
+END //
 DELIMITER ; 
