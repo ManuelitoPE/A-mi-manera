@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.14.36127.28 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmiManeraWeb", "AmiManeraWeb\AmiManeraWeb.csproj", "{176EBC47-01EE-49BB-ACA5-B69EA67C08ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmiManeraWeb", "AmiManeraWeb\AmiManeraWeb.csproj", "{8FB9BE3D-3744-466B-8407-0A04FD9BC84A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{176EBC47-01EE-49BB-ACA5-B69EA67C08ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{176EBC47-01EE-49BB-ACA5-B69EA67C08ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{176EBC47-01EE-49BB-ACA5-B69EA67C08ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{176EBC47-01EE-49BB-ACA5-B69EA67C08ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FB9BE3D-3744-466B-8407-0A04FD9BC84A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FB9BE3D-3744-466B-8407-0A04FD9BC84A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FB9BE3D-3744-466B-8407-0A04FD9BC84A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FB9BE3D-3744-466B-8407-0A04FD9BC84A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3D5052BC-F4C9-456C-86B9-85B128983A04}
+		SolutionGuid = {807B3FF7-BE69-42CC-B012-DDA3A2AB881F}
 	EndGlobalSection
 EndGlobal
