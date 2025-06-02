@@ -10,7 +10,7 @@
     <artifactId>AMiManeraWS</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>AMiManeraWS-1.0-SNAPSHOT</name>
+    <name>AMiManeraWS</name>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
