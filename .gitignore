@@ -76,3 +76,7 @@ Thumbs.db
 application.properties
 application-dev.properties
 application-prod.properties
+
+#Archivos del proyecto web
+/packages/
+*.csproj.user
