@@ -10,7 +10,8 @@ import jakarta.jws.WebParam;
 import jakarta.xml.ws.WebServiceException;
 import java.util.List;
 
-@WebService(serviceName = "PedidoWS")
+@WebService(serviceName = "PedidoWS",
+        targetNamespace = "https://servicios.amimaneraws.amm.restaurante.com")
 public class PedidoWS {
 
     private final IPedidoBO pedidoBO;

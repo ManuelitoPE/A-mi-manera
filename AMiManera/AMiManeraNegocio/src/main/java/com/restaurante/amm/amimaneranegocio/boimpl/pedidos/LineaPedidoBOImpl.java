@@ -1,4 +1,4 @@
-package com.restaurante.amm.amimaneranegocio.boimpl.gestionmesas;
+package com.restaurante.amm.amimaneranegocio.boimpl.pedidos;
 
 import com.restaurante.amm.amimaneramodel.pedidos.LineaPedido;
 import com.restaurante.amm.amimaneranegocio.Estado;
