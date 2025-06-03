@@ -62,7 +62,7 @@
             <header class="header">
                 <div class="search-container">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Buscar mesas, pedidos y mas" />
+                    <input type="text" placeholder="Buscar pedidos" />
                 </div>
                 
                 <div class="header-right">

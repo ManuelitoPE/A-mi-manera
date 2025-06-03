@@ -7,20 +7,20 @@
     <div class="filter-controls">
         <div class="tab-filters">
             <asp:LinkButton ID="btnAll" runat="server" CssClass="tab-filter active" OnClick="TabFilter_Click">
-                <span>All</span>
+                <span>Pedidos</span>
                 <span class="count">12</span>
             </asp:LinkButton>
-            <asp:LinkButton ID="btnReservation" runat="server" CssClass="tab-filter" OnClick="TabFilter_Click">
+    <!--        <asp:LinkButton ID="btnReservation" runat="server" CssClass="tab-filter" OnClick="TabFilter_Click">
                 <span>Reservation</span>
                 <span class="count">4</span>
             </asp:LinkButton>
             <asp:LinkButton ID="btnOnDine" runat="server" CssClass="tab-filter" OnClick="TabFilter_Click">
                 <span>On Dine</span>
                 <span class="count">3</span>
-            </asp:LinkButton>
+            </asp:LinkButton> -->
         </div>
         
-        <!-- Date Navigation -->
+        <!-- Date Navigation 
         <div class="date-navigation">
             <asp:LinkButton ID="btnPrevDate" runat="server" CssClass="date-nav-btn" OnClick="DateNav_Click">
                 <i class="fas fa-chevron-left"></i>
@@ -33,18 +33,20 @@
             <asp:LinkButton ID="btnNextDate" runat="server" CssClass="date-nav-btn" OnClick="DateNav_Click">
                 <i class="fas fa-chevron-right"></i>
             </asp:LinkButton>
-        </div>
+        </div> -->
         
         <!-- Search Box -->
         <div class="customer-search">
             <i class="fas fa-search"></i>
-            <asp:TextBox ID="txtSearchCustomers" runat="server" placeholder="Search customers" CssClass="search-input"></asp:TextBox>
-            <button type="button" class="filter-btn"><i class="fas fa-sliders-h"></i></button>
+            <input type="text" class="search-input" placeholder="Buscar pedidos" />
+           <!-- <asp:TextBox ID="txtSearchCustomers" runat="server" placeholder="Buscar Mesa" CssClass="search-input filter-btn"></asp:TextBox>
+            <button type="button" class="filter-btn"><i class="fas"></i>
+            </button> -->
         </div>
     </div>
     
     <div class="tables-content">
-        <!-- Reservations List -->
+        <!-- Pedidos List -->
         <div class="reservations-list">
             <asp:Repeater ID="rptReservations" runat="server" OnItemCommand="rptReservations_ItemCommand">
                 <ItemTemplate>
@@ -81,35 +83,36 @@
                 </ItemTemplate>
             </asp:Repeater>
             
-            <!-- Add New Reservation Button -->
+            <!-- Add New Reservation Button 
             <asp:LinkButton ID="btnAddReservation" runat="server" CssClass="add-reservation-btn" OnClick="btnAddReservation_Click">
                 <i class="fas fa-plus"></i>
                 <span>Add New Reservation</span>
-            </asp:LinkButton>
+            </asp:LinkButton> --> 
         </div>
         
         <!-- Tables Layout -->
         <div class="tables-layout">
             <!-- Area Tabs -->
             <div class="area-tabs">
-                <asp:LinkButton ID="btnMainDining" runat="server" CssClass="area-tab active" OnClick="AreaTab_Click">Main Dining</asp:LinkButton>
-                <asp:LinkButton ID="btnTerrace" runat="server" CssClass="area-tab" OnClick="AreaTab_Click">Terrace</asp:LinkButton>
-                <asp:LinkButton ID="btnOutdoor" runat="server" CssClass="area-tab" OnClick="AreaTab_Click">Outdoor</asp:LinkButton>
-            </div>
+                <asp:LinkButton ID="btnMainDining" runat="server" CssClass="area-tab active" OnClick="AreaTab_Click">Todos</asp:LinkButton>
+                <asp:LinkButton ID="btnTerrace" runat="server" CssClass="area-tab" OnClick="AreaTab_Click">Libre</asp:LinkButton>
+                <asp:LinkButton ID="btnOutdoor" runat="server" CssClass="area-tab" OnClick="AreaTab_Click">Ocupada</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="area-tab" OnClick="AreaTab_Click">Reservada</asp:LinkButton>
+             </div>
             
             <!-- Status Legend -->
             <div class="status-legend">
                 <div class="legend-item">
                     <span class="status-dot available"></span>
-                    <span>Available</span>
+                    <span>Libre</span>
                 </div>
                 <div class="legend-item">
                     <span class="status-dot reserved"></span>
-                    <span>Reserved</span>
+                    <span>Reservada</span>
                 </div>
                 <div class="legend-item">
                     <span class="status-dot ondine"></span>
-                    <span>On Dine</span>
+                    <span>Ocupada</span>
                 </div>
             </div>
             
