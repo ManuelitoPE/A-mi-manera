@@ -78,5 +78,5 @@ application-dev.properties
 application-prod.properties
 
 #Archivos del proyecto web
-/packages/
-*.csproj.user
+**/packages/
+**/*.csproj.user
