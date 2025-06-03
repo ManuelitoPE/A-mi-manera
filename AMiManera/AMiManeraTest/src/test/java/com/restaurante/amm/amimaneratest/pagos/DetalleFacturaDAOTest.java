@@ -1,12 +1,12 @@
 
-package com.restaurante.amm.amimanerapersistencia.test.dao.pagos;
+package com.restaurante.amm.amimaneratest.pagos;
 
 import com.restaurante.amm.amimaneramodel.pagos.Factura;
 import com.restaurante.amm.amimaneramodel.pagos.DetalleFactura;
 import com.restaurante.amm.amimaneramodel.pedidos.Producto;
 import com.restaurante.amm.amimanerapersistencia.dao.pagos.IDetalleFacturaDAO;
 import com.restaurante.amm.amimanerapersistencia.daoimpl.pagos.DetalleFacturaDAOImpl;
-import com.restaurante.amm.amimanerapersistencia.test.dao.ICrudDAOTest;
+import com.restaurante.amm.amimaneratest.ICrudDAOTest;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;

@@ -1,4 +1,4 @@
-package com.restaurante.amm.amimanerapersistencia.test.dao;
+package com.restaurante.amm.amimaneratest;
 
 public interface ICrudDAOTest {
     void debeInsertar();

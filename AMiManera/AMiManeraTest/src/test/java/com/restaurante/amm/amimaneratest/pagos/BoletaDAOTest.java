@@ -1,5 +1,5 @@
 
-package com.restaurante.amm.amimanerapersistencia.test.dao.pagos;
+package com.restaurante.amm.amimaneratest.pagos;
 
 import com.restaurante.amm.amimaneramodel.gestionmesas.Reserva;
 import com.restaurante.amm.amimaneramodel.pagos.Boleta;
@@ -7,7 +7,7 @@ import com.restaurante.amm.amimaneramodel.pagos.MetodoPago;
 import com.restaurante.amm.amimaneramodel.pedidos.Pedido;
 import com.restaurante.amm.amimanerapersistencia.dao.pagos.IBoletaDAO;
 import com.restaurante.amm.amimanerapersistencia.daoimpl.pagos.BoletaDAOImpl;
-import com.restaurante.amm.amimanerapersistencia.test.dao.ICrudDAOTest;
+import com.restaurante.amm.amimaneratest.ICrudDAOTest;
 import java.util.Date;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;

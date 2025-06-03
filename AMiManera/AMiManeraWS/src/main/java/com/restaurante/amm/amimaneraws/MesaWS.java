@@ -1,4 +1,4 @@
-package com.restaurante.amm.amimaneraws.gestionmesas;
+package com.restaurante.amm.amimaneraws;
 
 import com.restaurante.amm.amimaneramodel.gestionmesas.Mesa;
 import com.restaurante.amm.amimaneranegocio.bo.gestionmesas.IMesaBO;

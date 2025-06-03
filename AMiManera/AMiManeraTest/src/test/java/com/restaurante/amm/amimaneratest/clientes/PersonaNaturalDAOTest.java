@@ -1,10 +1,10 @@
 
-package com.restaurante.amm.amimanerapersistencia.test.dao.clientes;
+package com.restaurante.amm.amimaneratest.clientes;
 
 import com.restaurante.amm.amimaneramodel.clientes.PersonaNatural;
 import com.restaurante.amm.amimanerapersistencia.dao.clientes.IPersonaNaturalDAO;
 import com.restaurante.amm.amimanerapersistencia.daoimpl.clientes.PersonaNaturalDAOImpl;
-import com.restaurante.amm.amimanerapersistencia.test.dao.ICrudDAOTest;
+import com.restaurante.amm.amimaneratest.ICrudDAOTest;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;

@@ -1,9 +1,9 @@
-package com.restaurante.amm.amimanerapersistencia.test.dao.pedidos;
+package com.restaurante.amm.amimaneratest.pedidos;
 
 import com.restaurante.amm.amimanerapersistencia.dao.pedidos.ITipoProductoDAO;
 import com.restaurante.amm.amimanerapersistencia.daoimpl.pedidos.TipoProductoDAOImpl;
 import com.restaurante.amm.amimaneramodel.pedidos.TipoProducto;
-import com.restaurante.amm.amimanerapersistencia.test.dao.ICrudDAOTest;
+import com.restaurante.amm.amimaneratest.ICrudDAOTest;
 
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -19,7 +19,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class TipoProductoDAOTest implements ICrudDAOTest{
+public class TipoProductoDAOTest implements ICrudDAOTest {
     private int testId;
     private final int idIncorrecto = 99999;
 

@@ -1,15 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.restaurante.amm.amimanerapersistencia.test.dao.pedidos;
+
+package com.restaurante.amm.amimaneratest.pedidos;
 import com.restaurante.amm.amimanerapersistencia.dao.pedidos.IPedidoDAO;
 import com.restaurante.amm.amimanerapersistencia.daoimpl.pedidos.PedidoDAOImpl;
 import com.restaurante.amm.amimaneramodel.pedidos.Pedido;
 import com.restaurante.amm.amimaneramodel.pedidos.EstadoPedido;
 import com.restaurante.amm.amimaneramodel.gestionmesas.Mesa;
 import com.restaurante.amm.amimaneramodel.personal.Mesero;
-import com.restaurante.amm.amimanerapersistencia.test.dao.ICrudDAOTest;
+import com.restaurante.amm.amimaneratest.ICrudDAOTest;
 
 import java.util.Date;
 import java.util.List;
@@ -28,7 +25,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 
-public class PedidoDAOTest implements ICrudDAOTest{
+public class PedidoDAOTest implements ICrudDAOTest {
     private int testId;
     private final int idIncorrecto = 99999;
     

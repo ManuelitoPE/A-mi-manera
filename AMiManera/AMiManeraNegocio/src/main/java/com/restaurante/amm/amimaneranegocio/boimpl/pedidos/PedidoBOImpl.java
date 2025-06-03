@@ -36,4 +36,10 @@ public class PedidoBOImpl implements IPedidoBO{
         else if (estado == Estado.MODIFICAR) this.pedidoDAO.modificar(modelo);
     }
     
+    @Override
+    public List<Pedido> listarPedidosPorMesa(int idMesa) {
+        return pedidoDAO.listarPorMesa(idMesa);
+    }
+    
+    
 }
