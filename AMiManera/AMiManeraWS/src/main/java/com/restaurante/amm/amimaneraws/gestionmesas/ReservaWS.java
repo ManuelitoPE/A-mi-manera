@@ -1,4 +1,4 @@
-package com.restaurante.amm.amimaneraws;
+package com.restaurante.amm.amimaneraws.gestionmesas;
 
 import com.restaurante.amm.amimaneramodel.gestionmesas.Reserva;
 import com.restaurante.amm.amimaneranegocio.Estado;
@@ -10,7 +10,8 @@ import jakarta.jws.WebParam;
 import jakarta.xml.ws.WebServiceException;
 import java.util.List;
 
-@WebService(serviceName = "ReservaWS")
+@WebService(serviceName = "ReservaWS",
+        targetNamespace = "https://servicios.amimaneraws.amm.restaurante.com")
 public class ReservaWS {
 
     private final IReservaBO reservaBO;

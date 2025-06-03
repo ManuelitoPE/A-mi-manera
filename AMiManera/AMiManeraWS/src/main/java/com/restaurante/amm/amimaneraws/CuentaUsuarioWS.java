@@ -6,7 +6,8 @@ import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
 
-@WebService(serviceName = "CuentaUsuarioWS")
+@WebService(serviceName = "CuentaUsuarioWS",
+        targetNamespace = "https://servicios.amimaneraws.amm.restaurante.com")
 public class CuentaUsuarioWS {
 
     @WebMethod(operationName = "login")
