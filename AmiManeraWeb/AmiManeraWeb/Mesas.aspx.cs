@@ -55,7 +55,9 @@ namespace AmiManeraWeb
                 new ReservationViewModel { ReservationId = 4, CustomerName = "Khunais ibn Hudhafa", TableNumber = 4, People = 3, Time = "", Status = "OnDine", ContactNumber = "", PaymentStatus = "OnDine" },
                 new ReservationViewModel { ReservationId = 5, CustomerName = "Available Now", TableNumber = 5, People = 0, Time = "", Status = "Available", ContactNumber = "", PaymentStatus = "Free" },
                 new ReservationViewModel { ReservationId = 6, CustomerName = "Mus'ab ibn Umayr", TableNumber = 6, People = 7, Time = "8:25", Status = "Reserved", ContactNumber = "+84 800 563 554", PaymentStatus = "Unpaid" },
-                new ReservationViewModel { ReservationId = 7, CustomerName = "Shuja ibn Wahb", TableNumber = 7, People = 10, Time = "9:00", Status = "Reserved", ContactNumber = "", PaymentStatus = "Payment" }
+                new ReservationViewModel { ReservationId = 7, CustomerName = "Shuja ibn Wahb", TableNumber = 7, People = 10, Time = "9:00", Status = "Reserved", ContactNumber = "", PaymentStatus = "Payment" },
+                new ReservationViewModel { ReservationId = 7, CustomerName = "Shuja ibn Wahb", TableNumber = 7, People = 10, Time = "9:00", Status = "Reserved", ContactNumber = "", PaymentStatus = "Payment" },
+                new ReservationViewModel { ReservationId = 7, CustomerName = "Shuja ibn Wahb", TableNumber = 7, People = 10, Time = "9:00", Status = "Reserved", ContactNumber = "", PaymentStatus = "Payment" },
             };
         }
 

@@ -70,6 +70,7 @@
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\style.css" />
     <Content Include="Mesas.aspx" />
+    <Content Include="Platos.aspx" />
     <Content Include="Scripts\app.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -80,6 +81,13 @@
     </Compile>
     <Compile Include="Mesas.aspx.designer.cs">
       <DependentUpon>Mesas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Platos.aspx.cs">
+      <DependentUpon>Platos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Platos.aspx.designer.cs">
+      <DependentUpon>Platos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

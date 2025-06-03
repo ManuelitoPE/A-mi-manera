@@ -22,33 +22,33 @@
             </div>
             <!--Navegacion-->
             <nav class="nav-menu">        
-                <a href="" class="nav-item">
+                <a href="" class="nav-item" >
                     <i class="fas fa-receipt"></i>
                     <span>Pedidos</span>
                 </a>
-                <a href="" class="nav-item active">
+                <a href="Mesas.aspx" class="nav-item <%= Request.Path.EndsWith("Mesas.aspx") ? "active" : "" %>">
                     <i class="fas fa-border-all"></i>
                     <span>Mesas</span>
                 </a>
-                <a href="" class="nav-item">
+                <a href="Platos.aspx" class="nav-item <%= Request.Path.EndsWith("Platos.aspx") ? "active" : "" %>">
                     <i class="fas fa-utensils"></i>
                     <span>Platos</span>
                 </a>
-                <a href="" class="nav-item">
+                <a href="" class="nav-item" >
                     <i class="fas fa-users"></i>
                     <span>Reportes</span>
                 </a>
             </nav>
             
             <div class="sidebar-footer">
-                <a href="" class="nav-item">
+               <!-- <a href="" class="nav-item">
                     <i class="fas fa-cog"></i>
                     <span>Configuracion</span>
                 </a>
                 <a href="" class="nav-item">
                     <i class="fas fa-question-circle"></i>
                     <span>Ayuda</span>
-                </a>
+                </a>-->
                 <a href="javascript:void(0);" class="nav-item" id="btnLogout">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
@@ -81,8 +81,8 @@
             
             <!-- Page Content -->
             <div class="page-content">
-                <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder> 
             </div>
         </div>
     </div>

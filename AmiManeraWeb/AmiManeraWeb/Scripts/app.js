@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Animate tables on load
     animateTablesOnLoad();
+
+   
 });
 
 /**

@@ -44,51 +44,9 @@
             </button> -->
         </div>
     </div>
-    
-    <div class="tables-content">
-        <!-- Pedidos List -->
-        <div class="reservations-list">
-            <asp:Repeater ID="rptReservations" runat="server" OnItemCommand="rptReservations_ItemCommand">
-                <ItemTemplate>
-                    <div class="reservation-card <%# GetStatusClass(Eval("Status").ToString()) %>">
-                        <div class="reservation-status">
-                            <div class="time">
-                                <div class="hour"><%# Eval("Time") %></div>
-                                <div class="period">PM</div>
-                            </div>
-                            <div class="status-label"><%# GetStatusLabel(Eval("Status").ToString()) %></div>
-                        </div>
-                        <div class="reservation-details">
-                            <div class="customer-name"><%# Eval("CustomerName") %></div>
-                            <div class="reservation-info">
-                                <div class="table-info">
-                                    <i class="fas fa-border-all"></i>
-                                    <span><%# Eval("TableNumber") %></span>
-                                </div>
-                                <div class="people-info">
-                                    <i class="fas fa-user-friends"></i>
-                                    <span><%# Eval("People") %></span>
-                                </div>
-                            </div>
-                            <div class="contact-info">
-                                <i class="fas fa-phone-alt"></i>
-                                <span><%# Eval("ContactNumber") %></span>
-                            </div>
-                            <div class="payment-status <%# GetPaymentStatusClass(Eval("PaymentStatus").ToString()) %>">
-                                <i class="<%# GetPaymentIcon(Eval("PaymentStatus").ToString()) %>"></i>
-                                <span><%# Eval("PaymentStatus") %></span>
-                            </div>
-                        </div>
-                    </div>
-                </ItemTemplate>
-            </asp:Repeater>
-            
-            <!-- Add New Reservation Button 
-            <asp:LinkButton ID="btnAddReservation" runat="server" CssClass="add-reservation-btn" OnClick="btnAddReservation_Click">
-                <i class="fas fa-plus"></i>
-                <span>Add New Reservation</span>
-            </asp:LinkButton> --> 
-        </div>
+    <div class="main-content-tables">
+            <div class="tables-content">
+     
         
         <!-- Tables Layout -->
         <div class="tables-layout">
@@ -146,8 +104,53 @@
                 </asp:Repeater>
             </div>
         </div>
+        <!-- Pedidos List -->
+        <div class="reservations-list">
+            <asp:Repeater ID="rptReservations" runat="server" OnItemCommand="rptReservations_ItemCommand">
+                <ItemTemplate>
+                    <div class="reservation-card <%# GetStatusClass(Eval("Status").ToString()) %>">
+                        <div class="reservation-status">
+                            <div class="time">
+                                <div class="hour"><%# Eval("Time") %></div>
+                                <div class="period">PM</div>
+                            </div>
+                            <div class="status-label"><%# GetStatusLabel(Eval("Status").ToString()) %></div>
+                        </div>
+                        <div class="reservation-details">
+                            <div class="customer-name"><%# Eval("CustomerName") %></div>
+                            <div class="reservation-info">
+                                <div class="table-info">
+                                    <i class="fas fa-border-all"></i>
+                                    <span><%# Eval("TableNumber") %></span>
+                                </div>
+                                <div class="people-info">
+                                    <i class="fas fa-user-friends"></i>
+                                    <span><%# Eval("People") %></span>
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <i class="fas fa-phone-alt"></i>
+                                <span><%# Eval("ContactNumber") %></span>
+                            </div>
+                            <div class="payment-status <%# GetPaymentStatusClass(Eval("PaymentStatus").ToString()) %>">
+                                <i class="<%# GetPaymentIcon(Eval("PaymentStatus").ToString()) %>"></i>
+                                <span><%# Eval("PaymentStatus") %></span>
+                            </div>
+                        </div>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
+    
+            <!-- Add New Reservation Button 
+            <asp:LinkButton ID="btnAddReservation" runat="server" CssClass="add-reservation-btn" OnClick="btnAddReservation_Click">
+                <i class="fas fa-plus"></i>
+                <span>Add New Reservation</span>
+            </asp:LinkButton> --> 
+        </div>
     </div>
 </div>
+    </div>
+    
 
 <!-- Add Reservation Modal -->
 <div id="addReservationModal" class="modal">

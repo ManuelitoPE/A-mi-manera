@@ -78,24 +78,6 @@ namespace AmiManeraWeb
         protected global::System.Web.UI.WebControls.TextBox txtSearchCustomers;
 
         /// <summary>
-        /// rptReservations control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptReservations;
-
-        /// <summary>
-        /// btnAddReservation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnAddReservation;
-
-        /// <summary>
         /// btnMainDining control.
         /// </summary>
         /// <remarks>
@@ -139,6 +121,24 @@ namespace AmiManeraWeb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptTables;
+
+        /// <summary>
+        /// rptReservations control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptReservations;
+
+        /// <summary>
+        /// btnAddReservation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnAddReservation;
 
         /// <summary>
         /// txtCustomerName control.
