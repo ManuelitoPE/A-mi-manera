@@ -7,7 +7,9 @@ package com.restaurante.amm.amimaneranegocio.boimpl;
 import com.restaurante.amm.amimaneramodel.pedidos.Pedido;
 import com.restaurante.amm.amimaneranegocio.Estado;
 import com.restaurante.amm.amimaneranegocio.bo.IPedidoBO;
+import com.restaurante.amm.amimanerapersistencia.dao.ILineaPedidoDAO;
 import com.restaurante.amm.amimanerapersistencia.dao.IPedidoDAO;
+import com.restaurante.amm.amimanerapersistencia.daoimpl.LineaPedidoDAOImpl;
 import com.restaurante.amm.amimanerapersistencia.daoimpl.PedidoDAOImpl;
 import java.util.List;
 
@@ -18,9 +20,11 @@ import java.util.List;
 public class PedidoBOImpl implements IPedidoBO{
 
     private final IPedidoDAO pedidoDAO;
+    private final ILineaPedidoDAO lineaPedidoDAO;
     
     public PedidoBOImpl(){
         this.pedidoDAO = new PedidoDAOImpl();
+        this.lineaPedidoDAO = new LineaPedidoDAOImpl();
     }
     
     @Override
@@ -43,5 +47,9 @@ public class PedidoBOImpl implements IPedidoBO{
         if(estado == Estado.NUEVO) this.pedidoDAO.insertar(modelo);
         else if (estado == Estado.MODIFICAR) this.pedidoDAO.modificar(modelo);
     }
-    
+     
+    @Override
+    public List<Pedido> listarPedidoPorMesa(int idMesa){
+        return pedidoDAO.listarPorMesa(idMesa);
+    }
 }

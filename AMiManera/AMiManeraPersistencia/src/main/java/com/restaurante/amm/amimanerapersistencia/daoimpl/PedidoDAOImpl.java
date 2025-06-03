@@ -1,5 +1,6 @@
 package com.restaurante.amm.amimanerapersistencia.daoimpl;
 
+import com.restaurante.amm.amimaneradbmanager.DBManager;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,8 +10,9 @@ import java.sql.Date;
 import com.restaurante.amm.amimanerapersistencia.dao.IPedidoDAO;
 import com.restaurante.amm.amimaneramodel.pedidos.Pedido;
 import com.restaurante.amm.amimaneramodel.pedidos.EstadoPedido;
-import com.restaurante.amm.amimaneramodel.gestionmesas.Mesa;
-import com.restaurante.amm.amimaneramodel.personal.Mesero;
+import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PedidoDAOImpl extends BaseDAOImpl<Pedido> implements IPedidoDAO {
 
@@ -75,4 +77,36 @@ public class PedidoDAOImpl extends BaseDAOImpl<Pedido> implements IPedidoDAO {
   
         return pedido;
     }
+
+    @Override
+    public List<Pedido> listarPorMesa(int idMesa) {
+        try (
+            Connection conn = DBManager.getInstance().getConnection();
+            PreparedStatement ps = this.comandoListarPorMesa(conn,idMesa);
+        ) {
+            ResultSet rs = ps.executeQuery();
+            
+            List<Pedido> modelos = new ArrayList<>();
+            while (rs.next()) {
+                modelos.add(this.mapearModelo(rs));
+            }
+            
+            return modelos;
+        }
+        catch (SQLException e) {
+            System.err.println("Error SQL durante el listado por mesa: " + e.getMessage());
+            throw new RuntimeException("No se pudo listar por mesa el registro.", e);
+        }
+        catch (Exception e) {
+            System.err.println("Error inpesperado: " + e.getMessage());
+            throw new RuntimeException("Error inesperado al listar por mesa los registros.", e);
+        }
+    }
+    
+    protected CallableStatement comandoListarPorMesa(Connection conn,int idMesa) throws SQLException {
+        String sql = "{CALL listarPedidosPorMesa(?)}";
+        CallableStatement cmd = conn.prepareCall(sql);
+        cmd.setInt("p_idMesa", idMesa);
+        return cmd;
+    }    
 }

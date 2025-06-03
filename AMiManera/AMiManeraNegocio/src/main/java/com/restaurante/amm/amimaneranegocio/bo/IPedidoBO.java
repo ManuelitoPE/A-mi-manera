@@ -5,11 +5,12 @@
 package com.restaurante.amm.amimaneranegocio.bo;
 
 import com.restaurante.amm.amimaneramodel.pedidos.Pedido;
+import java.util.List;
 
 /**
  *
  * @author USER
  */
 public interface IPedidoBO extends IBaseBO<Pedido> {
-    
+    List<Pedido> listarPedidoPorMesa(int idMesa);
 }
