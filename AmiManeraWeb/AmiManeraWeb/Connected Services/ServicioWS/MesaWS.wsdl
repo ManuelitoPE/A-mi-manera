@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://servicios.amimaneraws.amm.restaurante.com" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="MesaWS" targetNamespace="https://servicios.amimaneraws.amm.restaurante.com" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/AMiManeraWS/MesaWS?xsd=1" namespace="https://servicios.amimaneraws.amm.restaurante.com" />
+    </xsd:schema>
+  </types>
+  <message name="listarMesas">
+    <part name="parameters" element="tns:listarMesas" />
+  </message>
+  <message name="listarMesasResponse">
+    <part name="parameters" element="tns:listarMesasResponse" />
+  </message>
+  <portType name="MesaWS">
+    <operation name="listarMesas">
+      <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/MesaWS/listarMesasRequest" message="tns:listarMesas" />
+      <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/MesaWS/listarMesasResponse" message="tns:listarMesasResponse" />
+    </operation>
+  </portType>
+  <binding name="MesaWSPortBinding" type="tns:MesaWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarMesas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="MesaWS">
+    <port name="MesaWSPort" binding="tns:MesaWSPortBinding">
+      <soap:address location="http://localhost:8080/AMiManeraWS/MesaWS" />
+    </port>
+  </service>
+</definitions>

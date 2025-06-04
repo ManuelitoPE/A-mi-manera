@@ -44,6 +44,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,6 +69,65 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.buscarPedidoPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.cuentaUsuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.eliminarPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.guardarPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.guardarProductoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.GuardarReservaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.listarMesasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.listarPedidosPorMesaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.listarPedidosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.listarProductosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.ListarReservasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.loginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.mesa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.pedido.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.producto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.reserva.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServicioWS\CuentaUsuarioWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\PedidoWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\servicios.disco" />
+    <None Include="Connected Services\ServicioWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ServicioWS\configuration.svcinfo" />
+    <None Include="Connected Services\ServicioWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\style.css" />
     <Content Include="Mesas.aspx" />
@@ -75,6 +136,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\ServicioWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Mesas.aspx.cs">
       <DependentUpon>Mesas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -99,6 +165,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\ServicioWS\CuentaUsuarioWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\MesaWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\MesaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\PedidoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\ProductoWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\ProductoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\ReservaWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\ReservaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
@@ -108,7 +190,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServicioWS\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

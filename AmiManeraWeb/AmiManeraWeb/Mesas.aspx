@@ -78,27 +78,28 @@
             <div class="table-grid">
                 <asp:Repeater ID="rptTables" runat="server" OnItemCommand="rptTables_ItemCommand">
                     <ItemTemplate>
-                        <div class="table-item <%# GetTableStatusClass(Eval("Status").ToString()) %>" 
-                             data-table-id='<%# Eval("TableId") %>'>
-                            <div class="table-chairs top">
-                                <%# GetChairIcons(Convert.ToInt32(Eval("TopChairs")), Eval("Status").ToString()) %>
-                            </div>
+                        <div class="table-item <%# GetTableStatusClass(Eval("estado").ToString()) %>" 
+                             data-table-id='<%# Eval("idMesa") %>'>
+                            <!--<div class="table-chairs top">
+                                <%# GetChairIcons(Convert.ToInt32(Eval("cantidadAsientos")), Eval("estado").ToString()) %>
+                            </div> -->
                             <div class="table-box">
-                                <div class="table-number">Table #<%# Eval("TableNumber") %></div>
+                                <div class="table-number">Mesa #<%# Eval("idMesa") %></div>
                                 <div class="table-capacity">
                                     <i class="fas fa-user-friends"></i>
-                                    <span><%# Eval("Capacity") %></span>
+                                    <span><%# Eval("cantidadAsientos") %></span>
                                 </div>
                             </div>
+                            <!--
                             <div class="table-chairs bottom">
-                                <%# GetChairIcons(Convert.ToInt32(Eval("BottomChairs")), Eval("Status").ToString()) %>
+                                <%# GetChairIcons(Convert.ToInt32(Eval("cantidadAsientos")), Eval("estado").ToString()) %>
                             </div>
                             <div class="table-chairs left">
-                                <%# GetChairIcons(Convert.ToInt32(Eval("LeftChairs")), Eval("Status").ToString()) %>
+                                <%# GetChairIcons(Convert.ToInt32(Eval("cantidadAsientos")), Eval("estado").ToString()) %>
                             </div>
                             <div class="table-chairs right">
-                                <%# GetChairIcons(Convert.ToInt32(Eval("RightChairs")), Eval("Status").ToString()) %>
-                            </div>
+                                <%# GetChairIcons(Convert.ToInt32(Eval("cantidadAsientos")), Eval("estado").ToString()) %>
+                            </div> -->
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
@@ -108,33 +109,25 @@
         <div class="reservations-list">
             <asp:Repeater ID="rptReservations" runat="server" OnItemCommand="rptReservations_ItemCommand">
                 <ItemTemplate>
-                    <div class="reservation-card <%# GetStatusClass(Eval("Status").ToString()) %>">
+                    <div class="reservation-card <%# GetStatusClass(Eval("estadoPedido").ToString()) %>">
                         <div class="reservation-status">
                             <div class="time">
-                                <div class="hour"><%# Eval("Time") %></div>
+                                <div class="hour"><%# Eval("fecha") %></div>
                                 <div class="period">PM</div>
                             </div>
-                            <div class="status-label"><%# GetStatusLabel(Eval("Status").ToString()) %></div>
+                            <div class="status-label"><%# GetStatusLabel(Eval("estadoPedido").ToString()) %></div>
                         </div>
                         <div class="reservation-details">
-                            <div class="customer-name"><%# Eval("CustomerName") %></div>
+                            <div class="customer-name"><%#GetMeseroName(Eval("mesero"))%></div>
                             <div class="reservation-info">
                                 <div class="table-info">
                                     <i class="fas fa-border-all"></i>
-                                    <span><%# Eval("TableNumber") %></span>
+                                    <span><%# Eval("mesa.idMesa") %></span>
                                 </div>
                                 <div class="people-info">
                                     <i class="fas fa-user-friends"></i>
-                                    <span><%# Eval("People") %></span>
+                                    <span><%# Eval("mesa.cantidadAsientos")  %></span>
                                 </div>
-                            </div>
-                            <div class="contact-info">
-                                <i class="fas fa-phone-alt"></i>
-                                <span><%# Eval("ContactNumber") %></span>
-                            </div>
-                            <div class="payment-status <%# GetPaymentStatusClass(Eval("PaymentStatus").ToString()) %>">
-                                <i class="<%# GetPaymentIcon(Eval("PaymentStatus").ToString()) %>"></i>
-                                <span><%# Eval("PaymentStatus") %></span>
                             </div>
                         </div>
                     </div>
