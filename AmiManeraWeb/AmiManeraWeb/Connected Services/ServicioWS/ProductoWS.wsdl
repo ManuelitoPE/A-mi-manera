@@ -5,23 +5,17 @@
       <xsd:import schemaLocation="http://localhost:8080/AMiManeraWS/ProductoWS?xsd=1" namespace="https://servicios.amimaneraws.amm.restaurante.com" />
     </xsd:schema>
   </types>
-  <message name="listarProductos">
-    <part name="parameters" element="tns:listarProductos" />
-  </message>
-  <message name="listarProductosResponse">
-    <part name="parameters" element="tns:listarProductosResponse" />
-  </message>
   <message name="guardarProducto">
     <part name="parameters" element="tns:guardarProducto" />
   </message>
   <message name="guardarProductoResponse">
     <part name="parameters" element="tns:guardarProductoResponse" />
   </message>
-  <message name="eliminarProducto">
-    <part name="parameters" element="tns:eliminarProducto" />
+  <message name="listarProductos">
+    <part name="parameters" element="tns:listarProductos" />
   </message>
-  <message name="eliminarProductoResponse">
-    <part name="parameters" element="tns:eliminarProductoResponse" />
+  <message name="listarProductosResponse">
+    <part name="parameters" element="tns:listarProductosResponse" />
   </message>
   <message name="buscarProducto">
     <part name="parameters" element="tns:buscarProducto" />
@@ -29,35 +23,32 @@
   <message name="buscarProductoResponse">
     <part name="parameters" element="tns:buscarProductoResponse" />
   </message>
+  <message name="eliminarProducto">
+    <part name="parameters" element="tns:eliminarProducto" />
+  </message>
+  <message name="eliminarProductoResponse">
+    <part name="parameters" element="tns:eliminarProductoResponse" />
+  </message>
   <portType name="ProductoWS">
-    <operation name="listarProductos">
-      <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/listarProductosRequest" message="tns:listarProductos" />
-      <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/listarProductosResponse" message="tns:listarProductosResponse" />
-    </operation>
     <operation name="guardarProducto">
       <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/guardarProductoRequest" message="tns:guardarProducto" />
       <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/guardarProductoResponse" message="tns:guardarProductoResponse" />
     </operation>
-    <operation name="eliminarProducto">
-      <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/eliminarProductoRequest" message="tns:eliminarProducto" />
-      <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/eliminarProductoResponse" message="tns:eliminarProductoResponse" />
+    <operation name="listarProductos">
+      <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/listarProductosRequest" message="tns:listarProductos" />
+      <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/listarProductosResponse" message="tns:listarProductosResponse" />
     </operation>
     <operation name="buscarProducto">
       <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/buscarProductoRequest" message="tns:buscarProducto" />
       <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/buscarProductoResponse" message="tns:buscarProductoResponse" />
     </operation>
+    <operation name="eliminarProducto">
+      <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/eliminarProductoRequest" message="tns:eliminarProducto" />
+      <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/eliminarProductoResponse" message="tns:eliminarProductoResponse" />
+    </operation>
   </portType>
   <binding name="ProductoWSPortBinding" type="tns:ProductoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarProductos">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="guardarProducto">
       <soap:operation soapAction="" />
       <input>
@@ -67,7 +58,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarProducto">
+    <operation name="listarProductos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -77,6 +68,15 @@
       </output>
     </operation>
     <operation name="buscarProducto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarProducto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

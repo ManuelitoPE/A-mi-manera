@@ -15,15 +15,33 @@ namespace AmiManeraWeb.ServicioWS {
     [System.ServiceModel.ServiceContractAttribute(Namespace="https://servicios.amimaneraws.amm.restaurante.com", ConfigurationName="ServicioWS.PedidoWS")]
     public interface PedidoWS {
         
-        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/eliminarPedidoRequest", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/eliminarPedidoResponse" +
-            "")]
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosPorMesaRe" +
+            "quest", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosPorMesaRe" +
+            "sponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        AmiManeraWeb.ServicioWS.eliminarPedidoResponse eliminarPedido(AmiManeraWeb.ServicioWS.eliminarPedidoRequest request);
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trabajador))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        AmiManeraWeb.ServicioWS.listarPedidosPorMesaResponse listarPedidosPorMesa(AmiManeraWeb.ServicioWS.listarPedidosPorMesaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/eliminarPedidoRequest", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/eliminarPedidoResponse" +
-            "")]
-        System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.eliminarPedidoResponse> eliminarPedidoAsync(AmiManeraWeb.ServicioWS.eliminarPedidoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosPorMesaRe" +
+            "quest", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosPorMesaRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.listarPedidosPorMesaResponse> listarPedidosPorMesaAsync(AmiManeraWeb.ServicioWS.listarPedidosPorMesaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosPorEstado" +
+            "Request", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosPorEstado" +
+            "Response")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trabajador))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        AmiManeraWeb.ServicioWS.listarPedidosPorEstadoResponse listarPedidosPorEstado(AmiManeraWeb.ServicioWS.listarPedidosPorEstadoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosPorEstado" +
+            "Request", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosPorEstado" +
+            "Response")]
+        System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.listarPedidosPorEstadoResponse> listarPedidosPorEstadoAsync(AmiManeraWeb.ServicioWS.listarPedidosPorEstadoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosRequest", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosResponse")]
@@ -34,6 +52,17 @@ namespace AmiManeraWeb.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosRequest", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosResponse")]
         System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.listarPedidosResponse> listarPedidosAsync(AmiManeraWeb.ServicioWS.listarPedidosRequest request);
+        
+        // CODEGEN: El parámetro 'id' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/eliminarPedidoRequest", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/eliminarPedidoResponse" +
+            "")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trabajador))]
+        AmiManeraWeb.ServicioWS.eliminarPedidoResponse eliminarPedido(AmiManeraWeb.ServicioWS.eliminarPedidoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/eliminarPedidoRequest", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/eliminarPedidoResponse" +
+            "")]
+        System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.eliminarPedidoResponse> eliminarPedidoAsync(AmiManeraWeb.ServicioWS.eliminarPedidoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/buscarPedidoPorIdReque" +
@@ -57,48 +86,6 @@ namespace AmiManeraWeb.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/guardarPedidoRequest", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/guardarPedidoResponse")]
         System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.guardarPedidoResponse> guardarPedidoAsync(AmiManeraWeb.ServicioWS.guardarPedidoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosPorMesaRe" +
-            "quest", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosPorMesaRe" +
-            "sponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trabajador))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        AmiManeraWeb.ServicioWS.listarPedidosPorMesaResponse listarPedidosPorMesa(AmiManeraWeb.ServicioWS.listarPedidosPorMesaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosPorMesaRe" +
-            "quest", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosPorMesaRe" +
-            "sponse")]
-        System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.listarPedidosPorMesaResponse> listarPedidosPorMesaAsync(AmiManeraWeb.ServicioWS.listarPedidosPorMesaRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPedido", WrapperNamespace="https://servicios.amimaneraws.amm.restaurante.com", IsWrapped=true)]
-    public partial class eliminarPedidoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://servicios.amimaneraws.amm.restaurante.com", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int id;
-        
-        public eliminarPedidoRequest() {
-        }
-        
-        public eliminarPedidoRequest(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPedidoResponse", WrapperNamespace="https://servicios.amimaneraws.amm.restaurante.com", IsWrapped=true)]
-    public partial class eliminarPedidoResponse {
-        
-        public eliminarPedidoResponse() {
-        }
     }
     
     /// <remarks/>
@@ -971,6 +958,78 @@ namespace AmiManeraWeb.ServicioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPedidosPorMesa", WrapperNamespace="https://servicios.amimaneraws.amm.restaurante.com", IsWrapped=true)]
+    public partial class listarPedidosPorMesaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://servicios.amimaneraws.amm.restaurante.com", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idMesa;
+        
+        public listarPedidosPorMesaRequest() {
+        }
+        
+        public listarPedidosPorMesaRequest(int idMesa) {
+            this.idMesa = idMesa;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPedidosPorMesaResponse", WrapperNamespace="https://servicios.amimaneraws.amm.restaurante.com", IsWrapped=true)]
+    public partial class listarPedidosPorMesaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://servicios.amimaneraws.amm.restaurante.com", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public AmiManeraWeb.ServicioWS.pedido[] @return;
+        
+        public listarPedidosPorMesaResponse() {
+        }
+        
+        public listarPedidosPorMesaResponse(AmiManeraWeb.ServicioWS.pedido[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPedidosPorEstado", WrapperNamespace="https://servicios.amimaneraws.amm.restaurante.com", IsWrapped=true)]
+    public partial class listarPedidosPorEstadoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://servicios.amimaneraws.amm.restaurante.com", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public AmiManeraWeb.ServicioWS.estadoPedido estado;
+        
+        public listarPedidosPorEstadoRequest() {
+        }
+        
+        public listarPedidosPorEstadoRequest(AmiManeraWeb.ServicioWS.estadoPedido estado) {
+            this.estado = estado;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPedidosPorEstadoResponse", WrapperNamespace="https://servicios.amimaneraws.amm.restaurante.com", IsWrapped=true)]
+    public partial class listarPedidosPorEstadoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://servicios.amimaneraws.amm.restaurante.com", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public AmiManeraWeb.ServicioWS.pedido[] @return;
+        
+        public listarPedidosPorEstadoResponse() {
+        }
+        
+        public listarPedidosPorEstadoResponse(AmiManeraWeb.ServicioWS.pedido[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="listarPedidos", WrapperNamespace="https://servicios.amimaneraws.amm.restaurante.com", IsWrapped=true)]
     public partial class listarPedidosRequest {
         
@@ -993,6 +1052,34 @@ namespace AmiManeraWeb.ServicioWS {
         
         public listarPedidosResponse(AmiManeraWeb.ServicioWS.pedido[] @return) {
             this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPedido", WrapperNamespace="https://servicios.amimaneraws.amm.restaurante.com", IsWrapped=true)]
+    public partial class eliminarPedidoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://servicios.amimaneraws.amm.restaurante.com", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int id;
+        
+        public eliminarPedidoRequest() {
+        }
+        
+        public eliminarPedidoRequest(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPedidoResponse", WrapperNamespace="https://servicios.amimaneraws.amm.restaurante.com", IsWrapped=true)]
+    public partial class eliminarPedidoResponse {
+        
+        public eliminarPedidoResponse() {
         }
     }
     
@@ -1078,42 +1165,6 @@ namespace AmiManeraWeb.ServicioWS {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPedidosPorMesa", WrapperNamespace="https://servicios.amimaneraws.amm.restaurante.com", IsWrapped=true)]
-    public partial class listarPedidosPorMesaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://servicios.amimaneraws.amm.restaurante.com", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idMesa;
-        
-        public listarPedidosPorMesaRequest() {
-        }
-        
-        public listarPedidosPorMesaRequest(int idMesa) {
-            this.idMesa = idMesa;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPedidosPorMesaResponse", WrapperNamespace="https://servicios.amimaneraws.amm.restaurante.com", IsWrapped=true)]
-    public partial class listarPedidosPorMesaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://servicios.amimaneraws.amm.restaurante.com", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public AmiManeraWeb.ServicioWS.pedido[] @return;
-        
-        public listarPedidosPorMesaResponse() {
-        }
-        
-        public listarPedidosPorMesaResponse(AmiManeraWeb.ServicioWS.pedido[] @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface PedidoWSChannel : AmiManeraWeb.ServicioWS.PedidoWS, System.ServiceModel.IClientChannel {
     }
@@ -1142,25 +1193,49 @@ namespace AmiManeraWeb.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AmiManeraWeb.ServicioWS.eliminarPedidoResponse AmiManeraWeb.ServicioWS.PedidoWS.eliminarPedido(AmiManeraWeb.ServicioWS.eliminarPedidoRequest request) {
-            return base.Channel.eliminarPedido(request);
+        AmiManeraWeb.ServicioWS.listarPedidosPorMesaResponse AmiManeraWeb.ServicioWS.PedidoWS.listarPedidosPorMesa(AmiManeraWeb.ServicioWS.listarPedidosPorMesaRequest request) {
+            return base.Channel.listarPedidosPorMesa(request);
         }
         
-        public void eliminarPedido(int id) {
-            AmiManeraWeb.ServicioWS.eliminarPedidoRequest inValue = new AmiManeraWeb.ServicioWS.eliminarPedidoRequest();
-            inValue.id = id;
-            AmiManeraWeb.ServicioWS.eliminarPedidoResponse retVal = ((AmiManeraWeb.ServicioWS.PedidoWS)(this)).eliminarPedido(inValue);
+        public AmiManeraWeb.ServicioWS.pedido[] listarPedidosPorMesa(int idMesa) {
+            AmiManeraWeb.ServicioWS.listarPedidosPorMesaRequest inValue = new AmiManeraWeb.ServicioWS.listarPedidosPorMesaRequest();
+            inValue.idMesa = idMesa;
+            AmiManeraWeb.ServicioWS.listarPedidosPorMesaResponse retVal = ((AmiManeraWeb.ServicioWS.PedidoWS)(this)).listarPedidosPorMesa(inValue);
+            return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.eliminarPedidoResponse> AmiManeraWeb.ServicioWS.PedidoWS.eliminarPedidoAsync(AmiManeraWeb.ServicioWS.eliminarPedidoRequest request) {
-            return base.Channel.eliminarPedidoAsync(request);
+        System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.listarPedidosPorMesaResponse> AmiManeraWeb.ServicioWS.PedidoWS.listarPedidosPorMesaAsync(AmiManeraWeb.ServicioWS.listarPedidosPorMesaRequest request) {
+            return base.Channel.listarPedidosPorMesaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.eliminarPedidoResponse> eliminarPedidoAsync(int id) {
-            AmiManeraWeb.ServicioWS.eliminarPedidoRequest inValue = new AmiManeraWeb.ServicioWS.eliminarPedidoRequest();
-            inValue.id = id;
-            return ((AmiManeraWeb.ServicioWS.PedidoWS)(this)).eliminarPedidoAsync(inValue);
+        public System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.listarPedidosPorMesaResponse> listarPedidosPorMesaAsync(int idMesa) {
+            AmiManeraWeb.ServicioWS.listarPedidosPorMesaRequest inValue = new AmiManeraWeb.ServicioWS.listarPedidosPorMesaRequest();
+            inValue.idMesa = idMesa;
+            return ((AmiManeraWeb.ServicioWS.PedidoWS)(this)).listarPedidosPorMesaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AmiManeraWeb.ServicioWS.listarPedidosPorEstadoResponse AmiManeraWeb.ServicioWS.PedidoWS.listarPedidosPorEstado(AmiManeraWeb.ServicioWS.listarPedidosPorEstadoRequest request) {
+            return base.Channel.listarPedidosPorEstado(request);
+        }
+        
+        public AmiManeraWeb.ServicioWS.pedido[] listarPedidosPorEstado(AmiManeraWeb.ServicioWS.estadoPedido estado) {
+            AmiManeraWeb.ServicioWS.listarPedidosPorEstadoRequest inValue = new AmiManeraWeb.ServicioWS.listarPedidosPorEstadoRequest();
+            inValue.estado = estado;
+            AmiManeraWeb.ServicioWS.listarPedidosPorEstadoResponse retVal = ((AmiManeraWeb.ServicioWS.PedidoWS)(this)).listarPedidosPorEstado(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.listarPedidosPorEstadoResponse> AmiManeraWeb.ServicioWS.PedidoWS.listarPedidosPorEstadoAsync(AmiManeraWeb.ServicioWS.listarPedidosPorEstadoRequest request) {
+            return base.Channel.listarPedidosPorEstadoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.listarPedidosPorEstadoResponse> listarPedidosPorEstadoAsync(AmiManeraWeb.ServicioWS.estadoPedido estado) {
+            AmiManeraWeb.ServicioWS.listarPedidosPorEstadoRequest inValue = new AmiManeraWeb.ServicioWS.listarPedidosPorEstadoRequest();
+            inValue.estado = estado;
+            return ((AmiManeraWeb.ServicioWS.PedidoWS)(this)).listarPedidosPorEstadoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1182,6 +1257,28 @@ namespace AmiManeraWeb.ServicioWS {
         public System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.listarPedidosResponse> listarPedidosAsync() {
             AmiManeraWeb.ServicioWS.listarPedidosRequest inValue = new AmiManeraWeb.ServicioWS.listarPedidosRequest();
             return ((AmiManeraWeb.ServicioWS.PedidoWS)(this)).listarPedidosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AmiManeraWeb.ServicioWS.eliminarPedidoResponse AmiManeraWeb.ServicioWS.PedidoWS.eliminarPedido(AmiManeraWeb.ServicioWS.eliminarPedidoRequest request) {
+            return base.Channel.eliminarPedido(request);
+        }
+        
+        public void eliminarPedido(int id) {
+            AmiManeraWeb.ServicioWS.eliminarPedidoRequest inValue = new AmiManeraWeb.ServicioWS.eliminarPedidoRequest();
+            inValue.id = id;
+            AmiManeraWeb.ServicioWS.eliminarPedidoResponse retVal = ((AmiManeraWeb.ServicioWS.PedidoWS)(this)).eliminarPedido(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.eliminarPedidoResponse> AmiManeraWeb.ServicioWS.PedidoWS.eliminarPedidoAsync(AmiManeraWeb.ServicioWS.eliminarPedidoRequest request) {
+            return base.Channel.eliminarPedidoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.eliminarPedidoResponse> eliminarPedidoAsync(int id) {
+            AmiManeraWeb.ServicioWS.eliminarPedidoRequest inValue = new AmiManeraWeb.ServicioWS.eliminarPedidoRequest();
+            inValue.id = id;
+            return ((AmiManeraWeb.ServicioWS.PedidoWS)(this)).eliminarPedidoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1229,29 +1326,6 @@ namespace AmiManeraWeb.ServicioWS {
             inValue.pedido = pedido;
             inValue.estado = estado;
             return ((AmiManeraWeb.ServicioWS.PedidoWS)(this)).guardarPedidoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AmiManeraWeb.ServicioWS.listarPedidosPorMesaResponse AmiManeraWeb.ServicioWS.PedidoWS.listarPedidosPorMesa(AmiManeraWeb.ServicioWS.listarPedidosPorMesaRequest request) {
-            return base.Channel.listarPedidosPorMesa(request);
-        }
-        
-        public AmiManeraWeb.ServicioWS.pedido[] listarPedidosPorMesa(int idMesa) {
-            AmiManeraWeb.ServicioWS.listarPedidosPorMesaRequest inValue = new AmiManeraWeb.ServicioWS.listarPedidosPorMesaRequest();
-            inValue.idMesa = idMesa;
-            AmiManeraWeb.ServicioWS.listarPedidosPorMesaResponse retVal = ((AmiManeraWeb.ServicioWS.PedidoWS)(this)).listarPedidosPorMesa(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.listarPedidosPorMesaResponse> AmiManeraWeb.ServicioWS.PedidoWS.listarPedidosPorMesaAsync(AmiManeraWeb.ServicioWS.listarPedidosPorMesaRequest request) {
-            return base.Channel.listarPedidosPorMesaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.listarPedidosPorMesaResponse> listarPedidosPorMesaAsync(int idMesa) {
-            AmiManeraWeb.ServicioWS.listarPedidosPorMesaRequest inValue = new AmiManeraWeb.ServicioWS.listarPedidosPorMesaRequest();
-            inValue.idMesa = idMesa;
-            return ((AmiManeraWeb.ServicioWS.PedidoWS)(this)).listarPedidosPorMesaAsync(inValue);
         }
     }
     
@@ -1613,6 +1687,19 @@ namespace AmiManeraWeb.ServicioWS {
     [System.ServiceModel.ServiceContractAttribute(Namespace="https://servicios.amimaneraws.amm.restaurante.com", ConfigurationName="ServicioWS.ProductoWS")]
     public interface ProductoWS {
         
+        // CODEGEN: El parámetro 'producto' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/guardarProductoReque" +
+            "st", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/guardarProductoRespo" +
+            "nse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trabajador))]
+        AmiManeraWeb.ServicioWS.guardarProductoResponse guardarProducto(AmiManeraWeb.ServicioWS.guardarProductoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/guardarProductoReque" +
+            "st", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/guardarProductoRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.guardarProductoResponse> guardarProductoAsync(AmiManeraWeb.ServicioWS.guardarProductoRequest request);
+        
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/listarProductosReque" +
             "st", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/listarProductosRespo" +
@@ -1627,32 +1714,6 @@ namespace AmiManeraWeb.ServicioWS {
             "nse")]
         System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.listarProductosResponse> listarProductosAsync(AmiManeraWeb.ServicioWS.listarProductosRequest request);
         
-        // CODEGEN: El parámetro 'producto' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/guardarProductoReque" +
-            "st", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/guardarProductoRespo" +
-            "nse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trabajador))]
-        AmiManeraWeb.ServicioWS.guardarProductoResponse guardarProducto(AmiManeraWeb.ServicioWS.guardarProductoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/guardarProductoReque" +
-            "st", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/guardarProductoRespo" +
-            "nse")]
-        System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.guardarProductoResponse> guardarProductoAsync(AmiManeraWeb.ServicioWS.guardarProductoRequest request);
-        
-        // CODEGEN: El parámetro 'arg0' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/eliminarProductoRequ" +
-            "est", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/eliminarProductoResp" +
-            "onse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trabajador))]
-        AmiManeraWeb.ServicioWS.eliminarProductoResponse eliminarProducto(AmiManeraWeb.ServicioWS.eliminarProductoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/eliminarProductoRequ" +
-            "est", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/eliminarProductoResp" +
-            "onse")]
-        System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.eliminarProductoResponse> eliminarProductoAsync(AmiManeraWeb.ServicioWS.eliminarProductoRequest request);
-        
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/buscarProductoReques" +
             "t", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/buscarProductoRespon" +
@@ -1666,34 +1727,19 @@ namespace AmiManeraWeb.ServicioWS {
             "t", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/buscarProductoRespon" +
             "se")]
         System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.buscarProductoResponse> buscarProductoAsync(AmiManeraWeb.ServicioWS.buscarProductoRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarProductos", WrapperNamespace="https://servicios.amimaneraws.amm.restaurante.com", IsWrapped=true)]
-    public partial class listarProductosRequest {
         
-        public listarProductosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarProductosResponse", WrapperNamespace="https://servicios.amimaneraws.amm.restaurante.com", IsWrapped=true)]
-    public partial class listarProductosResponse {
+        // CODEGEN: El parámetro 'arg0' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/eliminarProductoRequ" +
+            "est", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/eliminarProductoResp" +
+            "onse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(trabajador))]
+        AmiManeraWeb.ServicioWS.eliminarProductoResponse eliminarProducto(AmiManeraWeb.ServicioWS.eliminarProductoRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://servicios.amimaneraws.amm.restaurante.com", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public AmiManeraWeb.ServicioWS.producto[] @return;
-        
-        public listarProductosResponse() {
-        }
-        
-        public listarProductosResponse(AmiManeraWeb.ServicioWS.producto[] @return) {
-            this.@return = @return;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/eliminarProductoRequ" +
+            "est", ReplyAction="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/eliminarProductoResp" +
+            "onse")]
+        System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.eliminarProductoResponse> eliminarProductoAsync(AmiManeraWeb.ServicioWS.eliminarProductoRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1732,28 +1778,28 @@ namespace AmiManeraWeb.ServicioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProducto", WrapperNamespace="https://servicios.amimaneraws.amm.restaurante.com", IsWrapped=true)]
-    public partial class eliminarProductoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarProductos", WrapperNamespace="https://servicios.amimaneraws.amm.restaurante.com", IsWrapped=true)]
+    public partial class listarProductosRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://servicios.amimaneraws.amm.restaurante.com", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg0;
-        
-        public eliminarProductoRequest() {
-        }
-        
-        public eliminarProductoRequest(int arg0) {
-            this.arg0 = arg0;
+        public listarProductosRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProductoResponse", WrapperNamespace="https://servicios.amimaneraws.amm.restaurante.com", IsWrapped=true)]
-    public partial class eliminarProductoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarProductosResponse", WrapperNamespace="https://servicios.amimaneraws.amm.restaurante.com", IsWrapped=true)]
+    public partial class listarProductosResponse {
         
-        public eliminarProductoResponse() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://servicios.amimaneraws.amm.restaurante.com", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public AmiManeraWeb.ServicioWS.producto[] @return;
+        
+        public listarProductosResponse() {
+        }
+        
+        public listarProductosResponse(AmiManeraWeb.ServicioWS.producto[] @return) {
+            this.@return = @return;
         }
     }
     
@@ -1793,6 +1839,34 @@ namespace AmiManeraWeb.ServicioWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProducto", WrapperNamespace="https://servicios.amimaneraws.amm.restaurante.com", IsWrapped=true)]
+    public partial class eliminarProductoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://servicios.amimaneraws.amm.restaurante.com", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg0;
+        
+        public eliminarProductoRequest() {
+        }
+        
+        public eliminarProductoRequest(int arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProductoResponse", WrapperNamespace="https://servicios.amimaneraws.amm.restaurante.com", IsWrapped=true)]
+    public partial class eliminarProductoResponse {
+        
+        public eliminarProductoResponse() {
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ProductoWSChannel : AmiManeraWeb.ServicioWS.ProductoWS, System.ServiceModel.IClientChannel {
     }
@@ -1821,27 +1895,6 @@ namespace AmiManeraWeb.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AmiManeraWeb.ServicioWS.listarProductosResponse AmiManeraWeb.ServicioWS.ProductoWS.listarProductos(AmiManeraWeb.ServicioWS.listarProductosRequest request) {
-            return base.Channel.listarProductos(request);
-        }
-        
-        public AmiManeraWeb.ServicioWS.producto[] listarProductos() {
-            AmiManeraWeb.ServicioWS.listarProductosRequest inValue = new AmiManeraWeb.ServicioWS.listarProductosRequest();
-            AmiManeraWeb.ServicioWS.listarProductosResponse retVal = ((AmiManeraWeb.ServicioWS.ProductoWS)(this)).listarProductos(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.listarProductosResponse> AmiManeraWeb.ServicioWS.ProductoWS.listarProductosAsync(AmiManeraWeb.ServicioWS.listarProductosRequest request) {
-            return base.Channel.listarProductosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.listarProductosResponse> listarProductosAsync() {
-            AmiManeraWeb.ServicioWS.listarProductosRequest inValue = new AmiManeraWeb.ServicioWS.listarProductosRequest();
-            return ((AmiManeraWeb.ServicioWS.ProductoWS)(this)).listarProductosAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         AmiManeraWeb.ServicioWS.guardarProductoResponse AmiManeraWeb.ServicioWS.ProductoWS.guardarProducto(AmiManeraWeb.ServicioWS.guardarProductoRequest request) {
             return base.Channel.guardarProducto(request);
         }
@@ -1866,25 +1919,24 @@ namespace AmiManeraWeb.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        AmiManeraWeb.ServicioWS.eliminarProductoResponse AmiManeraWeb.ServicioWS.ProductoWS.eliminarProducto(AmiManeraWeb.ServicioWS.eliminarProductoRequest request) {
-            return base.Channel.eliminarProducto(request);
+        AmiManeraWeb.ServicioWS.listarProductosResponse AmiManeraWeb.ServicioWS.ProductoWS.listarProductos(AmiManeraWeb.ServicioWS.listarProductosRequest request) {
+            return base.Channel.listarProductos(request);
         }
         
-        public void eliminarProducto(int arg0) {
-            AmiManeraWeb.ServicioWS.eliminarProductoRequest inValue = new AmiManeraWeb.ServicioWS.eliminarProductoRequest();
-            inValue.arg0 = arg0;
-            AmiManeraWeb.ServicioWS.eliminarProductoResponse retVal = ((AmiManeraWeb.ServicioWS.ProductoWS)(this)).eliminarProducto(inValue);
+        public AmiManeraWeb.ServicioWS.producto[] listarProductos() {
+            AmiManeraWeb.ServicioWS.listarProductosRequest inValue = new AmiManeraWeb.ServicioWS.listarProductosRequest();
+            AmiManeraWeb.ServicioWS.listarProductosResponse retVal = ((AmiManeraWeb.ServicioWS.ProductoWS)(this)).listarProductos(inValue);
+            return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.eliminarProductoResponse> AmiManeraWeb.ServicioWS.ProductoWS.eliminarProductoAsync(AmiManeraWeb.ServicioWS.eliminarProductoRequest request) {
-            return base.Channel.eliminarProductoAsync(request);
+        System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.listarProductosResponse> AmiManeraWeb.ServicioWS.ProductoWS.listarProductosAsync(AmiManeraWeb.ServicioWS.listarProductosRequest request) {
+            return base.Channel.listarProductosAsync(request);
         }
         
-        public System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.eliminarProductoResponse> eliminarProductoAsync(int arg0) {
-            AmiManeraWeb.ServicioWS.eliminarProductoRequest inValue = new AmiManeraWeb.ServicioWS.eliminarProductoRequest();
-            inValue.arg0 = arg0;
-            return ((AmiManeraWeb.ServicioWS.ProductoWS)(this)).eliminarProductoAsync(inValue);
+        public System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.listarProductosResponse> listarProductosAsync() {
+            AmiManeraWeb.ServicioWS.listarProductosRequest inValue = new AmiManeraWeb.ServicioWS.listarProductosRequest();
+            return ((AmiManeraWeb.ServicioWS.ProductoWS)(this)).listarProductosAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1908,6 +1960,28 @@ namespace AmiManeraWeb.ServicioWS {
             AmiManeraWeb.ServicioWS.buscarProductoRequest inValue = new AmiManeraWeb.ServicioWS.buscarProductoRequest();
             inValue.arg0 = arg0;
             return ((AmiManeraWeb.ServicioWS.ProductoWS)(this)).buscarProductoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        AmiManeraWeb.ServicioWS.eliminarProductoResponse AmiManeraWeb.ServicioWS.ProductoWS.eliminarProducto(AmiManeraWeb.ServicioWS.eliminarProductoRequest request) {
+            return base.Channel.eliminarProducto(request);
+        }
+        
+        public void eliminarProducto(int arg0) {
+            AmiManeraWeb.ServicioWS.eliminarProductoRequest inValue = new AmiManeraWeb.ServicioWS.eliminarProductoRequest();
+            inValue.arg0 = arg0;
+            AmiManeraWeb.ServicioWS.eliminarProductoResponse retVal = ((AmiManeraWeb.ServicioWS.ProductoWS)(this)).eliminarProducto(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.eliminarProductoResponse> AmiManeraWeb.ServicioWS.ProductoWS.eliminarProductoAsync(AmiManeraWeb.ServicioWS.eliminarProductoRequest request) {
+            return base.Channel.eliminarProductoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<AmiManeraWeb.ServicioWS.eliminarProductoResponse> eliminarProductoAsync(int arg0) {
+            AmiManeraWeb.ServicioWS.eliminarProductoRequest inValue = new AmiManeraWeb.ServicioWS.eliminarProductoRequest();
+            inValue.arg0 = arg0;
+            return ((AmiManeraWeb.ServicioWS.ProductoWS)(this)).eliminarProductoAsync(inValue);
         }
     }
     

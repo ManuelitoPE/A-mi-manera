@@ -22,21 +22,21 @@
             </div>
             <!--Navegacion-->
             <nav class="nav-menu">        
-                <a href="Pedidos.aspx" class="nav-item" <%= Request.Path.EndsWith("Pedidos.aspx") ? "active" : "" %>">
+                <a id="lnkPedidos" runat="server" href="Pedidos.aspx" class="nav-item">
                     <i class="fas fa-receipt"></i>
                     <span>Pedidos</span>
                 </a>
-                <a href="Mesas.aspx" class="nav-item <%= Request.Path.EndsWith("Mesas.aspx") ? "active" : "" %>">
+                <a id="lnkMesas" runat="server" href="Mesas.aspx" class="nav-item">
                     <i class="fas fa-border-all"></i>
                     <span>Mesas</span>
                 </a>
-                <a href="Productos.aspx" class="nav-item <%= Request.Path.EndsWith("Productos.aspx") ? "active" : "" %>">
+                <a id="lnkProductos" runat="server" href="Productos.aspx" class="nav-item">
                     <i class="fas fa-utensils"></i>
                     <span>Productos</span>
                 </a>
-                <a href="" class="nav-item" >
+                <a id="lnkAgregarUsuario" runat="server" href="AgregarUsuario.aspx" class="nav-item">
                     <i class="fas fa-users"></i>
-                    <span>Agregar Usuarios</span>
+                    <span>Agregar Usuario</span>
                 </a>
             </nav>
             
@@ -57,6 +57,6 @@
         </div>
     </div>
 </form>
-<script src="Scripts/app.js"></script>
+    <script src="Scripts/app.js"></script>
 </body>
 </html>

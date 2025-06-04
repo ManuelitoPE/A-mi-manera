@@ -117,16 +117,19 @@
     <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.reserva.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.buscarProductoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.eliminarProductoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.listarTipoProductosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.tipoProducto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.buscarProductoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.eliminarProductoResponse.datasource">
+    <Content Include="Connected Services\ServicioWS\AmiManeraWeb.ServicioWS.listarPedidosPorEstadoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ServicioWS\CuentaUsuarioWS.xsd">
@@ -140,8 +143,11 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Content\Images\login-background.png" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\style.css" />
+    <Content Include="Login.aspx" />
+    <Content Include="MenuPrincipal.aspx" />
     <Content Include="Mesas.aspx" />
     <Content Include="Pedidos.aspx" />
     <Content Include="Productos.aspx" />
@@ -153,6 +159,20 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipal.aspx.cs">
+      <DependentUpon>MenuPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal.aspx.designer.cs">
+      <DependentUpon>MenuPrincipal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mesas.aspx.cs">
       <DependentUpon>Mesas.aspx</DependentUpon>

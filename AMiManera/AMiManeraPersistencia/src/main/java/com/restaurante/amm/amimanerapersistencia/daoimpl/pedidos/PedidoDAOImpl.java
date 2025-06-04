@@ -82,6 +82,13 @@ public class PedidoDAOImpl extends BaseDAOImpl<Pedido> implements IPedidoDAO {
         return pedido;
     }
     
+    protected CallableStatement comandoListarPorMesa(Connection conn,int idMesa) throws SQLException {
+        String sql = "{CALL listarPedidosPorMesa(?)}";
+        CallableStatement cmd = conn.prepareCall(sql);
+        cmd.setInt("p_idMesa", idMesa);
+        return cmd;
+    }
+    
     @Override
     public List<Pedido> listarPorMesa(int idMesa) {
         try (
@@ -107,10 +114,35 @@ public class PedidoDAOImpl extends BaseDAOImpl<Pedido> implements IPedidoDAO {
         }
     }
     
-    protected CallableStatement comandoListarPorMesa(Connection conn,int idMesa) throws SQLException {
-        String sql = "{CALL listarPedidosPorMesa(?)}";
+    protected CallableStatement comandoListarPorEstado(Connection conn,EstadoPedido estado) throws SQLException {
+        String sql = "{CALL listarPedidosPorEstado(?)}";
         CallableStatement cmd = conn.prepareCall(sql);
-        cmd.setInt("p_idMesa", idMesa);
+        cmd.setString("p_estadoPedido", estado.toString());
         return cmd;
+    }
+    
+    @Override
+    public List<Pedido> listarPorEstado(EstadoPedido estado) {
+        try (
+            Connection conn = DBManager.getInstance().getConnection();
+            PreparedStatement ps = this.comandoListarPorEstado(conn,estado);
+        ) {
+            ResultSet rs = ps.executeQuery();
+
+            List<Pedido> modelos = new ArrayList<>();
+            while (rs.next()) {
+                modelos.add(this.mapearModelo(rs));
+            }
+
+            return modelos;
+        }
+        catch (SQLException e) {
+            System.err.println("Error SQL durante el listado por estado: " + e.getMessage());
+            throw new RuntimeException("No se pudo listar por estado el registro.", e);
+        }
+        catch (Exception e) {
+            System.err.println("Error inpesperado: " + e.getMessage());
+            throw new RuntimeException("Error inesperado al listar por estado los registros.", e);
+        }
     }
 }

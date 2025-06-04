@@ -7,7 +7,7 @@
     --success-color: #10b981;
     --warning-color: #f59e0b;
     --error-color: #ef4444;
-    --text-primary: #191919;
+    --text-primary: #e2e8f0;
     --text-secondary: #e2e8f0;
     --text-light: #94a3b8;
     --bg-white: #3C1518;
@@ -741,7 +741,7 @@ button, input, select, textarea {
     margin: 10% auto;
     padding: var(--spacing-6);
     border-radius: var(--border-radius-lg);
-    width: 500px;
+    width: 900px;
     max-width: 90%;
     box-shadow: var(--shadow-lg);
     position: relative;
@@ -800,6 +800,7 @@ button, input, select, textarea {
     border-radius: var(--border-radius-md);
     background-color: var(--bg-white);
     transition: all 0.2s ease;
+    color: white;
 }
 
     .form-control:focus {
@@ -951,4 +952,75 @@ button, input, select, textarea {
 
 .modal-content {
     animation: slideUp 0.3s ease forwards;
+}
+
+/*xd*/
+grid-section {
+    flex-grow: 1;
+    min-height: 300px;
+}
+
+.grid-container {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 0;
+    border-collapse: collapse;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.table th,
+.table td {
+    padding: 8px 12px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.table-header {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.table-row {
+    background-color: #fff;
+}
+
+.table-row-alt {
+    background-color: #f8f9fa;
+}
+
+.form-title {
+    color: #2c3e50;
+}
+
+.form-label {
+    color: #34495e;
+    font-weight: 600;
+}
+
+.ddl-producto {
+    color: #2c3e50;
+}
+
+.table-productos th {
+    color: #ffffff;
+    background-color: #3498db;
+}
+
+.table-productos td {
+    color: #2c3e50;
 }

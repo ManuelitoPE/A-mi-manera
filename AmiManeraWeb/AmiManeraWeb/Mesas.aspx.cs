@@ -16,22 +16,27 @@ namespace AmiManeraWeb
         private BindingList<mesa> mesas;
         private PedidoWSClient pedidoWS = new PedidoWSClient();
         private BindingList<pedido> pedidos;
+        private ProductoWSClient productoWS = new ProductoWSClient();
+        private BindingList<producto> productos;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             if (!IsPostBack)
             {
                 mesas = new BindingList<mesa>(mesaWs.listarMesas());
                 pedidos = new BindingList<pedido>(pedidoWS.listarPedidos());
+                productos = new BindingList<producto>(productoWS.listarProductos());
                 //PopulateTableDropdown();
 
-                // Set default date to today
+                //// Set default date to today
                 //txtDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
             }
             rptTables.DataSource = mesas;
             rptTables.DataBind();
 
+            gvProductos.DataSource = productos;
+            gvProductos.DataBind();
             rptReservations.DataSource = pedidos;
             rptReservations.DataBind();
         }
@@ -48,27 +53,27 @@ namespace AmiManeraWeb
         //    }
 
         protected void TabFilter_Click(object sender, EventArgs e)
-            {
-                //LinkButton btn = (LinkButton)sender;
-                //string tabId = btn.ID;
+        {
+            //LinkButton btn = (LinkButton)sender;
+            //string tabId = btn.ID;
 
-                //// Set active tab
-                //btnAll.CssClass = "tab-filter";
-                //btnReservation.CssClass = "tab-filter";
-                //btnOnDine.CssClass = "tab-filter";
+            //// Set active tab
+            //btnAll.CssClass = "tab-filter";
+            //btnReservation.CssClass = "tab-filter";
+            //btnOnDine.CssClass = "tab-filter";
 
-                //btn.CssClass = "tab-filter active";
+            //btn.CssClass = "tab-filter active";
 
-                //// Store selected tab
-                //if (tabId == "btnAll")
-                //    ViewState["SelectedTab"] = "All";
-                //else if (tabId == "btnReservation")
-                //    ViewState["SelectedTab"] = "Reservation";
-                //else if (tabId == "btnOnDine")
-                //    ViewState["SelectedTab"] = "OnDine";
+            //// Store selected tab
+            //if (tabId == "btnAll")
+            //    ViewState["SelectedTab"] = "All";
+            //else if (tabId == "btnReservation")
+            //    ViewState["SelectedTab"] = "Reservation";
+            //else if (tabId == "btnOnDine")
+            //    ViewState["SelectedTab"] = "OnDine";
 
-                //BindReservations();
-            }
+            //BindReservations();
+        }
 
         protected void AreaTab_Click(object sender, EventArgs e)
         {
@@ -120,7 +125,29 @@ namespace AmiManeraWeb
 
         protected void rptTables_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            // Handle table item commands
+
+        }
+
+        protected void dgvProductos_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Cells[0].Text = DataBinder.Eval(e.Row.DataItem, "idProducto").ToString();
+                e.Row.Cells[1].Text = DataBinder.Eval(e.Row.DataItem, "nombre").ToString();
+                e.Row.Cells[2].Text = DataBinder.Eval(e.Row.DataItem, "precioUnitario").ToString();
+                e.Row.Cells[3].Text = DataBinder.Eval(e.Row.DataItem, "tipoProducto.descripcion").ToString();
+            }
+        }
+
+        protected void dgvProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvProductos.PageIndex = e.NewPageIndex;
+            gvProductos.DataBind();
+        }
+
+        private void ShowMessage(string v1, string v2)
+        {
+            throw new NotImplementedException();
         }
 
         protected void btnAddReservation_Click(object sender, EventArgs e)
@@ -130,6 +157,7 @@ namespace AmiManeraWeb
 
         protected void btnSaveReservation_Click(object sender, EventArgs e)
         {
+            
             //// In a real application, you would save the reservation to the database
             //string customerName = txtCustomerName.Text;
             //int tableId = Convert.ToInt32(ddlTable.SelectedValue);
@@ -265,17 +293,23 @@ namespace AmiManeraWeb
             }
         }
 
-        protected string GetMeseroName(Object mesero) {
-            
+        protected string GetMeseroName(Object mesero)
+        {
+
             mesero mesero1 = (mesero)mesero;
             return mesero1.nombre;
         }
 
-        protected int GetNumberTable(mesa mesa){
+        protected int GetNumberTable(mesa mesa)
+        {
             return mesa.idMesa;
-        } 
-        protected int GetAsientosMesa(mesa mesa){
+        }
+        protected int GetAsientosMesa(mesa mesa)
+        {
             return mesa.cantidadAsientos;
         }
+
+       
+        
     }
 }

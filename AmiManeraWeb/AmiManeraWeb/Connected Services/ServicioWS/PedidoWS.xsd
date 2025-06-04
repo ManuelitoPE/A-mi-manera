@@ -7,6 +7,8 @@
   <xs:element name="guardarPedido" type="tns:guardarPedido" />
   <xs:element name="guardarPedidoResponse" type="tns:guardarPedidoResponse" />
   <xs:element name="listarPedidos" type="tns:listarPedidos" />
+  <xs:element name="listarPedidosPorEstado" type="tns:listarPedidosPorEstado" />
+  <xs:element name="listarPedidosPorEstadoResponse" type="tns:listarPedidosPorEstadoResponse" />
   <xs:element name="listarPedidosPorMesa" type="tns:listarPedidosPorMesa" />
   <xs:element name="listarPedidosPorMesaResponse" type="tns:listarPedidosPorMesaResponse" />
   <xs:element name="listarPedidosResponse" type="tns:listarPedidosResponse" />
@@ -121,6 +123,16 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarPedidosPorMesaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:pedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPedidosPorEstado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estado" type="tns:estadoPedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPedidosPorEstadoResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:pedido" />
     </xs:sequence>
