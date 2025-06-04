@@ -13,7 +13,7 @@ import java.util.List;
 @WebService(serviceName = "ProductoWS",
         targetNamespace = "https://servicios.amimaneraws.amm.restaurante.com")
 public class ProductoWS {
-        private final IProductoBO productoBO;
+    private final IProductoBO productoBO;
     
     public ProductoWS(){
         this.productoBO = new ProductoBOImpl();
@@ -34,4 +34,21 @@ public class ProductoWS {
         }
     }
     
+    @WebMethod(operationName = "buscarProducto")
+    public Producto buscarProducto(int id){
+        try {
+            return this.productoBO.obtener(id);
+        } catch (Exception e) {
+            throw new WebServiceException("Error al obtener el producto: "+e.getMessage());
+        }
+    }
+    
+    @WebMethod(operationName = "eliminarProducto")
+    public void eliminarProducto(int id){
+        try {
+            this.productoBO.eliminar(id);
+        } catch (Exception e) {
+            throw new WebServiceException("Error al eliminar el producto: "+e.getMessage());
+        }
+    }
 }

@@ -32,7 +32,12 @@ INSERT INTO TRABAJADOR (nombre, rol, apellidoPaterno, apellidoMaterno, idCuentaU
 INSERT INTO PEDIDO (fecha, estadoPedido, montoTotal, idMesa, idMesero) VALUES
 (NOW(), 'EN_ORDEN', 150.00, 1, 1),
 (NOW(), 'CANCELADO', 200.50, 2, 2),
-(NOW(), 'ENTREGADO', 75.99, 3, 3);
+(NOW(), 'ENTREGADO', 75.99, 3, 3),
+(NOW(), 'EN_ORDEN', 175.99, 2, 1),
+(NOW(), 'EN_ORDEN', 120.99, 2, 1),
+(NOW(), 'EN_ORDEN', 17.99, 2, 1),
+(NOW(), 'EN_ORDEN', 45.99, 2, 1),
+(NOW(), 'EN_ORDEN', 78.99, 2, 1);
 
 -- Insertar en TIPO_PRODUCTO
 INSERT INTO TIPO_PRODUCTO (descripcion) VALUES
