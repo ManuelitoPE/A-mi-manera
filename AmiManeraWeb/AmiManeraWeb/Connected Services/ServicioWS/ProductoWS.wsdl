@@ -11,12 +11,6 @@
   <message name="guardarProductoResponse">
     <part name="parameters" element="tns:guardarProductoResponse" />
   </message>
-  <message name="listarProductos">
-    <part name="parameters" element="tns:listarProductos" />
-  </message>
-  <message name="listarProductosResponse">
-    <part name="parameters" element="tns:listarProductosResponse" />
-  </message>
   <message name="buscarProducto">
     <part name="parameters" element="tns:buscarProducto" />
   </message>
@@ -29,14 +23,16 @@
   <message name="eliminarProductoResponse">
     <part name="parameters" element="tns:eliminarProductoResponse" />
   </message>
+  <message name="listarProductos">
+    <part name="parameters" element="tns:listarProductos" />
+  </message>
+  <message name="listarProductosResponse">
+    <part name="parameters" element="tns:listarProductosResponse" />
+  </message>
   <portType name="ProductoWS">
     <operation name="guardarProducto">
       <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/guardarProductoRequest" message="tns:guardarProducto" />
       <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/guardarProductoResponse" message="tns:guardarProductoResponse" />
-    </operation>
-    <operation name="listarProductos">
-      <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/listarProductosRequest" message="tns:listarProductos" />
-      <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/listarProductosResponse" message="tns:listarProductosResponse" />
     </operation>
     <operation name="buscarProducto">
       <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/buscarProductoRequest" message="tns:buscarProducto" />
@@ -45,6 +41,10 @@
     <operation name="eliminarProducto">
       <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/eliminarProductoRequest" message="tns:eliminarProducto" />
       <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/eliminarProductoResponse" message="tns:eliminarProductoResponse" />
+    </operation>
+    <operation name="listarProductos">
+      <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/listarProductosRequest" message="tns:listarProductos" />
+      <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/listarProductosResponse" message="tns:listarProductosResponse" />
     </operation>
   </portType>
   <binding name="ProductoWSPortBinding" type="tns:ProductoWS">
@@ -58,15 +58,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarProductos">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="buscarProducto">
       <soap:operation soapAction="" />
       <input>
@@ -77,6 +68,15 @@
       </output>
     </operation>
     <operation name="eliminarProducto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarProductos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
