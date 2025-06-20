@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://servicios.amimaneraws.amm.restaurante.com" targetNamespace="https://servicios.amimaneraws.amm.restaurante.com" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="listarTipoProductos" type="tns:listarTipoProductos" />
+  <xs:element name="listarTipoProductosResponse" type="tns:listarTipoProductosResponse" />
+  <xs:complexType name="listarTipoProductos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarTipoProductosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:tipoProducto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idTipoProducto" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

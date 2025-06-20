@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="02f7bb41-b7ae-4e46-8f3e-cf60986995bb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/AMiManeraWS/servicios.disco" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PedidoWS.wsdl" MetadataType="Wsdl" ID="5851a794-aae9-4fa3-9638-4a648ce14fd5" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/PedidoWS?WSDL" />
+    <MetadataFile FileName="PedidoWS.xsd" MetadataType="Schema" ID="8cb95789-c934-4812-81ed-9bf2d4ffe543" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/PedidoWS?xsd=1" />
+    <MetadataFile FileName="TipoProductoWS.wsdl" MetadataType="Wsdl" ID="461f233f-f012-42d3-b7f2-f8f0417e9b4c" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/TipoProductoWS?WSDL" />
+    <MetadataFile FileName="ReservaWS.xsd" MetadataType="Schema" ID="13bd1777-fb6a-409e-8a91-3f10c554a6da" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/ReservaWS?xsd=1" />
+    <MetadataFile FileName="ProductoWS.xsd" MetadataType="Schema" ID="8090a173-a2a8-42ee-8add-64b43cebcd2b" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/ProductoWS?xsd=1" />
+    <MetadataFile FileName="MesaWS.wsdl" MetadataType="Wsdl" ID="c6f80b96-ce2d-4d91-87ce-b35226c8ecfa" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/MesaWS?WSDL" />
+    <MetadataFile FileName="servicios.disco" MetadataType="Disco" ID="c0c66747-52dd-4caa-b24e-fcbf8628f18e" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/servicios.disco" />
+    <MetadataFile FileName="MesaWS.xsd" MetadataType="Schema" ID="10fcba97-7b62-4161-9eb0-915d8b76a49a" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/MesaWS?xsd=1" />
+    <MetadataFile FileName="CuentaUsuarioWS.xsd" MetadataType="Schema" ID="7c38f41b-cfad-48fc-bf10-c8a4c34ad6f8" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/CuentaUsuarioWS?xsd=1" />
+    <MetadataFile FileName="TipoProductoWS.xsd" MetadataType="Schema" ID="a7c2bb19-030f-43d9-aacd-def343f148fb" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/TipoProductoWS?xsd=1" />
+    <MetadataFile FileName="ReservaWS.wsdl" MetadataType="Wsdl" ID="e44f80ea-03f9-41f7-9847-eba14558925a" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/ReservaWS?WSDL" />
+    <MetadataFile FileName="ProductoWS.wsdl" MetadataType="Wsdl" ID="7170f038-a135-4f36-9d3d-99d797db5a00" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/ProductoWS?WSDL" />
+    <MetadataFile FileName="CuentaUsuarioWS.wsdl" MetadataType="Wsdl" ID="7a5202fd-9e63-462d-a3d7-7e7499ba394f" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/CuentaUsuarioWS?WSDL" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

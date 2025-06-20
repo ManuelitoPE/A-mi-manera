@@ -1,5 +1,6 @@
 package com.restaurante.amm.amimaneraws.pedidos;
 
+import com.restaurante.amm.amimaneramodel.pedidos.EstadoPedido;
 import com.restaurante.amm.amimaneramodel.pedidos.Pedido;
 import com.restaurante.amm.amimaneranegocio.Estado;
 import com.restaurante.amm.amimaneranegocio.bo.pedidos.IPedidoBO;
@@ -59,4 +60,13 @@ public class PedidoWS {
         }
     }
     
+    @WebMethod(operationName = "listarPedidosPorEstado")
+    public List<Pedido> listarPedidosPorEstado(@WebParam(name = "estado") EstadoPedido estado){
+        try {
+            return this.pedidoBO.listarPedidosPorEstado(estado);
+        } catch (Exception e) {
+            throw new WebServiceException("Error al listar pedido de la mesa "
+                    +estado.toString()+" : "+e.getMessage());
+        }
+    }
 }

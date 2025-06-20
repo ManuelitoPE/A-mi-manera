@@ -1,5 +1,6 @@
 package com.restaurante.amm.amimaneranegocio.boimpl.pedidos;
 
+import com.restaurante.amm.amimaneramodel.pedidos.EstadoPedido;
 import com.restaurante.amm.amimaneramodel.pedidos.Pedido;
 import com.restaurante.amm.amimaneranegocio.Estado;
 import com.restaurante.amm.amimaneranegocio.bo.pedidos.IPedidoBO;
@@ -41,5 +42,8 @@ public class PedidoBOImpl implements IPedidoBO{
         return pedidoDAO.listarPorMesa(idMesa);
     }
     
-    
+    @Override
+    public List<Pedido> listarPedidosPorEstado(EstadoPedido estado) {
+        return pedidoDAO.listarPorEstado(estado);
+    }
 }
