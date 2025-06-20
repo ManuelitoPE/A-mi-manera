@@ -46,7 +46,11 @@ public class PedidoDAOTest implements ICrudDAOTest {
 
         Mesero mesero = new Mesero();
         mesero.setIdTrabajador(1);
+<<<<<<< HEAD
         pedido.setMesero(mesero);
+=======
+        pedido.setTrabajador(mesero);
+>>>>>>> main
 
         this.testId = pedidoDao.insertar(pedido);
         assertTrue(this.testId > 0);
@@ -70,7 +74,11 @@ public class PedidoDAOTest implements ICrudDAOTest {
 
         Mesero mesero = new Mesero();
         mesero.setIdTrabajador(1);
+<<<<<<< HEAD
         pedido.setMesero(mesero);
+=======
+        pedido.setTrabajador(mesero);
+>>>>>>> main
         
         boolean modifico = pedidoDao.modificar(pedido);
         assertTrue(modifico);
@@ -99,7 +107,11 @@ public class PedidoDAOTest implements ICrudDAOTest {
 
         Mesero mesero = new Mesero();
         mesero.setIdTrabajador(2);
+<<<<<<< HEAD
         pedido.setMesero(mesero);
+=======
+        pedido.setTrabajador(mesero);
+>>>>>>> main
         
         boolean modifico = pedidoDao.modificar(pedido);
         assertFalse(modifico);

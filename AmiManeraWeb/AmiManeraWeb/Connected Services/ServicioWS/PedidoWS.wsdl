@@ -5,6 +5,45 @@
       <xsd:import schemaLocation="http://localhost:8080/AMiManeraWS/PedidoWS?xsd=1" namespace="https://servicios.amimaneraws.amm.restaurante.com" />
     </xsd:schema>
   </types>
+<<<<<<< HEAD
+=======
+  <message name="guardarPedido">
+    <part name="parameters" element="tns:guardarPedido" />
+  </message>
+  <message name="guardarPedidoResponse">
+    <part name="parameters" element="tns:guardarPedidoResponse" />
+  </message>
+  <message name="eliminarPedido">
+    <part name="parameters" element="tns:eliminarPedido" />
+  </message>
+  <message name="eliminarPedidoResponse">
+    <part name="parameters" element="tns:eliminarPedidoResponse" />
+  </message>
+  <message name="listarPedidos">
+    <part name="parameters" element="tns:listarPedidos" />
+  </message>
+  <message name="listarPedidosResponse">
+    <part name="parameters" element="tns:listarPedidosResponse" />
+  </message>
+  <message name="buscarPedidoPorId">
+    <part name="parameters" element="tns:buscarPedidoPorId" />
+  </message>
+  <message name="buscarPedidoPorIdResponse">
+    <part name="parameters" element="tns:buscarPedidoPorIdResponse" />
+  </message>
+  <message name="crearPedido">
+    <part name="parameters" element="tns:crearPedido" />
+  </message>
+  <message name="crearPedidoResponse">
+    <part name="parameters" element="tns:crearPedidoResponse" />
+  </message>
+  <message name="agregarProductoAPedido">
+    <part name="parameters" element="tns:agregarProductoAPedido" />
+  </message>
+  <message name="agregarProductoAPedidoResponse">
+    <part name="parameters" element="tns:agregarProductoAPedidoResponse" />
+  </message>
+>>>>>>> main
   <message name="listarPedidosPorMesa">
     <part name="parameters" element="tns:listarPedidosPorMesa" />
   </message>
@@ -17,6 +56,7 @@
   <message name="listarPedidosPorEstadoResponse">
     <part name="parameters" element="tns:listarPedidosPorEstadoResponse" />
   </message>
+<<<<<<< HEAD
   <message name="listarPedidos">
     <part name="parameters" element="tns:listarPedidos" />
   </message>
@@ -42,6 +82,33 @@
     <part name="parameters" element="tns:guardarPedidoResponse" />
   </message>
   <portType name="PedidoWS">
+=======
+  <portType name="PedidoWS">
+    <operation name="guardarPedido">
+      <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/guardarPedidoRequest" message="tns:guardarPedido" />
+      <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/guardarPedidoResponse" message="tns:guardarPedidoResponse" />
+    </operation>
+    <operation name="eliminarPedido">
+      <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/eliminarPedidoRequest" message="tns:eliminarPedido" />
+      <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/eliminarPedidoResponse" message="tns:eliminarPedidoResponse" />
+    </operation>
+    <operation name="listarPedidos">
+      <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosRequest" message="tns:listarPedidos" />
+      <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosResponse" message="tns:listarPedidosResponse" />
+    </operation>
+    <operation name="buscarPedidoPorId">
+      <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/buscarPedidoPorIdRequest" message="tns:buscarPedidoPorId" />
+      <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/buscarPedidoPorIdResponse" message="tns:buscarPedidoPorIdResponse" />
+    </operation>
+    <operation name="crearPedido">
+      <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/crearPedidoRequest" message="tns:crearPedido" />
+      <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/crearPedidoResponse" message="tns:crearPedidoResponse" />
+    </operation>
+    <operation name="agregarProductoAPedido">
+      <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/agregarProductoAPedidoRequest" message="tns:agregarProductoAPedido" />
+      <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/agregarProductoAPedidoResponse" message="tns:agregarProductoAPedidoResponse" />
+    </operation>
+>>>>>>> main
     <operation name="listarPedidosPorMesa">
       <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosPorMesaRequest" message="tns:listarPedidosPorMesa" />
       <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosPorMesaResponse" message="tns:listarPedidosPorMesaResponse" />
@@ -50,6 +117,7 @@
       <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosPorEstadoRequest" message="tns:listarPedidosPorEstado" />
       <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosPorEstadoResponse" message="tns:listarPedidosPorEstadoResponse" />
     </operation>
+<<<<<<< HEAD
     <operation name="listarPedidos">
       <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosRequest" message="tns:listarPedidos" />
       <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/PedidoWS/listarPedidosResponse" message="tns:listarPedidosResponse" />
@@ -69,6 +137,65 @@
   </portType>
   <binding name="PedidoWSPortBinding" type="tns:PedidoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+=======
+  </portType>
+  <binding name="PedidoWSPortBinding" type="tns:PedidoWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="guardarPedido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarPedido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPedidos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarPedidoPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="crearPedido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="agregarProductoAPedido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+>>>>>>> main
     <operation name="listarPedidosPorMesa">
       <soap:operation soapAction="" />
       <input>
@@ -87,6 +214,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
     <operation name="listarPedidos">
       <soap:operation soapAction="" />
       <input>
@@ -123,6 +251,8 @@
         <soap:body use="literal" />
       </output>
     </operation>
+=======
+>>>>>>> main
   </binding>
   <service name="PedidoWS">
     <port name="PedidoWSPort" binding="tns:PedidoWSPortBinding">

@@ -8,7 +8,7 @@ CREATE PROCEDURE insertarCuentaUsuario(
     OUT p_id INT
 )
 BEGIN
-    INSERT INTO CuentaUsuario (nombreUsuario, contrasenia, tipoUsuario)
+    INSERT INTO CUENTAUSUARIO (nombreUsuario, contrasenia, tipoUsuario)
     VALUES (p_nombreUsuario, p_contrasenia, p_tipoUsuario);
     SET p_id = LAST_INSERT_ID();
 END //
@@ -21,7 +21,7 @@ CREATE PROCEDURE modificarCuentaUsuario(
     IN p_id INT
 )
 BEGIN
-    UPDATE CuentaUsuario
+    UPDATE CUENTAUSUARIO
     SET nombreUsuario = p_nombreUsuario,
         contrasenia = p_contrasenia,
         tipoUsuario = p_tipoUsuario
@@ -33,7 +33,7 @@ CREATE PROCEDURE eliminarCuentaUsuario(
     IN p_id INT
 )
 BEGIN
-    DELETE FROM CuentaUsuario
+    DELETE FROM CUENTAUSUARIO
     WHERE idCuentaUsuario = p_id;
 END //
 
@@ -43,7 +43,7 @@ CREATE PROCEDURE buscarCuentaUsuarioPorId(
 )
 BEGIN
     SELECT idCuentaUsuario, nombreUsuario, contrasenia, tipoUsuario
-    FROM CuentaUsuario
+    FROM CUENTAUSUARIO
     WHERE idCuentaUsuario = p_id;
 END //
 
@@ -51,7 +51,7 @@ END //
 CREATE PROCEDURE listarCuentasUsuario()
 BEGIN
     SELECT idCuentaUsuario, nombreUsuario, contrasenia, tipoUsuario
-    FROM CuentaUsuario;
+    FROM CUENTAUSUARIO;
 END //
 
 -- Procedimiento para buscar una cuenta de usuario por nombre de usuario y contrasenia
@@ -61,7 +61,11 @@ CREATE PROCEDURE autenticarUsuario(
 )
 BEGIN
     SELECT idCuentaUsuario, nombreUsuario, contrasenia, tipoUsuario
+<<<<<<< HEAD
     FROM CuentaUsuario
+=======
+    FROM CUENTAUSUARIO
+>>>>>>> main
     WHERE nombreUsuario = p_nombreUsuario AND contrasenia = p_contrasenia;
 END //
 DELIMITER ; 

@@ -5,31 +5,55 @@
       <xsd:import schemaLocation="http://localhost:8080/AMiManeraWS/ReservaWS?xsd=1" namespace="https://servicios.amimaneraws.amm.restaurante.com" />
     </xsd:schema>
   </types>
+<<<<<<< HEAD
   <message name="ListarReservas">
     <part name="parameters" element="tns:ListarReservas" />
   </message>
   <message name="ListarReservasResponse">
     <part name="parameters" element="tns:ListarReservasResponse" />
   </message>
+=======
+>>>>>>> main
   <message name="GuardarReserva">
     <part name="parameters" element="tns:GuardarReserva" />
   </message>
   <message name="GuardarReservaResponse">
     <part name="parameters" element="tns:GuardarReservaResponse" />
   </message>
+<<<<<<< HEAD
   <portType name="ReservaWS">
     <operation name="ListarReservas">
       <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ReservaWS/ListarReservasRequest" message="tns:ListarReservas" />
       <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ReservaWS/ListarReservasResponse" message="tns:ListarReservasResponse" />
     </operation>
+=======
+  <message name="ListarReservas">
+    <part name="parameters" element="tns:ListarReservas" />
+  </message>
+  <message name="ListarReservasResponse">
+    <part name="parameters" element="tns:ListarReservasResponse" />
+  </message>
+  <portType name="ReservaWS">
+>>>>>>> main
     <operation name="GuardarReserva">
       <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ReservaWS/GuardarReservaRequest" message="tns:GuardarReserva" />
       <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ReservaWS/GuardarReservaResponse" message="tns:GuardarReservaResponse" />
     </operation>
+<<<<<<< HEAD
   </portType>
   <binding name="ReservaWSPortBinding" type="tns:ReservaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <operation name="ListarReservas">
+=======
+    <operation name="ListarReservas">
+      <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ReservaWS/ListarReservasRequest" message="tns:ListarReservas" />
+      <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ReservaWS/ListarReservasResponse" message="tns:ListarReservasResponse" />
+    </operation>
+  </portType>
+  <binding name="ReservaWSPortBinding" type="tns:ReservaWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GuardarReserva">
+>>>>>>> main
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -38,7 +62,11 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
     <operation name="GuardarReserva">
+=======
+    <operation name="ListarReservas">
+>>>>>>> main
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

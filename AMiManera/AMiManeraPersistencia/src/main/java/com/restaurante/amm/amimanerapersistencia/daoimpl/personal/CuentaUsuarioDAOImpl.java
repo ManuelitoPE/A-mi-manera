@@ -99,5 +99,41 @@ public class CuentaUsuarioDAOImpl extends BaseDAOImpl<CuentaUsuario> implements 
             System.err.println("Error inpesperado: " + e.getMessage());
             throw new RuntimeException("Error inesperado al buscar el registro.", e);
         }
+<<<<<<< HEAD
     }    
+=======
+    }
+    
+    protected CallableStatement comandoBuscarPorId(Connection conn, String nombre) throws SQLException{
+        String sql = "{CALL buscarCuentaUsuarioPorNombre(?,?)}";
+        CallableStatement cmd = conn.prepareCall(sql);
+        cmd.setString("p_nombreUsuario", nombre);
+        cmd.registerOutParameter("p_id", Types.INTEGER);
+        return cmd;        
+    }
+    
+    @Override
+    public int buscarId(CuentaUsuario cuenta){
+        try (
+            Connection conn = DBManager.getInstance().getConnection();
+            CallableStatement cmd = this.comandoBuscarPorId(conn, cuenta.getNombreUsuario());
+        ) {
+            
+            if (cmd.executeUpdate() == 0) {
+                System.err.println("No se encontro el usuario con nombre: " + 
+                        cuenta.getNombreUsuario());
+                return -1;
+            }
+            return cmd.getInt("p_id");
+        }
+        catch (SQLException e) {
+            System.err.println("Error SQL durante la busqueda: " + e.getMessage());
+            throw new RuntimeException("No se pudo buscar el registro.", e);
+        }
+        catch (Exception e) {
+            System.err.println("Error inpesperado: " + e.getMessage());
+            throw new RuntimeException("Error inesperado al buscar el registro.", e);
+        }        
+    }
+>>>>>>> main
 } 

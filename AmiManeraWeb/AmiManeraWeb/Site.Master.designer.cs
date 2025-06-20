@@ -69,6 +69,27 @@ namespace AmiManeraWeb
         protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkAgregarUsuario;
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Control lnkReportes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkReportes;
+
+        /// <summary>
+        /// Control lnkReporteComprobantes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkReporteComprobantes;
+
+        /// <summary>
+>>>>>>> main
         /// Control MainContent.
         /// </summary>
         /// <remarks>

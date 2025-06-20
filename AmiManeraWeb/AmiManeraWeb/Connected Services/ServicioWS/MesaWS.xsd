@@ -25,6 +25,7 @@
       <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
       <xs:element name="idPedido" type="xs:int" />
       <xs:element minOccurs="0" name="mesa" type="tns:mesa" />
+<<<<<<< HEAD
       <xs:element minOccurs="0" name="mesero" type="tns:mesero" />
       <xs:element name="montoTotal" type="xs:double" />
     </xs:sequence>
@@ -39,6 +40,13 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="trabajador" abstract="true">
+=======
+      <xs:element name="montoTotal" type="xs:double" />
+      <xs:element minOccurs="0" name="trabajador" type="tns:trabajador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="trabajador">
+>>>>>>> main
     <xs:sequence>
       <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string" />
       <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string" />

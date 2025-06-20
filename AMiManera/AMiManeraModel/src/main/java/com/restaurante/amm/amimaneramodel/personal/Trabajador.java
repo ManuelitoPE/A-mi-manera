@@ -1,6 +1,6 @@
 package com.restaurante.amm.amimaneramodel.personal;
 
-public abstract class Trabajador {
+public class Trabajador {
     // Atributos
     private int idTrabajador;
     private String nombre;

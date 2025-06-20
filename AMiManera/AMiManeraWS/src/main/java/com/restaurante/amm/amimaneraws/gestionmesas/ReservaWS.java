@@ -37,4 +37,15 @@ public class ReservaWS {
         }  
     }
     
+<<<<<<< HEAD
+=======
+    @WebMethod(operationName = "BuscarReserva")
+    public Reserva buscarReserva(int id){
+        try {
+            return this.reservaBO.obtener(id);
+        } catch (Exception e) {
+            throw new WebServiceException("Error al obtener la reserva: "+e.getMessage());
+        }
+    }
+>>>>>>> main
 }

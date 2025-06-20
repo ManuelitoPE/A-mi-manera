@@ -54,4 +54,11 @@ CREATE PROCEDURE listarPedidos()
 BEGIN
     SELECT * FROM PEDIDO;
 END //
+
+CREATE PROCEDURE listarPedidosPorMesa(in p_idMesa INT)
+BEGIN
+    SELECT *
+    FROM PEDIDO
+    WHERE idMesa = p_idMesa AND fecha = CURDATE() AND estadoPedido != 'CANCELADO';
+END //
 DELIMITER ;

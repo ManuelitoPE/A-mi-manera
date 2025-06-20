@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="https://servicios.amimaneraws.amm.restaurante.com" targetNamespace="https://servicios.amimaneraws.amm.restaurante.com" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<<<<<<< HEAD
   <xs:element name="login" type="tns:login" />
   <xs:element name="loginResponse" type="tns:loginResponse" />
+=======
+  <xs:element name="encontrarRolDelUsuario" type="tns:encontrarRolDelUsuario" />
+  <xs:element name="encontrarRolDelUsuarioResponse" type="tns:encontrarRolDelUsuarioResponse" />
+  <xs:element name="login" type="tns:login" />
+  <xs:element name="loginResponse" type="tns:loginResponse" />
+  <xs:complexType name="encontrarRolDelUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cuenta" type="tns:cuentaUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cuentaUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="constrasenia" type="xs:string" />
+      <xs:element name="idCuentaUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreUsuario" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoUsuario" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="encontrarRolDelUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+>>>>>>> main
   <xs:complexType name="login">
     <xs:sequence>
       <xs:element minOccurs="0" name="nombreUsuario" type="xs:string" />
@@ -13,6 +38,7 @@
       <xs:element minOccurs="0" name="return" type="tns:cuentaUsuario" />
     </xs:sequence>
   </xs:complexType>
+<<<<<<< HEAD
   <xs:complexType name="cuentaUsuario">
     <xs:sequence>
       <xs:element minOccurs="0" name="constrasenia" type="xs:string" />
@@ -21,4 +47,6 @@
       <xs:element minOccurs="0" name="tipoUsuario" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+=======
+>>>>>>> main
 </xs:schema>

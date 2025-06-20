@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="https://servicios.amimaneraws.amm.restaurante.com" targetNamespace="https://servicios.amimaneraws.amm.restaurante.com" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<<<<<<< HEAD
   <xs:element name="buscarPedidoPorId" type="tns:buscarPedidoPorId" />
   <xs:element name="buscarPedidoPorIdResponse" type="tns:buscarPedidoPorIdResponse" />
+=======
+  <xs:element name="agregarProductoAPedido" type="tns:agregarProductoAPedido" />
+  <xs:element name="agregarProductoAPedidoResponse" type="tns:agregarProductoAPedidoResponse" />
+  <xs:element name="buscarPedidoPorId" type="tns:buscarPedidoPorId" />
+  <xs:element name="buscarPedidoPorIdResponse" type="tns:buscarPedidoPorIdResponse" />
+  <xs:element name="crearPedido" type="tns:crearPedido" />
+  <xs:element name="crearPedidoResponse" type="tns:crearPedidoResponse" />
+>>>>>>> main
   <xs:element name="eliminarPedido" type="tns:eliminarPedido" />
   <xs:element name="eliminarPedidoResponse" type="tns:eliminarPedidoResponse" />
   <xs:element name="guardarPedido" type="tns:guardarPedido" />
@@ -28,8 +37,13 @@
       <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
       <xs:element name="idPedido" type="xs:int" />
       <xs:element minOccurs="0" name="mesa" type="tns:mesa" />
+<<<<<<< HEAD
       <xs:element minOccurs="0" name="mesero" type="tns:mesero" />
       <xs:element name="montoTotal" type="xs:double" />
+=======
+      <xs:element name="montoTotal" type="xs:double" />
+      <xs:element minOccurs="0" name="trabajador" type="tns:trabajador" />
+>>>>>>> main
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="mesa">
@@ -65,6 +79,7 @@
   <xs:complexType name="localDateTime" final="extension restriction">
     <xs:sequence />
   </xs:complexType>
+<<<<<<< HEAD
   <xs:complexType name="mesero">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:trabajador">
@@ -75,6 +90,9 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="trabajador" abstract="true">
+=======
+  <xs:complexType name="trabajador">
+>>>>>>> main
     <xs:sequence>
       <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string" />
       <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string" />
@@ -101,6 +119,22 @@
   <xs:complexType name="guardarPedidoResponse">
     <xs:sequence />
   </xs:complexType>
+<<<<<<< HEAD
+=======
+  <xs:complexType name="agregarProductoAPedido">
+    <xs:sequence>
+      <xs:element name="idPedido" type="xs:int" />
+      <xs:element name="idProd" type="xs:int" />
+      <xs:element name="idTrabajador" type="xs:int" />
+      <xs:element name="cant" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agregarProductoAPedidoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+>>>>>>> main
   <xs:complexType name="eliminarPedido">
     <xs:sequence>
       <xs:element name="id" type="xs:int" />
@@ -109,6 +143,20 @@
   <xs:complexType name="eliminarPedidoResponse">
     <xs:sequence />
   </xs:complexType>
+<<<<<<< HEAD
+=======
+  <xs:complexType name="crearPedido">
+    <xs:sequence>
+      <xs:element name="idMesa" type="xs:int" />
+      <xs:element name="idMesero" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="crearPedidoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+>>>>>>> main
   <xs:complexType name="listarPedidos">
     <xs:sequence />
   </xs:complexType>

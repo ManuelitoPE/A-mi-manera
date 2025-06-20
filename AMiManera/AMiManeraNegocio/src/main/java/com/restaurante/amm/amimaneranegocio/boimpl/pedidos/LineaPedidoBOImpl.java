@@ -34,4 +34,12 @@ public class LineaPedidoBOImpl implements ILineaPedidoBO{
     public List<LineaPedido> listar(){
         return this.lineaPedidoDAO.listar();
     }
+<<<<<<< HEAD
+=======
+    
+    @Override
+    public List<LineaPedido> listarPorIdPedido(int idPedido){
+        return this.lineaPedidoDAO.listarPorIdPedido(idPedido);
+    }
+>>>>>>> main
 }

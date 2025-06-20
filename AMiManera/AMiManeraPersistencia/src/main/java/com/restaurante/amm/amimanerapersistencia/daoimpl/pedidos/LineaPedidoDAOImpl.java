@@ -1,5 +1,9 @@
 package com.restaurante.amm.amimanerapersistencia.daoimpl.pedidos;
 
+<<<<<<< HEAD
+=======
+import com.restaurante.amm.amimaneradbmanager.DBManager;
+>>>>>>> main
 import com.restaurante.amm.amimanerapersistencia.daoimpl.pedidos.ProductoDAOImpl;
 import com.restaurante.amm.amimanerapersistencia.daoimpl.pedidos.PedidoDAOImpl;
 import java.sql.CallableStatement;
@@ -10,6 +14,12 @@ import java.sql.Types;
 import com.restaurante.amm.amimanerapersistencia.dao.pedidos.ILineaPedidoDAO;
 import com.restaurante.amm.amimaneramodel.pedidos.LineaPedido;
 import com.restaurante.amm.amimanerapersistencia.daoimpl.BaseDAOImpl;
+<<<<<<< HEAD
+=======
+import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.List;
+>>>>>>> main
 
 public class LineaPedidoDAOImpl extends BaseDAOImpl<LineaPedido> implements ILineaPedidoDAO {
     @Override
@@ -67,4 +77,39 @@ public class LineaPedidoDAOImpl extends BaseDAOImpl<LineaPedido> implements ILin
         
         return linea;
     }
+<<<<<<< HEAD
+=======
+    
+    protected CallableStatement comandoListarPorIdPedido(Connection conn,
+            int idPedido) throws SQLException{
+        String sql = "{CALL listarLineasPedidoPorIdPedido(?)}";
+        CallableStatement cmd = conn.prepareCall(sql);
+        cmd.setInt("p_id", idPedido);
+        return cmd;    
+    }
+    @Override
+    public List<LineaPedido> listarPorIdPedido(int idPedido){
+        try (
+            Connection conn = DBManager.getInstance().getConnection();
+            PreparedStatement ps = this.comandoListarPorIdPedido(conn,idPedido);
+        ) {
+            ResultSet rs = ps.executeQuery();
+            
+            List<LineaPedido> modelos = new ArrayList<>();
+            while (rs.next()) {
+                modelos.add(this.mapearModelo(rs));
+            }
+            
+            return modelos;
+        }
+        catch (SQLException e) {
+            System.err.println("Error SQL durante el listado por pedido: " + e.getMessage());
+            throw new RuntimeException("No se pudo listar las lineas pedido por pedido.", e);
+        }
+        catch (Exception e) {
+            System.err.println("Error inpesperado: " + e.getMessage());
+            throw new RuntimeException("Error inesperado al listar los lineas pedido por pedido.", e);
+        }        
+    }
+>>>>>>> main
 } 

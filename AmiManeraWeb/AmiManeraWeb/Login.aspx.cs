@@ -10,6 +10,10 @@ namespace AmiManeraWeb
 {
     public partial class Login : System.Web.UI.Page
     {
+<<<<<<< HEAD
+=======
+        
+>>>>>>> main
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -28,7 +32,11 @@ namespace AmiManeraWeb
                 // Client proxy al Web Service
                 var ws = new CuentaUsuarioWSClient();
                 cuentaUsuario cuenta = ws.login(usuario, clave);   // ←  tu método WS
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> main
                 if (cuenta != null)
                 {
                     // Guarda el objeto completo por si lo necesitas luego
@@ -36,7 +44,12 @@ namespace AmiManeraWeb
                     Session["UsuarioNombre"] = cuenta.nombreUsuario;
                     // También el rol por comodidad
                     Session["rol"] = cuenta.tipoUsuario;
+<<<<<<< HEAD
 
+=======
+                    int id = ws.encontrarRolDelUsuario(cuenta);
+                    Session["idTrabajador"] = id;
+>>>>>>> main
                     Response.Redirect("~/MenuPrincipal.aspx");
                 }
                 else

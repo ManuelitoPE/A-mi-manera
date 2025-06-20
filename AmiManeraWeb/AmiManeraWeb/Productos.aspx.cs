@@ -15,6 +15,11 @@ namespace AmiManeraWeb
         
         protected void Page_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
+            Page.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+
+>>>>>>> main
             if (!IsPostBack)
             {
                 CargarTipos();
@@ -38,12 +43,25 @@ namespace AmiManeraWeb
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
+            if (!double.TryParse(txtPrecio.Text, out double precio))
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "alert('Ingrese un precio válido.');", true);
+                return;
+            }
+
+>>>>>>> main
             producto producto = new producto
             {
                 idProducto = string.IsNullOrWhiteSpace(hfIdProducto.Value) ? 0 : int.Parse(hfIdProducto.Value),
                 nombre = txtNombre.Text.Trim(),
                 descripcion = txtDescripcion.Text.Trim(),
+<<<<<<< HEAD
                 precioUnitario = double.Parse(txtPrecio.Text),
+=======
+                precioUnitario = Math.Round(precio, 2),
+>>>>>>> main
                 tipoProducto = new tipoProducto { idTipoProducto = int.Parse(ddlTipoProducto.SelectedValue) }
             };
 

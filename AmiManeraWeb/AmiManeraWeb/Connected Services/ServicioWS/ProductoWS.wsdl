@@ -5,12 +5,15 @@
       <xsd:import schemaLocation="http://localhost:8080/AMiManeraWS/ProductoWS?xsd=1" namespace="https://servicios.amimaneraws.amm.restaurante.com" />
     </xsd:schema>
   </types>
+<<<<<<< HEAD
   <message name="guardarProducto">
     <part name="parameters" element="tns:guardarProducto" />
   </message>
   <message name="guardarProductoResponse">
     <part name="parameters" element="tns:guardarProductoResponse" />
   </message>
+=======
+>>>>>>> main
   <message name="listarProductos">
     <part name="parameters" element="tns:listarProductos" />
   </message>
@@ -29,11 +32,27 @@
   <message name="eliminarProductoResponse">
     <part name="parameters" element="tns:eliminarProductoResponse" />
   </message>
+<<<<<<< HEAD
   <portType name="ProductoWS">
     <operation name="guardarProducto">
       <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/guardarProductoRequest" message="tns:guardarProducto" />
       <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/guardarProductoResponse" message="tns:guardarProductoResponse" />
     </operation>
+=======
+  <message name="guardarProducto">
+    <part name="parameters" element="tns:guardarProducto" />
+  </message>
+  <message name="guardarProductoResponse">
+    <part name="parameters" element="tns:guardarProductoResponse" />
+  </message>
+  <message name="buscarProductoPorNombre">
+    <part name="parameters" element="tns:buscarProductoPorNombre" />
+  </message>
+  <message name="buscarProductoPorNombreResponse">
+    <part name="parameters" element="tns:buscarProductoPorNombreResponse" />
+  </message>
+  <portType name="ProductoWS">
+>>>>>>> main
     <operation name="listarProductos">
       <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/listarProductosRequest" message="tns:listarProductos" />
       <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/listarProductosResponse" message="tns:listarProductosResponse" />
@@ -46,6 +65,7 @@
       <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/eliminarProductoRequest" message="tns:eliminarProducto" />
       <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/eliminarProductoResponse" message="tns:eliminarProductoResponse" />
     </operation>
+<<<<<<< HEAD
   </portType>
   <binding name="ProductoWSPortBinding" type="tns:ProductoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -58,6 +78,19 @@
         <soap:body use="literal" />
       </output>
     </operation>
+=======
+    <operation name="guardarProducto">
+      <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/guardarProductoRequest" message="tns:guardarProducto" />
+      <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/guardarProductoResponse" message="tns:guardarProductoResponse" />
+    </operation>
+    <operation name="buscarProductoPorNombre">
+      <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/buscarProductoPorNombreRequest" message="tns:buscarProductoPorNombre" />
+      <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/ProductoWS/buscarProductoPorNombreResponse" message="tns:buscarProductoPorNombreResponse" />
+    </operation>
+  </portType>
+  <binding name="ProductoWSPortBinding" type="tns:ProductoWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+>>>>>>> main
     <operation name="listarProductos">
       <soap:operation soapAction="" />
       <input>
@@ -85,6 +118,27 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
+=======
+    <operation name="guardarProducto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarProductoPorNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+>>>>>>> main
   </binding>
   <service name="ProductoWS">
     <port name="ProductoWSPort" binding="tns:ProductoWSPortBinding">

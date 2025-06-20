@@ -6,11 +6,19 @@ package com.restaurante.amm.amimaneranegocio.bo.pedidos;
 
 import com.restaurante.amm.amimaneramodel.pedidos.LineaPedido;
 import com.restaurante.amm.amimaneranegocio.bo.IBaseBO;
+<<<<<<< HEAD
+=======
+import java.util.List;
+>>>>>>> main
 
 /**
  *
  * @author USER
  */
 public interface ILineaPedidoBO extends IBaseBO<LineaPedido>{
+<<<<<<< HEAD
     
+=======
+    List<LineaPedido> listarPorIdPedido(int idPedido);
+>>>>>>> main
 }

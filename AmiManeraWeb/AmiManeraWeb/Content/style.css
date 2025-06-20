@@ -11,7 +11,7 @@
     --text-secondary: #e2e8f0;
     --text-light: #94a3b8;
     --bg-white: #3C1518;
-    --bg-light: e2e8f0;
+    --bg-light: #e2e8f0;
     --bg-gray: #69140E;
     --border-color: #e2e8f0;
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -239,6 +239,7 @@ button, input, select, textarea {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: var(--spacing-6);
+    color: var(--primary-color);
 }
 
 /* Manage Tables Styles */
@@ -281,6 +282,7 @@ button, input, select, textarea {
         border-radius: 50%;
         margin-left: var(--spacing-2);
         font-size: 0.75rem;
+        color: var(--text-secondary)
     }
 
     .tab-filter:hover {
@@ -320,11 +322,12 @@ button, input, select, textarea {
 .current-date {
     margin: 0 var(--spacing-4);
     font-weight: 500;
+    color: var(--primary-color)
 }
 
 .customer-search {
     position: relative;
-    width: 240px;
+/*    width: 240px;*/
     display: flex;
 }
 
@@ -343,6 +346,17 @@ button, input, select, textarea {
     border-radius: var(--border-radius-md);
     background-color: var(--bg-white);
 }
+
+    .search-input:hover {
+        background-color: var(--primary-light);
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+    }
+    .search-input:not(:placeholder-shown) {
+        background-color: var(--primary-light);
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+    }
 
 .filter-btn {
     width: 36px;
@@ -364,19 +378,27 @@ button, input, select, textarea {
         color: var(--primary-color);
     }
 
+.main-content-tables {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ocupar toda la altura visible del navegador */
+    overflow: hidden; /* Evita que crezca más allá */
+}
 .tables-content {
     display: flex;
     flex: 1;
     gap: var(--spacing-6);
+/*    height: 100vh;*/
+    overflow: hidden;
 }
 
 /* Reservations List Styles */
 .reservations-list {
-    flex: 0 0 360px;
+    flex: 0 0 280px;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    max-height: calc(100vh - 260px);
+    overflow-y: auto; 
+    height: 100%;
 }
 
 .reservation-card {
@@ -565,6 +587,9 @@ button, input, select, textarea {
     margin-right: var(--spacing-6);
     font-size: 0.875rem;
 }
+    .legend-item span{
+        color: var(--primary-color)
+    }
 
 .status-dot {
     width: 12px;
@@ -587,7 +612,8 @@ button, input, select, textarea {
 
 .table-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+/*    height: 100vh;*/
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
     gap: var(--spacing-6);
     flex: 1;
 }
@@ -636,13 +662,14 @@ button, input, select, textarea {
 .table-number {
     font-weight: 600;
     font-size: 0.875rem;
+    color: var(--primary-color);
 }
 
 .table-capacity {
     display: flex;
     align-items: center;
     font-size: 0.75rem;
-    color: var(--text-secondary);
+    color: var(--primary-color);
 }
 
     .table-capacity i {
@@ -714,7 +741,7 @@ button, input, select, textarea {
     margin: 10% auto;
     padding: var(--spacing-6);
     border-radius: var(--border-radius-lg);
-    width: 500px;
+    width: 900px;
     max-width: 90%;
     box-shadow: var(--shadow-lg);
     position: relative;
@@ -773,6 +800,7 @@ button, input, select, textarea {
     border-radius: var(--border-radius-md);
     background-color: var(--bg-white);
     transition: all 0.2s ease;
+    color: white;
 }
 
     .form-control:focus {
@@ -817,14 +845,26 @@ button, input, select, textarea {
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
-    .tables-content {
+    .manage-tables-container {
         flex-direction: column;
     }
 
+    .tables-content {
+        flex-direction: column;
+        overflow: hidden;
+        flex: 1;
+    }
+
+    .table-grid {
+        flex: 1;
+        overflow-y: auto; /* scroll en mesas si hay muchas */
+    }
+
     .reservations-list {
-        flex: 0 0 auto;
+/*        flex: 0 0 auto;*/
         max-height: 400px;
         width: 100%;
+        overflow-y: auto;
     }
 }
 
@@ -912,4 +952,76 @@ button, input, select, textarea {
 
 .modal-content {
     animation: slideUp 0.3s ease forwards;
+}
+
+/*xd*/
+grid-section {
+    flex-grow: 1;
+    min-height: 300px;
+}
+
+.grid-container {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 0;
+    border-collapse: collapse;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.table th,
+.table td {
+    padding: 8px 12px;
+    border: 1px solid #dee2e6;
+    background-color: #69140E;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.table-header {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.table-row {
+    background-color: #fff;
+}
+
+.table-row-alt {
+    background-color: #f8f9fa;
+}
+
+.form-title {
+    color: #2c3e50;
+}
+
+.form-label {
+    color: #34495e;
+    font-weight: 600;
+}
+
+.ddl-producto {
+    color: #2c3e50;
+}
+
+.table-productos th {
+    color: #ffffff;
+    background-color: #A44200;
+}
+
+.table-productos td {
+    color: #2c3e50;
 }

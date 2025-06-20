@@ -78,6 +78,18 @@ namespace AmiManeraWeb
         protected global::System.Web.UI.WebControls.TextBox txtPrecio;
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Control revPrecio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revPrecio;
+
+        /// <summary>
+>>>>>>> main
         /// Control lblTipo.
         /// </summary>
         /// <remarks>

@@ -6,6 +6,10 @@ import com.restaurante.amm.amimaneranegocio.bo.IBaseBO;
 import java.util.List;
 
 public interface IPedidoBO extends IBaseBO<Pedido> {
+<<<<<<< HEAD
+=======
+    public int crear(Pedido modelo);
+>>>>>>> main
     List<Pedido> listarPedidosPorMesa(int idMesa);
     List<Pedido> listarPedidosPorEstado(EstadoPedido estado);
 }

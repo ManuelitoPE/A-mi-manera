@@ -11,11 +11,27 @@
   <message name="loginResponse">
     <part name="parameters" element="tns:loginResponse" />
   </message>
+<<<<<<< HEAD
+=======
+  <message name="encontrarRolDelUsuario">
+    <part name="parameters" element="tns:encontrarRolDelUsuario" />
+  </message>
+  <message name="encontrarRolDelUsuarioResponse">
+    <part name="parameters" element="tns:encontrarRolDelUsuarioResponse" />
+  </message>
+>>>>>>> main
   <portType name="CuentaUsuarioWS">
     <operation name="login">
       <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/CuentaUsuarioWS/loginRequest" message="tns:login" />
       <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/CuentaUsuarioWS/loginResponse" message="tns:loginResponse" />
     </operation>
+<<<<<<< HEAD
+=======
+    <operation name="encontrarRolDelUsuario">
+      <input wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/CuentaUsuarioWS/encontrarRolDelUsuarioRequest" message="tns:encontrarRolDelUsuario" />
+      <output wsam:Action="https://servicios.amimaneraws.amm.restaurante.com/CuentaUsuarioWS/encontrarRolDelUsuarioResponse" message="tns:encontrarRolDelUsuarioResponse" />
+    </operation>
+>>>>>>> main
   </portType>
   <binding name="CuentaUsuarioWSPortBinding" type="tns:CuentaUsuarioWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -28,6 +44,18 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
+=======
+    <operation name="encontrarRolDelUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+>>>>>>> main
   </binding>
   <service name="CuentaUsuarioWS">
     <port name="CuentaUsuarioWSPort" binding="tns:CuentaUsuarioWSPortBinding">

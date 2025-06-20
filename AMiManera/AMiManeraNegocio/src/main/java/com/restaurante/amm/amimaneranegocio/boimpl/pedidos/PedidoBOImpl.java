@@ -38,6 +38,14 @@ public class PedidoBOImpl implements IPedidoBO{
     }
     
     @Override
+<<<<<<< HEAD
+=======
+    public int crear(Pedido modelo){
+        return this.pedidoDAO.insertar(modelo);
+    }
+    
+    @Override
+>>>>>>> main
     public List<Pedido> listarPedidosPorMesa(int idMesa) {
         return pedidoDAO.listarPorMesa(idMesa);
     }

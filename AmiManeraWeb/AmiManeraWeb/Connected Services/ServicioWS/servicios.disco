@@ -6,4 +6,8 @@
   <contractRef ref="http://localhost:8080/AMiManeraWS/PedidoWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
   <contractRef ref="http://localhost:8080/AMiManeraWS/ProductoWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
   <contractRef ref="http://localhost:8080/AMiManeraWS/TipoProductoWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+<<<<<<< HEAD
+=======
+  <contractRef ref="http://localhost:8080/AMiManeraWS/LineaPedidoWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+>>>>>>> main
 </discovery>

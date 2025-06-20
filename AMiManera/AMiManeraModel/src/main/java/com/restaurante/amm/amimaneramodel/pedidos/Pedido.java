@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import com.restaurante.amm.amimaneramodel.gestionmesas.Mesa;
-import com.restaurante.amm.amimaneramodel.personal.Mesero;
+import com.restaurante.amm.amimaneramodel.personal.Trabajador;
 
 public class Pedido {
     //Atributos
@@ -12,27 +12,29 @@ public class Pedido {
     private Date fecha;
     private EstadoPedido estadoPedido;
     private double montoTotal;
-    
     private List<LineaPedido> listaLineaPedido;
     private Mesa mesa;
-    private Mesero mesero;
+    private Trabajador trabajador;
     
     //Contructores
     public Pedido(){
         listaLineaPedido = new ArrayList<>();
+        fecha = new Date();
+        estadoPedido = EstadoPedido.EN_ORDEN;
         mesa = new Mesa();
-        mesero = new Mesero();
+        trabajador = new Trabajador();
+        montoTotal = 0;
     }
     public Pedido(int idPedido, Date fecha, EstadoPedido estadoPedido,
                   double montoTotal, List<LineaPedido> listaLineaPedidos,
-                  Mesa mesa, Mesero mesero){
+                  Mesa mesa, Trabajador trabajador){
         this.idPedido = idPedido;
         this.fecha = fecha;
         this.estadoPedido = estadoPedido;
         this.montoTotal = montoTotal;
         this.listaLineaPedido = new ArrayList<>(listaLineaPedidos);
         this.mesa = new Mesa(mesa);
-        this.mesero = new Mesero(mesero);
+        this.trabajador = new Trabajador(trabajador);
     }
     public Pedido(Pedido pedido){
         idPedido = pedido.idPedido;
@@ -41,7 +43,7 @@ public class Pedido {
         montoTotal = pedido.montoTotal;
         listaLineaPedido = new ArrayList<>(pedido.listaLineaPedido);
         mesa = new Mesa(pedido.mesa);
-        mesero = new Mesero(pedido.mesero);
+        trabajador = new Trabajador(pedido.trabajador);
     }
     
     //Setters
@@ -85,24 +87,17 @@ public class Pedido {
         return mesa;
     }
 
-    /**
-     * @param mesa the mesa to set
-     */
+
     public void setMesa(Mesa mesa) {
         this.mesa = mesa;
     }
 
-    /**
-     * @return the mesero
-     */
-    public Mesero getMesero() {
-        return mesero;
+
+    public Trabajador getTrabajador() {
+        return trabajador;
     }
 
-    /**
-     * @param mesero the mesero to set
-     */
-    public void setMesero(Mesero mesero) {
-        this.mesero = mesero;
+    public void setTrabajador(Trabajador trabajador) {
+        this.trabajador = trabajador;
     }
 }

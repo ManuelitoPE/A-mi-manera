@@ -18,7 +18,11 @@ namespace AmiManeraWeb
         private BindingList<pedido> pedidos;
         private ProductoWSClient productoWS = new ProductoWSClient();
         private BindingList<producto> productos;
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> main
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -35,8 +39,13 @@ namespace AmiManeraWeb
             rptTables.DataSource = mesas;
             rptTables.DataBind();
 
+<<<<<<< HEAD
             gvProductos.DataSource = productos;
             gvProductos.DataBind();
+=======
+            //gvProductos.DataSource = productos;
+            //gvProductos.DataBind();
+>>>>>>> main
             rptReservations.DataSource = pedidos;
             rptReservations.DataBind();
         }
@@ -125,10 +134,22 @@ namespace AmiManeraWeb
 
         protected void rptTables_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
+<<<<<<< HEAD
 
         }
 
         protected void dgvProductos_RowDataBound(object sender, GridViewRowEventArgs e)
+=======
+            if (e.CommandName == "SeleccionarMesa")
+            {
+                int idMesa = Convert.ToInt32(e.CommandArgument);
+                
+                Response.Redirect("PedidoMesa.aspx?idMesa=" + idMesa);
+            }
+        }
+
+        protected void gvProductos_RowDataBound(object sender, GridViewRowEventArgs e)
+>>>>>>> main
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
@@ -139,10 +160,17 @@ namespace AmiManeraWeb
             }
         }
 
+<<<<<<< HEAD
         protected void dgvProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvProductos.PageIndex = e.NewPageIndex;
             gvProductos.DataBind();
+=======
+        protected void gvProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            //gvProductos.PageIndex = e.NewPageIndex;
+            //gvProductos.DataBind();
+>>>>>>> main
         }
 
         private void ShowMessage(string v1, string v2)
@@ -212,7 +240,11 @@ namespace AmiManeraWeb
         //    }
 
         //    // Helper methods for UI rendering
+<<<<<<< HEAD
         protected string GetStatusClass(string status)
+=======
+        public string GetStatusClass(string status)
+>>>>>>> main
         {
             switch (status)
             {
@@ -223,7 +255,7 @@ namespace AmiManeraWeb
             }
         }
 
-        protected string GetStatusLabel(string status)
+        public string GetStatusLabel(string status)
         {
             switch (status)
             {
@@ -269,7 +301,7 @@ namespace AmiManeraWeb
             }
         }
 
-        protected string GetChairIcons(int count, string status)
+        public string GetChairIcons(int count, string status)
         {
             string chairClass = GetChairClass(status);
             string result = "";
@@ -293,10 +325,17 @@ namespace AmiManeraWeb
             }
         }
 
+<<<<<<< HEAD
         protected string GetMeseroName(Object mesero)
         {
 
             mesero mesero1 = (mesero)mesero;
+=======
+        public string GetMeseroName(Object mesero)
+        {
+
+            trabajador mesero1 = (trabajador)mesero;
+>>>>>>> main
             return mesero1.nombre;
         }
 

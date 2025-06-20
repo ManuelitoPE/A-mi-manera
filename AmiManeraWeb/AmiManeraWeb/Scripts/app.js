@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Animate tables on load
     animateTablesOnLoad();
+
+    // Show modal on page load if required
+    ScriptManager.RegisterStartupScript(this, GetType(), "ShowModal", "openModal();", true);
 });
 
 /**
@@ -55,7 +58,7 @@ function setupEventListeners() {
 
         item.addEventListener('click', function () {
             const tableId = this.getAttribute('data-table-id');
-            showTableDetails(tableId);
+            openModal();
         });
     });
 
@@ -130,15 +133,6 @@ function initializeTooltips() {
  * Show table details
  * @param {string} tableId - Table ID
  */
-function showTableDetails(tableId) {
-    console.log('Showing details for table: ' + tableId);
-
-    // In a real application, you would fetch table details from the server
-    // and show them in a modal or side panel
-
-    // For demo purposes, just show an alert
-    alert('Table #' + tableId + ' details would be shown here');
-}
 
 /**
  * Open reservation modal

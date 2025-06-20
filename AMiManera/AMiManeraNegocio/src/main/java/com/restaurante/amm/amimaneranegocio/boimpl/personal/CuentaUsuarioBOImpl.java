@@ -39,4 +39,12 @@ public class CuentaUsuarioBOImpl implements ICuentaUsuarioBO{
     public CuentaUsuario autenticar(String nombreUsuario,String contrasenia){
         return this.cuentaUsuarioDAO.autenticar(nombreUsuario, contrasenia);
     }
+<<<<<<< HEAD
+=======
+    
+    @Override
+    public int obtenerIdUsuario(CuentaUsuario cuenta){
+        return this.cuentaUsuarioDAO.buscarId(cuenta);
+    }
+>>>>>>> main
 }
