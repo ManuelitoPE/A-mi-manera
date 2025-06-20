@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="26542399-4996-4029-8034-57466576ac6a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/AMiManeraWS/servicios.disco" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PedidoWS.wsdl" MetadataType="Wsdl" ID="1abc4a44-204b-4af0-9e1b-e5a8eea9ce9f" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/PedidoWS?WSDL" />
+    <MetadataFile FileName="PedidoWS.xsd" MetadataType="Schema" ID="d7979187-3378-489c-b8a6-343ea79cf7ef" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/PedidoWS?xsd=1" />
+    <MetadataFile FileName="TipoProductoWS.wsdl" MetadataType="Wsdl" ID="490ac940-c8be-44c4-921c-567d831c8263" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/TipoProductoWS?WSDL" />
+    <MetadataFile FileName="ReservaWS.xsd" MetadataType="Schema" ID="807f8b55-52c9-4c0e-a053-74e122dcfdd4" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/ReservaWS?xsd=1" />
+    <MetadataFile FileName="LineaPedidoWS.wsdl" MetadataType="Wsdl" ID="df996c7c-4b18-4065-b11d-9efd9cae9f4b" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/LineaPedidoWS?WSDL" />
+    <MetadataFile FileName="ProductoWS.xsd" MetadataType="Schema" ID="95390889-63c1-4029-90fa-828db2dab3f7" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/ProductoWS?xsd=1" />
+    <MetadataFile FileName="LineaPedidoWS.xsd" MetadataType="Schema" ID="06ec46f0-e63c-4e3e-a2af-5f132233e567" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/LineaPedidoWS?xsd=1" />
+    <MetadataFile FileName="MesaWS.wsdl" MetadataType="Wsdl" ID="7fde5481-bee9-44c0-84d9-d7a54f4d3ba6" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/MesaWS?WSDL" />
+    <MetadataFile FileName="servicios.disco" MetadataType="Disco" ID="32b7b7e5-fe15-4c0c-8aed-baca8b0b2bad" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/servicios.disco" />
+    <MetadataFile FileName="MesaWS.xsd" MetadataType="Schema" ID="ccf7a98e-ea3e-40be-8ba9-ad2955b3c275" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/MesaWS?xsd=1" />
+    <MetadataFile FileName="CuentaUsuarioWS.xsd" MetadataType="Schema" ID="7cfcc3ce-75bf-4b21-81c4-42a0b9923c6a" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/CuentaUsuarioWS?xsd=1" />
+    <MetadataFile FileName="TipoProductoWS.xsd" MetadataType="Schema" ID="caa314ec-da30-4b73-83e6-a7904a56ce8d" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/TipoProductoWS?xsd=1" />
+    <MetadataFile FileName="ReservaWS.wsdl" MetadataType="Wsdl" ID="a37fa592-1b85-4d59-9c64-9500d42f3a1b" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/ReservaWS?WSDL" />
+    <MetadataFile FileName="ProductoWS.wsdl" MetadataType="Wsdl" ID="7e35d91f-a36f-4cc9-84ae-33e776e6c69b" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/ProductoWS?WSDL" />
+    <MetadataFile FileName="CuentaUsuarioWS.wsdl" MetadataType="Wsdl" ID="ffd291b0-bc3c-4f24-90af-d4a8e6d92b64" SourceId="1" SourceUrl="http://localhost:8080/AMiManeraWS/CuentaUsuarioWS?WSDL" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,7 +1,8 @@
 package com.restaurante.amm.amimaneramodel.gestionmesas;
 
 import java.time.LocalDateTime;
-import com.restaurante.amm.amimaneramodel.clientes.Cliente;
+import com.restaurante.amm.amimaneramodel.clientes.PersonaJuridica;
+import com.restaurante.amm.amimaneramodel.clientes.PersonaNatural;
 
 public class Reserva {
     // Variables (atributos)
@@ -12,18 +13,21 @@ public class Reserva {
     private EstadoReserva estado;
     private double montoReserva;
     private Mesa mesa;
-    private Cliente cliente;
+    private PersonaNatural personaNatural;
+    private PersonaJuridica personaJuridica;
     
     //CONSTRUCTORES
     
     public Reserva(){
-        this.mesa = new Mesa();
-        this.cliente = null;
+        this.mesa = null;
+        this.personaNatural = null;
+        this.personaJuridica = null;
     }
     
     public Reserva(int idReserva, LocalDateTime fechaHoraInicio,
             LocalDateTime fechaHoraFin, int cantidadPersonas, EstadoReserva estado, 
-            double montoReserva, Mesa mesa){
+            double montoReserva, Mesa mesa, PersonaNatural personaNatural,
+            PersonaJuridica personaJuridica){
         
         this.idReserva=idReserva;
         this.fechaHoraInicio=fechaHoraInicio;
@@ -32,6 +36,9 @@ public class Reserva {
         this.estado=estado;
         this.montoReserva=montoReserva;
         this.mesa = new Mesa(mesa);
+        this.personaNatural = new PersonaNatural(personaNatural);
+        this.personaJuridica = new PersonaJuridica(personaJuridica);
+        
     }
     
     public Reserva(Reserva reserva){
@@ -41,7 +48,9 @@ public class Reserva {
         this.cantidadPersonas=reserva.cantidadPersonas;
         this.estado=reserva.estado;
         this.montoReserva=reserva.montoReserva;
-        this.mesa = new Mesa(reserva.getMesa());
+        this.mesa = new Mesa(reserva.mesa);
+        this.personaNatural = new PersonaNatural(reserva.personaNatural);
+        this.personaJuridica = new PersonaJuridica(reserva.personaJuridica);
     }
     
     // Getters y Setters
@@ -102,12 +111,20 @@ public class Reserva {
         this.mesa = mesa;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public PersonaNatural getPersonaNatural() {
+        return personaNatural;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setPersonaNatural(PersonaNatural personaNatural) {
+        this.personaNatural = personaNatural;
+    }
+
+    public PersonaJuridica getPersonaJuridica() {
+        return personaJuridica;
+    }
+
+    public void setPersonaJuridica(PersonaJuridica personaJuridica) {
+        this.personaJuridica = personaJuridica;
     }
     
 }

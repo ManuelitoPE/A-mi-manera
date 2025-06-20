@@ -27,58 +27,34 @@ public class CuentaUsuario {
     
     //GETERS Y SETERS
 
-    /**
-     * @return the idCuentaUsuario
-     */
     public int getIdCuentaUsuario() {
         return idCuentaUsuario;
     }
 
-    /**
-     * @param idCuentaUsuario the idCuentaUsuario to set
-     */
     public void setIdCuentaUsuario(int idCuentaUsuario) {
         this.idCuentaUsuario = idCuentaUsuario;
     }
 
-    /**
-     * @return the nombreUsuario
-     */
     public String getNombreUsuario() {
         return nombreUsuario;
     }
 
-    /**
-     * @param nombreUsuario the nombreUsuario to set
-     */
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
     }
 
-    /**
-     * @return the constrasenia
-     */
     public String getConstrasenia() {
         return constrasenia;
     }
 
-    /**
-     * @param constrasenia the constrasenia to set
-     */
     public void setConstrasenia(String constrasenia) {
         this.constrasenia = constrasenia;
     }
 
-    /**
-     * @return the tipoUsuario
-     */
     public String getTipoUsuario() {
         return tipoUsuario;
     }
 
-    /**
-     * @param tipoUsuario the tipoUsuario to set
-     */
     public void setTipoUsuario(String tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }

@@ -104,12 +104,10 @@ CREATE TABLE LINEAPEDIDO (
 -- Tabla Reserva con estado ENUM
 CREATE TABLE RESERVA (
     idReserva INT AUTO_INCREMENT PRIMARY KEY,
-    fecha DATE NOT NULL,
-    horaInicio DATETIME NOT NULL,
-    horaFin DATETIME NOT NULL,
+    fechaHoraInicio DATETIME NOT NULL,
+    fechaHoraFin DATETIME NOT NULL,
     cantidadPersonas INT NOT NULL,
     estado ENUM('PENDIENTE', 'CONFIRMADA', 'CANCELADA') NOT NULL,
-    horaMaximaCancelacion DATETIME NOT NULL,
     montoReserva DECIMAL(10,2) NOT NULL,
     idPersonaNatural INT,
     idPersonaJuridica INT,

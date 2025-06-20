@@ -8,46 +8,59 @@ DROP PROCEDURE IF EXISTS listarReservas;
 
 DELIMITER //
 CREATE PROCEDURE insertarReserva(
-    IN p_fecha DATE,
-    IN p_horaInicio DATETIME,
-    IN p_horaFin DATETIME,
+    IN p_fechaHoraInicio DATETIME,
+    IN p_fechaHoraFin DATETIME,
     IN p_cantidadPersonas INT,
     IN p_estado VARCHAR(20),
-    IN p_horaMaximaCancelacion DATETIME,
     IN p_montoReserva DECIMAL(10,2),
-    IN p_idCliente INT,
+    IN p_idPersonaNatural INT,
+	IN p_idPersonaJuridica INT,
     IN p_idMesa INT,
     OUT p_id INT
 )
 BEGIN
-    INSERT INTO RESERVA(fecha, horaInicio, horaFin, cantidadPersonas, estado, horaMaximaCancelacion, montoReserva, idCliente, idMesa)
-    VALUES(p_fecha, p_horaInicio, p_horaFin, p_cantidadPersonas, p_estado, p_horaMaximaCancelacion, p_montoReserva, p_idCliente, p_idMesa);
+    INSERT INTO RESERVA(
+		fechaHoraInicio, 
+		fechaHoraFin, 
+		cantidadPersonas, 
+		estado, 
+		montoReserva, 
+		idPersonaNatural, 
+		idPersonaJuridica, 
+		idMesa)
+    VALUES(
+		p_fechaHoraInicio,
+		p_fechaHoraFin,
+		p_cantidadPersonas,
+		p_estado,
+		p_montoReserva, 
+		p_idPersonaNatural,
+		p_idPersonaJuridica,
+		p_idMesa);
     SET p_id = LAST_INSERT_ID();
 END //
 
 CREATE PROCEDURE modificarReserva(
-    IN p_fecha DATE,
-    IN p_horaInicio DATETIME,
-    IN p_horaFin DATETIME,
+    IN p_fechaHoraInicio DATETIME,
+    IN p_fechaHoraFin DATETIME,
     IN p_cantidadPersonas INT,
     IN p_estado VARCHAR(20),
-    IN p_horaMaximaCancelacion DATETIME,
     IN p_montoReserva DECIMAL(10,2),
-    IN p_idCliente INT,
+    IN p_idPersonaNatural INT,
+	IN p_idPersonaJuridica INT,
     IN p_idMesa INT,
     IN p_id INT
 )
 BEGIN
     UPDATE RESERVA
     SET 
-        fecha = p_fecha,
-        horaInicio = p_horaInicio,
-        horaFin = p_horaFin,
+        fechaHoraInicio = p_fechaHoraInicio,
+        fechaHoraFin = p_fechaHoraFin,
         cantidadPersonas = p_cantidadPersonas,
         estado = p_estado,
-        horaMaximaCancelacion = p_horaMaximaCancelacion,
         montoReserva = p_montoReserva,
-        idCliente = p_idCliente,
+        idPersonaNatural = p_idPersonaNatural,
+		idPersonaJuridica = p_idPersonaJuridica,
         idMesa = p_idMesa
     WHERE idReserva = p_id;
 END //

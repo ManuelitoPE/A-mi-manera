@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://servicios.amimaneraws.amm.restaurante.com" targetNamespace="https://servicios.amimaneraws.amm.restaurante.com" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="agregarProductoAPedido" type="tns:agregarProductoAPedido" />
+  <xs:element name="agregarProductoAPedidoResponse" type="tns:agregarProductoAPedidoResponse" />
+  <xs:element name="buscarPedidoPorId" type="tns:buscarPedidoPorId" />
+  <xs:element name="buscarPedidoPorIdResponse" type="tns:buscarPedidoPorIdResponse" />
+  <xs:element name="crearPedido" type="tns:crearPedido" />
+  <xs:element name="crearPedidoResponse" type="tns:crearPedidoResponse" />
+  <xs:element name="eliminarPedido" type="tns:eliminarPedido" />
+  <xs:element name="eliminarPedidoResponse" type="tns:eliminarPedidoResponse" />
+  <xs:element name="guardarPedido" type="tns:guardarPedido" />
+  <xs:element name="guardarPedidoResponse" type="tns:guardarPedidoResponse" />
+  <xs:element name="listarPedidos" type="tns:listarPedidos" />
+  <xs:element name="listarPedidosPorEstado" type="tns:listarPedidosPorEstado" />
+  <xs:element name="listarPedidosPorEstadoResponse" type="tns:listarPedidosPorEstadoResponse" />
+  <xs:element name="listarPedidosPorMesa" type="tns:listarPedidosPorMesa" />
+  <xs:element name="listarPedidosPorMesaResponse" type="tns:listarPedidosPorMesaResponse" />
+  <xs:element name="listarPedidosResponse" type="tns:listarPedidosResponse" />
+  <xs:complexType name="buscarPedidoPorId">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarPedidoPorIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:pedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estadoPedido" type="tns:estadoPedido" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element name="idPedido" type="xs:int" />
+      <xs:element minOccurs="0" name="mesa" type="tns:mesa" />
+      <xs:element name="montoTotal" type="xs:double" />
+      <xs:element minOccurs="0" name="trabajador" type="tns:trabajador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mesa">
+    <xs:sequence>
+      <xs:element name="cantidadAsientos" type="xs:int" />
+      <xs:element minOccurs="0" name="estado" type="tns:estadoMesa" />
+      <xs:element name="idMesa" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="listaPedidos" nillable="true" type="tns:pedido" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="listaReservas" nillable="true" type="tns:reserva" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reserva">
+    <xs:sequence>
+      <xs:element name="cantidadPersonas" type="xs:int" />
+      <xs:element minOccurs="0" name="cliente" type="tns:cliente" />
+      <xs:element minOccurs="0" name="estado" type="tns:estadoReserva" />
+      <xs:element minOccurs="0" name="fechaHoraFin" type="tns:localDateTime" />
+      <xs:element minOccurs="0" name="fechaHoraInicio" type="tns:localDateTime" />
+      <xs:element name="idReserva" type="xs:int" />
+      <xs:element minOccurs="0" name="mesa" type="tns:mesa" />
+      <xs:element name="montoReserva" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cliente" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element name="idCliente" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="listaReservas" nillable="true" type="tns:reserva" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element name="telefono" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="localDateTime" final="extension restriction">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="trabajador">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="cuentaUsuario" type="tns:cuentaUsuario" />
+      <xs:element name="idTrabajador" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="rol" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cuentaUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="constrasenia" type="xs:string" />
+      <xs:element name="idCuentaUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreUsuario" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoUsuario" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="guardarPedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pedido" type="tns:pedido" />
+      <xs:element minOccurs="0" name="estado" type="tns:estado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="guardarPedidoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="agregarProductoAPedido">
+    <xs:sequence>
+      <xs:element name="idPedido" type="xs:int" />
+      <xs:element name="idProd" type="xs:int" />
+      <xs:element name="idTrabajador" type="xs:int" />
+      <xs:element name="cant" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agregarProductoAPedidoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarPedido">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarPedidoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="crearPedido">
+    <xs:sequence>
+      <xs:element name="idMesa" type="xs:int" />
+      <xs:element name="idMesero" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="crearPedidoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPedidos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarPedidosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:pedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPedidosPorMesa">
+    <xs:sequence>
+      <xs:element name="idMesa" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPedidosPorMesaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:pedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPedidosPorEstado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estado" type="tns:estadoPedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPedidosPorEstadoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:pedido" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="estadoPedido">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EN_ORDEN" />
+      <xs:enumeration value="CANCELADO" />
+      <xs:enumeration value="ENTREGADO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="estadoMesa">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LIBRE" />
+      <xs:enumeration value="OCUPADA" />
+      <xs:enumeration value="RESERVADA" />
+      <xs:enumeration value="NO_DISPONIBLE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="estadoReserva">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PENDIENTE" />
+      <xs:enumeration value="CONFIRMADO" />
+      <xs:enumeration value="CANCELADO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="estado">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NUEVO" />
+      <xs:enumeration value="MODIFICAR" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
