@@ -99,9 +99,6 @@ public class CuentaUsuarioDAOImpl extends BaseDAOImpl<CuentaUsuario> implements 
             System.err.println("Error inpesperado: " + e.getMessage());
             throw new RuntimeException("Error inesperado al buscar el registro.", e);
         }
-<<<<<<< HEAD
-    }    
-=======
     }
     
     protected CallableStatement comandoBuscarPorId(Connection conn, String nombre) throws SQLException{
@@ -135,5 +132,4 @@ public class CuentaUsuarioDAOImpl extends BaseDAOImpl<CuentaUsuario> implements 
             throw new RuntimeException("Error inesperado al buscar el registro.", e);
         }        
     }
->>>>>>> main
 } 

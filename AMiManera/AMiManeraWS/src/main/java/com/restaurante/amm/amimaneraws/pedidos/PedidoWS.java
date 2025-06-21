@@ -1,12 +1,6 @@
 package com.restaurante.amm.amimaneraws.pedidos;
 
 import com.restaurante.amm.amimaneramodel.pedidos.EstadoPedido;
-<<<<<<< HEAD
-import com.restaurante.amm.amimaneramodel.pedidos.Pedido;
-import com.restaurante.amm.amimaneranegocio.Estado;
-import com.restaurante.amm.amimaneranegocio.bo.pedidos.IPedidoBO;
-import com.restaurante.amm.amimaneranegocio.boimpl.pedidos.PedidoBOImpl;
-=======
 import com.restaurante.amm.amimaneramodel.pedidos.LineaPedido;
 import com.restaurante.amm.amimaneramodel.pedidos.Pedido;
 import com.restaurante.amm.amimaneramodel.pedidos.Producto;
@@ -22,7 +16,6 @@ import com.restaurante.amm.amimaneranegocio.boimpl.pedidos.LineaPedidoBOImpl;
 import com.restaurante.amm.amimaneranegocio.boimpl.pedidos.PedidoBOImpl;
 import com.restaurante.amm.amimaneranegocio.boimpl.pedidos.ProductoBOImpl;
 import com.restaurante.amm.amimaneranegocio.boimpl.personal.TrabajadorBO;
->>>>>>> main
 import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
@@ -32,15 +25,6 @@ import java.util.List;
 @WebService(serviceName = "PedidoWS",
         targetNamespace = "https://servicios.amimaneraws.amm.restaurante.com")
 public class PedidoWS {
-<<<<<<< HEAD
-
-    private final IPedidoBO pedidoBO;
-    
-    public PedidoWS(){
-        this.pedidoBO = new PedidoBOImpl();
-    }
-    
-=======
     
     private final IPedidoBO pedidoBO;
     private final IProductoBO productoBO;
@@ -64,7 +48,6 @@ public class PedidoWS {
         return this.pedidoBO.crear(pedido);
     }  
     
->>>>>>> main
     @WebMethod(operationName = "guardarPedido")
     public void guardarPedido(@WebParam(name = "pedido") Pedido pedido,
             @WebParam(name = "estado") Estado estado){
@@ -113,8 +96,6 @@ public class PedidoWS {
                     +estado.toString()+" : "+e.getMessage());
         }
     }
-<<<<<<< HEAD
-=======
     
     @WebMethod(operationName = "agregarProductoAPedido")
     public boolean agregarProductoAPedido(@WebParam(name = "idPedido") int idPedido,
@@ -146,5 +127,4 @@ public class PedidoWS {
                     + e.getMessage());
         }
     }    
->>>>>>> main
 }

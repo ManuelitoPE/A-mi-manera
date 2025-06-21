@@ -3,6 +3,7 @@ package com.restaurante.amm.amimaneraws.pedidos;
 import com.restaurante.amm.amimaneramodel.pedidos.TipoProducto;
 import com.restaurante.amm.amimaneranegocio.bo.pedidos.ITipoProductoBO;
 import com.restaurante.amm.amimaneranegocio.boimpl.pedidos.TipoProductoBOImpl;
+import com.restaurante.amm.amimanerapersistencia.dao.pedidos.ITipoProductoDAO;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebService;
 import jakarta.xml.ws.WebServiceException;

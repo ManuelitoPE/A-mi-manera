@@ -37,8 +37,6 @@ public class ReservaWS {
         }  
     }
     
-<<<<<<< HEAD
-=======
     @WebMethod(operationName = "BuscarReserva")
     public Reserva buscarReserva(int id){
         try {
@@ -47,5 +45,4 @@ public class ReservaWS {
             throw new WebServiceException("Error al obtener la reserva: "+e.getMessage());
         }
     }
->>>>>>> main
 }

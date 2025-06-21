@@ -44,20 +44,13 @@ public class ProductoWS {
     }
     
     @WebMethod(operationName = "eliminarProducto")
-<<<<<<< HEAD
-    public void eliminarProducto(int id){
-=======
     public void eliminarProducto(@WebParam(name = "id") int id){
->>>>>>> main
         try {
             this.productoBO.eliminar(id);
         } catch (Exception e) {
             throw new WebServiceException("Error al eliminar el producto: "+e.getMessage());
         }
     }
-<<<<<<< HEAD
-}
-=======
     
     @WebMethod(operationName = "buscarProductoPorNombre")
     public List<Producto> buscarProductoPorNombre(@WebParam(name = "valor") String nombre){
@@ -69,4 +62,3 @@ public class ProductoWS {
     }
 }
 
->>>>>>> main

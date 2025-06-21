@@ -1,9 +1,6 @@
 package com.restaurante.amm.amimanerapersistencia.daoimpl.pedidos;
 
-<<<<<<< HEAD
-=======
 import com.restaurante.amm.amimaneradbmanager.DBManager;
->>>>>>> main
 import com.restaurante.amm.amimanerapersistencia.daoimpl.pedidos.ProductoDAOImpl;
 import com.restaurante.amm.amimanerapersistencia.daoimpl.pedidos.PedidoDAOImpl;
 import java.sql.CallableStatement;
@@ -14,12 +11,9 @@ import java.sql.Types;
 import com.restaurante.amm.amimanerapersistencia.dao.pedidos.ILineaPedidoDAO;
 import com.restaurante.amm.amimaneramodel.pedidos.LineaPedido;
 import com.restaurante.amm.amimanerapersistencia.daoimpl.BaseDAOImpl;
-<<<<<<< HEAD
-=======
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
->>>>>>> main
 
 public class LineaPedidoDAOImpl extends BaseDAOImpl<LineaPedido> implements ILineaPedidoDAO {
     @Override
@@ -77,8 +71,6 @@ public class LineaPedidoDAOImpl extends BaseDAOImpl<LineaPedido> implements ILin
         
         return linea;
     }
-<<<<<<< HEAD
-=======
     
     protected CallableStatement comandoListarPorIdPedido(Connection conn,
             int idPedido) throws SQLException{
@@ -111,5 +103,4 @@ public class LineaPedidoDAOImpl extends BaseDAOImpl<LineaPedido> implements ILin
             throw new RuntimeException("Error inesperado al listar los lineas pedido por pedido.", e);
         }        
     }
->>>>>>> main
 } 

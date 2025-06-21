@@ -36,11 +36,8 @@ public class ProductoBOImpl implements IProductoBO{
         else if (estado == Estado.MODIFICAR) this.productoDAO.modificar(modelo);
     }
     
-<<<<<<< HEAD
-=======
     @Override
     public  List<Producto> obtenerPorNombre(String nombre){
         return this.productoDAO.buscarPorNombre(nombre);
     }
->>>>>>> main
 }

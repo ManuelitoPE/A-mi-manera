@@ -1,24 +1,24 @@
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\clientes\Cliente.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\clientes\PersonaJuridica.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\clientes\PersonaNatural.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\gestionmesas\EstadoMesa.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\gestionmesas\EstadoReserva.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\gestionmesas\Mesa.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\gestionmesas\Reserva.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pagos\Boleta.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pagos\ComprobantePago.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pagos\DetalleBoleta.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pagos\DetalleFactura.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pagos\Factura.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pagos\MetodoPago.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pedidos\EstadoPedido.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pedidos\LineaPedido.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pedidos\Pedido.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pedidos\Producto.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pedidos\TipoProducto.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\personal\Administrador.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\personal\Bartender.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\personal\Cajero.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\personal\CuentaUsuario.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\personal\Mesero.java
-C:\Users\fenix\Desktop\ProyectoAMM\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\personal\Trabajador.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\clientes\Cliente.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\clientes\PersonaJuridica.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\clientes\PersonaNatural.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\gestionmesas\EstadoMesa.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\gestionmesas\EstadoReserva.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\gestionmesas\Mesa.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\gestionmesas\Reserva.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pagos\Boleta.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pagos\ComprobantePago.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pagos\DetalleBoleta.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pagos\DetalleFactura.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pagos\Factura.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pagos\MetodoPago.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pedidos\EstadoPedido.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pedidos\LineaPedido.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pedidos\Pedido.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pedidos\Producto.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\pedidos\TipoProducto.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\personal\Administrador.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\personal\Bartender.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\personal\Cajero.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\personal\CuentaUsuario.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\personal\Mesero.java
+C:\Users\italo\Documents\Ciclo 2025-1\Programacion 3\Trabajo_Grupal\TA_CODE\Trabajo actual\AMM\A-mi-manera\AMiManera\AMiManeraModel\src\main\java\com\restaurante\amm\amimaneramodel\personal\Trabajador.java
